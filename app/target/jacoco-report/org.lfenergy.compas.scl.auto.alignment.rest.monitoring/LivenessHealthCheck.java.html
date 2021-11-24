@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="nl"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>LivenessHealthCheck.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">quarkus-application</a> &gt; <a href="index.source.html" class="el_package">org.lfenergy.compas.scl.auto.alignment.rest.monitoring</a> &gt; <span class="el_source">LivenessHealthCheck.java</span></div><h1>LivenessHealthCheck.java</h1><pre class="source lang-java linenums">// SPDX-FileCopyrightText: 2021 Alliander N.V.
+//
+// SPDX-License-Identifier: Apache-2.0
+package org.lfenergy.compas.scl.auto.alignment.rest.monitoring;
+
+import org.eclipse.microprofile.health.HealthCheck;
+import org.eclipse.microprofile.health.HealthCheckResponse;
+import org.eclipse.microprofile.health.Liveness;
+
+import javax.enterprise.context.ApplicationScoped;
+
+@Liveness
+@ApplicationScoped
+<span class="fc" id="L14">public class LivenessHealthCheck implements HealthCheck {</span>
+    @Override
+    public HealthCheckResponse call() {
+<span class="fc" id="L17">        return HealthCheckResponse.up(&quot;System Live&quot;);</span>
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>
