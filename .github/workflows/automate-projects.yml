@@ -15,14 +15,14 @@ jobs:
         if: github.event_name == 'issues' && github.event.action == 'opened'
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          GITHUB_PROJECT_URL: https://github.com/com-pas/compas-scl-auto-alignment/projects/2
+          GITHUB_PROJECT_URL: https://github.com/com-pas/compas-scl-auto-alignment/projects/1
           GITHUB_PROJECT_COLUMN_NAME: To do
       - name: add-new-pull-request-to-repository-based-project-column
         uses: docker://takanabe/github-actions-automate-projects:v0.0.1
         if: github.event_name == 'pull_request' && github.event.action == 'opened'
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          GITHUB_PROJECT_URL: https://github.com/com-pas/compas-scl-auto-alignment/projects/2
+          GITHUB_PROJECT_URL: https://github.com/com-pas/compas-scl-auto-alignment/projects/1
           GITHUB_PROJECT_COLUMN_NAME: To do
       - name: add-new-issues-to-organization-based-project-column
         uses: docker://takanabe/github-actions-automate-projects:v0.0.1
