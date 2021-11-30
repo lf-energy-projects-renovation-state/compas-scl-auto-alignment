@@ -45,7 +45,6 @@ public class SclAutoAlignmentService {
                 createSubstationBuilder(scl.getSubstation(substationName), substationName);
 
         String json = createJson(substationBuilder);
-
         return converter.convertToString(scl.getElement());
     }
 

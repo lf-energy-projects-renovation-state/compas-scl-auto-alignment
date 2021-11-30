@@ -12,4 +12,6 @@ public class SclAutoAlignmentConstants {
 
     public static final String SCL_NS_URI = "http://www.iec.ch/61850/2003/SCL";
     public static final String SCL_ELEMENT_NAME = "SCL";
+    public static final String SCLXY_NS_URI = "http://www.iec.ch/61850/2003/SCLcoordinates";
+    public static final String SCLXY_PREFIX = "sxy";
 }

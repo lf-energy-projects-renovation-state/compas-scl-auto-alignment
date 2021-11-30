@@ -8,7 +8,7 @@ import org.w3c.dom.Element;
 import java.util.stream.IntStream;
 import java.util.stream.Stream;
 
-import static org.lfenergy.compas.scl.auto.alignment.SclAutoAlignmentConstants.SCL_NS_URI;
+import static org.lfenergy.compas.scl.auto.alignment.SclAutoAlignmentConstants.*;
 
 public class AbstractCompasEntity {
     protected Element element;
@@ -39,5 +39,10 @@ public class AbstractCompasEntity {
 
     public Element getElement() {
         return element;
+    }
+
+    public void setXYCoordinates(long x, long y) {
+        element.setAttributeNS(SCLXY_NS_URI, SCLXY_PREFIX + ":x", String.valueOf(x));
+        element.setAttributeNS(SCLXY_NS_URI, SCLXY_PREFIX + ":y", String.valueOf(y));
     }
 }

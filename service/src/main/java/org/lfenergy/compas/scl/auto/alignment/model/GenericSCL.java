@@ -8,9 +8,16 @@ import org.w3c.dom.Element;
 
 import java.util.Optional;
 
+import static org.lfenergy.compas.scl.auto.alignment.SclAutoAlignmentConstants.SCLXY_NS_URI;
+import static org.lfenergy.compas.scl.auto.alignment.SclAutoAlignmentConstants.SCLXY_PREFIX;
+
 public class GenericSCL extends AbstractCompasEntity {
     public GenericSCL(Element element) {
         super(element);
+
+        if (!element.hasAttribute("xmlns:" + SCLXY_PREFIX)) {
+            element.setAttribute("xmlns:" + SCLXY_PREFIX, SCLXY_NS_URI);
+        }
     }
 
     public Optional<GenericSubstation> getSubstation(String substationName) {

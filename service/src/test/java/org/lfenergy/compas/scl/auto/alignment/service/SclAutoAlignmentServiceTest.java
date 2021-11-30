@@ -4,7 +4,6 @@
 package org.lfenergy.compas.scl.auto.alignment.service;
 
 import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.lfenergy.compas.core.commons.ElementConverter;
@@ -15,7 +14,6 @@ import java.nio.charset.StandardCharsets;
 
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 
-@Disabled
 @ExtendWith(MockitoExtension.class)
 class SclAutoAlignmentServiceTest {
 
@@ -76,7 +74,6 @@ class SclAutoAlignmentServiceTest {
             throw new UncheckedIOException(e);
         }
     }
-
 
     private String readSCL(String filename) throws IOException {
         var inputStream = getClass().getResourceAsStream("/scl/" + filename);
