@@ -35,7 +35,7 @@ SPDX-License-Identifier: Apache-2.0
 
         <dependency>
             <groupId>org.lfenergy.compas.core</groupId>
-            <artifactId>scl2007b4</artifactId>
+            <artifactId>commons</artifactId>
         </dependency>
         <dependency>
             <groupId>org.lfenergy.compas.core</groupId>
