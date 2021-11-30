@@ -1,3 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- SPDX-FileCopyrightText: 2020 RTE FRANCE -->
+<!-- -->
+<!-- SPDX-License-Identifier: Apache-2.0 -->
+
 <SCL xmlns="http://www.iec.ch/61850/2003/SCL" version="2007" revision="B" release="4">
 	<Header id="a27b6b6c-8d56-48b0-b64e-cff12ac5c776" version="0.0.1" revision="">
 		<History>

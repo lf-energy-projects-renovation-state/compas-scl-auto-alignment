@@ -72,8 +72,7 @@ public class SclAutoAlignmentService {
             throw new SclAutoAlignmentException(NO_SCL_ELEMENT_FOUND_ERROR_CODE, "No valid SCL found in the passed SCL Data.");
         }
 
-        var scl = new GenericSCL(sclElement);
-        return scl;
+        return new GenericSCL(sclElement);
     }
 
     private RawGraphBuilder.SubstationBuilder createSubstationBuilder(Optional<GenericSubstation> substation,
@@ -140,13 +139,13 @@ public class SclAutoAlignmentService {
         public RawDiagramLabelProvider(SubstationGraph graph) {
             this.busLabels = new HashMap<>();
             LabelPosition labelPosition = new LabelPosition("default", 0, -5, true, 0);
-            graph.getNodes().forEach(v -> {
-                v.getNodes().forEach(n -> {
-                    List<DiagramLabelProvider.NodeLabel> labels = new ArrayList<>();
-                    labels.add(new DiagramLabelProvider.NodeLabel(n.getId(), labelPosition, null));
-                    busLabels.put(n, labels);
-                });
-            });
+            graph.getNodes().forEach(v ->
+                    v.getNodes().forEach(n -> {
+                        List<NodeLabel> labels = new ArrayList<>();
+                        labels.add(new NodeLabel(n.getId(), labelPosition, null));
+                        busLabels.put(n, labels);
+                    })
+            );
         }
 
         @Override

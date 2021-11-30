@@ -19,7 +19,8 @@ public enum ConductingEquipmentType {
                 return DIS;
             case "CBR":
                 return CBR;
+            default:
+                return null;
         }
-        return null;
     }
 }

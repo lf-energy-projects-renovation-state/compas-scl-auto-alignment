@@ -25,7 +25,7 @@ public class AbstractCompasEntity {
         var nodeList = element.getElementsByTagNameNS(namespace, tagName);
         return IntStream.range(0, nodeList.getLength())
                 .mapToObj(nodeList::item)
-                .filter(node -> node instanceof Element)
+                .filter(Element.class::isInstance)
                 .map(Element.class::cast);
     }
 

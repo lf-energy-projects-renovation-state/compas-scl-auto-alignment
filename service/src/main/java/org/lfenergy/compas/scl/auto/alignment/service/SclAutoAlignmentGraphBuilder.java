@@ -26,7 +26,7 @@ public class SclAutoAlignmentGraphBuilder {
         rawGraphBuilder = new RawGraphBuilder();
         substationBuilder = rawGraphBuilder.createSubstationBuilder(substationElement.getName());
         substationElement.getVoltageLevels()
-                .forEach(voltageLevel -> createVoltageLevelGraph(voltageLevel));
+                .forEach(this::createVoltageLevelGraph);
     }
 
     private void createVoltageLevelGraph(GenericVoltageLevel voltageLevel) {

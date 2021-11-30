@@ -13,6 +13,8 @@ import org.mockito.junit.jupiter.MockitoExtension;
 import java.io.*;
 import java.nio.charset.StandardCharsets;
 
+import static org.junit.jupiter.api.Assertions.assertNotNull;
+
 @Disabled
 @ExtendWith(MockitoExtension.class)
 class SclAutoAlignmentServiceTest {
@@ -31,7 +33,9 @@ class SclAutoAlignmentServiceTest {
         var filename = "scl-1";
         var sclString = readSCL(filename + ".scd");
 
-        writeFile(filename + ".json", sclAutoAlignmentService.getJson(sclString, "AA1"));
+        var result = sclAutoAlignmentService.getJson(sclString, "AA1");
+        assertNotNull(result);
+        writeFile(filename + ".json", result);
     }
 
     @Test
@@ -39,7 +43,9 @@ class SclAutoAlignmentServiceTest {
         var filename = "scl-2";
         var sclString = readSCL(filename + ".scd");
 
-        writeFile(filename + ".json", sclAutoAlignmentService.getJson(sclString, "_af9a4ae3-ba2e-4c34-8e47-5af894ee20f4"));
+        var result = sclAutoAlignmentService.getJson(sclString, "_af9a4ae3-ba2e-4c34-8e47-5af894ee20f4");
+        assertNotNull(result);
+        writeFile(filename + ".json", result);
     }
 
     @Test
@@ -47,7 +53,9 @@ class SclAutoAlignmentServiceTest {
         var filename = "scl-1";
         var sclString = readSCL(filename + ".scd");
 
-        writeFile(filename + ".svg", sclAutoAlignmentService.getSVG(sclString, "AA1"));
+        var result = sclAutoAlignmentService.getSVG(sclString, "AA1");
+        assertNotNull(result);
+        writeFile(filename + ".svg", result);
     }
 
     @Test
@@ -55,7 +63,9 @@ class SclAutoAlignmentServiceTest {
         var filename = "scl-2";
         var sclString = readSCL(filename + ".scd");
 
-        writeFile(filename + ".svg", sclAutoAlignmentService.getSVG(sclString, "_af9a4ae3-ba2e-4c34-8e47-5af894ee20f4"));
+        var result = sclAutoAlignmentService.getSVG(sclString, "_af9a4ae3-ba2e-4c34-8e47-5af894ee20f4");
+        assertNotNull(result);
+        writeFile(filename + ".svg", result);
     }
 
     private void writeFile(String fileName, String data) {
