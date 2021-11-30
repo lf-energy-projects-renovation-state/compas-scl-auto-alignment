@@ -4,9 +4,9 @@
 package org.lfenergy.compas.scl.auto.alignment.service;
 
 import com.powsybl.sld.RawGraphBuilder;
-import com.powsybl.sld.layout.HorizontalSubstationLayoutFactory;
 import com.powsybl.sld.layout.LayoutParameters;
 import com.powsybl.sld.layout.PositionVoltageLevelLayoutFactory;
+import com.powsybl.sld.layout.VerticalSubstationLayoutFactory;
 import com.powsybl.sld.library.ComponentTypeName;
 import com.powsybl.sld.library.ConvergenceComponentLibrary;
 import com.powsybl.sld.model.FeederNode;
@@ -110,26 +110,32 @@ public class SclAutoAlignmentService {
         return writer.toString();
     }
 
-    private void configureLayout(SubstationGraph graph, LayoutParameters layoutParameters) {
-        new HorizontalSubstationLayoutFactory().create(graph,
-                        new PositionVoltageLevelLayoutFactory().setFeederStacked(false))
-                .run(layoutParameters);
-    }
-
     private LayoutParameters getLayoutParameters() {
         return new LayoutParameters()
-                .setVerticalSpaceBus(25)
-                .setHorizontalBusPadding(20)
-                .setCellWidth(50)
-                .setExternCellHeight(250)
-                .setInternCellHeight(40)
-                .setStackHeight(30)
-                .setShowInternalNodes(false)
-                .setDrawStraightWires(false)
-                .setHorizontalSnakeLinePadding(30)
-                .setVerticalSnakeLinePadding(30)
-                .setCssLocation(LayoutParameters.CssLocation.INSERTED_IN_SVG)
-                .setSvgWidthAndHeightAdded(true);
+//                .setVerticalSpaceBus(25)
+//                .setHorizontalBusPadding(20)
+//                .setCellWidth(50)
+//                .setExternCellHeight(250)
+//                .setInternCellHeight(40)
+//                .setStackHeight(30)
+//                .setShowInternalNodes(false)
+//                .setDrawStraightWires(false)
+//                .setHorizontalSnakeLinePadding(30)
+//                .setVerticalSnakeLinePadding(30)
+//                .setSvgWidthAndHeightAdded(true)
+                .setAdaptCellHeightToContent(true)
+                .setCssLocation(LayoutParameters.CssLocation.INSERTED_IN_SVG);
+    }
+
+    private void configureLayout(SubstationGraph graph, LayoutParameters layoutParameters) {
+        new VerticalSubstationLayoutFactory().create(graph,
+                        new PositionVoltageLevelLayoutFactory()
+                                .setFeederStacked(false)
+                                .setHandleShunts(true))
+                .run(layoutParameters);
+//
+//        new ImplicitCellDetector().detectCells(graph);
+//        new BlockOrganizer(true).organize(graph);
     }
 
 
@@ -150,8 +156,8 @@ public class SclAutoAlignmentService {
 
         @Override
         public List<FeederInfo> getFeederInfos(FeederNode node) {
-            return Arrays.asList(new FeederInfo(ComponentTypeName.ARROW_ACTIVE, Direction.OUT, "", "tata", null),
-                    new FeederInfo(ComponentTypeName.ARROW_REACTIVE, Direction.IN, "", "tutu", null));
+            return Arrays.asList(new FeederInfo(ComponentTypeName.ARROW_ACTIVE, Direction.OUT, "", "", null),
+                    new FeederInfo(ComponentTypeName.ARROW_REACTIVE, Direction.IN, "", "", null));
         }
 
         @Override
