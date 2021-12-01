@@ -9,10 +9,11 @@ import org.junit.jupiter.api.extension.ExtendWith;
 import org.lfenergy.compas.core.commons.ElementConverter;
 import org.mockito.junit.jupiter.MockitoExtension;
 
-import java.io.*;
-import java.nio.charset.StandardCharsets;
+import java.io.IOException;
 
 import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static org.lfenergy.compas.scl.auto.alignment.TestUtil.readSCL;
+import static org.lfenergy.compas.scl.auto.alignment.TestUtil.writeFile;
 
 @ExtendWith(MockitoExtension.class)
 class SclAutoAlignmentServiceTest {
@@ -64,21 +65,5 @@ class SclAutoAlignmentServiceTest {
         var result = sclAutoAlignmentService.getSVG(sclString, "_af9a4ae3-ba2e-4c34-8e47-5af894ee20f4");
         assertNotNull(result);
         writeFile(filename + ".svg", result);
-    }
-
-    private void writeFile(String fileName, String data) {
-        File file = new File("target", fileName);
-        try (OutputStreamWriter fw = new OutputStreamWriter(new FileOutputStream(file), StandardCharsets.UTF_8)) {
-            fw.write(data);
-        } catch (IOException e) {
-            throw new UncheckedIOException(e);
-        }
-    }
-
-    private String readSCL(String filename) throws IOException {
-        var inputStream = getClass().getResourceAsStream("/scl/" + filename);
-        assert inputStream != null;
-
-        return new String(inputStream.readAllBytes());
     }
 }

@@ -13,13 +13,13 @@ public class GenericConductingEquipment extends AbstractCompasNameEntity {
         super(element);
     }
 
+    public String getType() {
+        return getAttribute("type");
+    }
+
     public List<GenericTerminal> getTerminals() {
         return getElementsStream("Terminal")
                 .map(GenericTerminal::new)
                 .collect(Collectors.toList());
-    }
-
-    public String getType() {
-        return getAttribute("type");
     }
 }

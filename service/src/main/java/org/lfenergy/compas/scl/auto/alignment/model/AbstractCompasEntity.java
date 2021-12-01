@@ -3,6 +3,7 @@
 // SPDX-License-Identifier: Apache-2.0
 package org.lfenergy.compas.scl.auto.alignment.model;
 
+import org.apache.commons.lang3.StringUtils;
 import org.w3c.dom.Element;
 
 import java.util.stream.IntStream;
@@ -31,10 +32,14 @@ public class AbstractCompasEntity {
 
     protected String getAttribute(String attributeName) {
         String value = element.getAttribute(attributeName);
-        if (value != null && !value.isBlank()) {
+        if (StringUtils.isNotBlank(value)) {
             return value;
         }
         return null;
+    }
+
+    protected double convertStringToDouble(Element element) {
+        return Double.parseDouble(element.getTextContent());
     }
 
     public Element getElement() {

@@ -3,6 +3,8 @@
 // SPDX-License-Identifier: Apache-2.0
 package org.lfenergy.compas.scl.auto.alignment.model;
 
+import java.util.Arrays;
+
 public enum ConductingEquipmentType {
     DIS("DIS"),
     CBR("CBR");
@@ -13,14 +15,14 @@ public enum ConductingEquipmentType {
         this.typeName = typeName;
     }
 
+    public String getTypeName() {
+        return typeName;
+    }
+
     public static ConductingEquipmentType fromString(String strType) {
-        switch (strType) {
-            case "DIS":
-                return DIS;
-            case "CBR":
-                return CBR;
-            default:
-                return null;
-        }
+        return Arrays.stream(ConductingEquipmentType.values())
+                .filter(type -> type.getTypeName().equals(strType))
+                .findFirst()
+                .orElse(null);
     }
 }

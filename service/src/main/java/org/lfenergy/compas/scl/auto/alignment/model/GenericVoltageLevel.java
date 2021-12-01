@@ -27,13 +27,9 @@ public class GenericVoltageLevel extends AbstractCompasNameEntity {
     public double getVoltage() {
         return getElementsStream("Voltage")
                 .findFirst()
-                .map(this::convertVoltage)
+                .map(this::convertStringToDouble)
                 .orElseThrow(() -> new SclAutoAlignmentException(NO_VOLTAGE_FOUND_ERROR_CODE,
                         "No Voltage found for VoltageLevel '" + getName() + "'."));
-    }
-
-    private double convertVoltage(Element element) {
-        return Double.parseDouble(element.getTextContent());
     }
 
     public Optional<GenericConductingEquipment> getConductingEquipment(String ceName) {
