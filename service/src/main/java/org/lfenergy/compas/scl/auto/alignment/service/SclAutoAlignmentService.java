@@ -24,9 +24,9 @@ import java.io.ByteArrayInputStream;
 import java.io.StringWriter;
 import java.nio.charset.StandardCharsets;
 import java.util.*;
+import java.util.regex.Pattern;
 
-import static org.lfenergy.compas.scl.auto.alignment.SclAutoAlignmentConstants.SCL_ELEMENT_NAME;
-import static org.lfenergy.compas.scl.auto.alignment.SclAutoAlignmentConstants.SCL_NS_URI;
+import static org.lfenergy.compas.scl.auto.alignment.SclAutoAlignmentConstants.*;
 import static org.lfenergy.compas.scl.auto.alignment.exception.SclAutoAlignmentErrorCode.NO_SCL_ELEMENT_FOUND_ERROR_CODE;
 import static org.lfenergy.compas.scl.auto.alignment.exception.SclAutoAlignmentErrorCode.SUBSTATION_NOT_FOUND_ERROR_CODE;
 
@@ -44,7 +44,12 @@ public class SclAutoAlignmentService {
         RawGraphBuilder.SubstationBuilder substationBuilder =
                 createSubstationBuilder(scl.getSubstation(substationName), substationName);
 
-        String json = createJson(substationBuilder);
+        // Create the JSON With all X/Y Coordinate information.
+        var jsonGraphInfo = createJson(substationBuilder);
+        // Use that JSON to enrich the passed SCL XML with X/Y Coordinates.
+        var enricher = new SclAutoAlignmentEnricher(scl, jsonGraphInfo);
+        enricher.enrich();
+
         return converter.convertToString(scl.getElement());
     }
 
@@ -65,13 +70,32 @@ public class SclAutoAlignmentService {
     }
 
     private GenericSCL readSCL(String sclData) {
+        // First we will cleanup existing X/Y Coordinates from the SCL XML.
+        var cleanSclData = cleanSXYDeclarationAndAttributes(sclData);
+
+        // Next convert the String to W3C Document/Element
         var sclElement = converter.convertToElement(new BufferedInputStream(
-                new ByteArrayInputStream(sclData.getBytes(StandardCharsets.UTF_8))), SCL_ELEMENT_NAME, SCL_NS_URI);
+                new ByteArrayInputStream(cleanSclData.getBytes(StandardCharsets.UTF_8))), SCL_ELEMENT_NAME, SCL_NS_URI);
         if (sclElement == null) {
             throw new SclAutoAlignmentException(NO_SCL_ELEMENT_FOUND_ERROR_CODE, "No valid SCL found in the passed SCL Data.");
         }
 
         return new GenericSCL(sclElement);
+    }
+
+    static String cleanSXYDeclarationAndAttributes(String data) {
+        // Find Prefix of Namespace.
+        var pattern = Pattern.compile("xmlns:([A-Za-z0-9]*)=\\\"" + SCLXY_NS_URI + "\\\"");
+        var matcher = pattern.matcher(data);
+
+        if (matcher.find()) {
+            var prefix = matcher.group(1);
+            var replacementPattern = "xmlns:[A-Za-z0-9]*=\\\"" + SCLXY_NS_URI + "\\\"" + // Remove the namespace declaration.
+                    "|" + // Combine the two regex patterns.
+                    prefix + ":[A-Za-z]*=\\\"[A-Za-z0-9]*\\\" "; // Remove the attributes using that namespace.
+            return data.replaceAll(replacementPattern, "");
+        }
+        return data;
     }
 
     private RawGraphBuilder.SubstationBuilder createSubstationBuilder(Optional<GenericSubstation> substation,
@@ -111,17 +135,6 @@ public class SclAutoAlignmentService {
 
     private LayoutParameters getLayoutParameters() {
         return new LayoutParameters()
-//                .setVerticalSpaceBus(25)
-//                .setHorizontalBusPadding(20)
-//                .setCellWidth(50)
-//                .setExternCellHeight(250)
-//                .setInternCellHeight(40)
-//                .setStackHeight(30)
-//                .setShowInternalNodes(false)
-//                .setDrawStraightWires(false)
-//                .setHorizontalSnakeLinePadding(30)
-//                .setVerticalSnakeLinePadding(30)
-//                .setSvgWidthAndHeightAdded(true)
                 .setAdaptCellHeightToContent(true)
                 .setCssLocation(LayoutParameters.CssLocation.INSERTED_IN_SVG);
     }
@@ -132,9 +145,6 @@ public class SclAutoAlignmentService {
                                 .setFeederStacked(false)
                                 .setHandleShunts(true))
                 .run(layoutParameters);
-//
-//        new ImplicitCellDetector().detectCells(graph);
-//        new BlockOrganizer(true).organize(graph);
     }
 
 

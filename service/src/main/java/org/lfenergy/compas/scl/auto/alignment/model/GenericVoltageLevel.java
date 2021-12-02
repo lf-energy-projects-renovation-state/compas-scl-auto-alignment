@@ -24,6 +24,17 @@ public class GenericVoltageLevel extends AbstractCompasNameEntity {
                 .collect(Collectors.toList());
     }
 
+    public Optional<GenericBay> getBusbar(String name) {
+        if (StringUtils.isNotBlank(name)) {
+            return getElementsStream("Bay")
+                    .map(GenericBay::new)
+                    .filter(GenericBay::isBusbar)
+                    .filter(busbar -> name.equals(busbar.getName()))
+                    .findFirst();
+        }
+        return Optional.empty();
+    }
+
     public double getVoltage() {
         return getElementsStream("Voltage")
                 .findFirst()

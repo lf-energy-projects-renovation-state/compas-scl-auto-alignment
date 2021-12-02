@@ -7,12 +7,18 @@ import org.junit.jupiter.api.Test;
 import org.lfenergy.compas.core.commons.ElementConverter;
 import org.lfenergy.compas.scl.auto.alignment.TestUtil;
 import org.lfenergy.compas.scl.auto.alignment.model.GenericSCL;
+import org.w3c.dom.Element;
 
+import java.io.BufferedInputStream;
+import java.io.ByteArrayInputStream;
 import java.io.IOException;
+import java.nio.charset.StandardCharsets;
 
 import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static org.lfenergy.compas.scl.auto.alignment.SclAutoAlignmentConstants.SCL_ELEMENT_NAME;
+import static org.lfenergy.compas.scl.auto.alignment.SclAutoAlignmentConstants.SCL_NS_URI;
 import static org.lfenergy.compas.scl.auto.alignment.TestUtil.readFile;
-import static org.lfenergy.compas.scl.auto.alignment.TestUtil.readSCLElement;
+import static org.lfenergy.compas.scl.auto.alignment.TestUtil.readSCL;
 
 class SclAutoAlignmentEnricherTest {
     @Test
@@ -39,6 +45,15 @@ class SclAutoAlignmentEnricherTest {
 
         assertNotNull(scl.getElement());
         writeFile(filename + "-updated.scd", scl);
+    }
+
+    private Element readSCLElement(String filename) throws IOException {
+        var sclData = readSCL(filename);
+        sclData = SclAutoAlignmentService.cleanSXYDeclarationAndAttributes(sclData);
+
+        ElementConverter converter = new ElementConverter();
+        return converter.convertToElement(new BufferedInputStream(
+                new ByteArrayInputStream(sclData.getBytes(StandardCharsets.UTF_8))), SCL_ELEMENT_NAME, SCL_NS_URI);
     }
 
     private void writeFile(String filename, GenericSCL scl) {

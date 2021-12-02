@@ -36,20 +36,34 @@ public class SclAutoAlignmentEnricher {
         var voltageLevelName = jsonVoltageLevel.get("voltageLevelInfos").getAsJsonObject().get("id").getAsString();
         var sclVoltageLevel = substation.getVoltageLevel(voltageLevelName);
         sclVoltageLevel.ifPresent(voltageLevel -> {
-            voltageLevel.setXYCoordinates(jsonVoltageLevel.get("x").getAsLong(), jsonVoltageLevel.get("y").getAsLong());
+            voltageLevel.setXYCoordinates(getCoordinate(jsonVoltageLevel, "x"),
+                    getCoordinate(jsonVoltageLevel, "y"));
 
             if (jsonVoltageLevel.has("nodes")) {
                 jsonVoltageLevel.getAsJsonArray("nodes")
-                        .forEach(jsonConductingEquipment -> {
-                            enrichConductingEquipment(voltageLevel, jsonConductingEquipment.getAsJsonObject());
+                        .forEach(jsonNode -> {
+                            var type = jsonNode.getAsJsonObject().get("type").getAsString();
+                            if ("BUS".equals(type)) {
+                                enrichBusbar(voltageLevel, jsonNode.getAsJsonObject());
+                            } else {
+                                enrichConductingEquipment(voltageLevel, jsonNode.getAsJsonObject());
+                            }
                         });
             }
 
-            AtomicLong bayXCoordinate = new AtomicLong(0);
+            AtomicLong bayXCoordinate = new AtomicLong(1);
             voltageLevel.getBays()
                     .stream()
                     .filter(bay -> !bay.isBusbar())
-                    .forEach(bay -> bay.setXYCoordinates(bayXCoordinate.getAndIncrement() * 100, 0));
+                    .forEach(bay -> bay.setXYCoordinates(bayXCoordinate.getAndIncrement() * 10, 1));
+        });
+    }
+
+    private void enrichBusbar(GenericVoltageLevel voltageLevel, JsonObject jsonBusbar) {
+        var name = jsonBusbar.get("id").getAsString();
+        var sclBusbar = voltageLevel.getBusbar(name);
+        sclBusbar.ifPresent(busbar -> {
+            busbar.setXYCoordinates(getCoordinate(jsonBusbar, "x"), getCoordinate(jsonBusbar, "y"));
         });
     }
 
@@ -57,7 +71,13 @@ public class SclAutoAlignmentEnricher {
         var ceName = jsonCoductingEquipment.get("id").getAsString();
         var sclConductingEquipment = voltageLevel.getConductingEquipment(ceName);
         sclConductingEquipment.ifPresent(conductingEquipment -> {
-            conductingEquipment.setXYCoordinates(jsonCoductingEquipment.get("x").getAsLong(), jsonCoductingEquipment.get("y").getAsLong());
+            conductingEquipment.setXYCoordinates(getCoordinate(jsonCoductingEquipment, "x"),
+                    getCoordinate(jsonCoductingEquipment, "y"));
         });
+    }
+
+    private long getCoordinate(JsonObject jsonObject, String fieldName) {
+        var coordinate = jsonObject.get(fieldName).getAsLong();
+        return Math.max(coordinate / 10, 1);
     }
 }
