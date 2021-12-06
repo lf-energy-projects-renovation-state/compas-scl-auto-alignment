@@ -9,12 +9,15 @@ package org.lfenergy.compas.scl.auto.alignment.service;
 import com.powsybl.sld.RawGraphBuilder;
 import com.powsybl.sld.model.*;
 import com.powsybl.sld.model.SwitchNode.SwitchKind;
+import org.lfenergy.compas.scl.auto.alignment.exception.SclAutoAlignmentException;
 import org.lfenergy.compas.scl.auto.alignment.model.*;
 
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.concurrent.atomic.AtomicInteger;
+
+import static org.lfenergy.compas.scl.auto.alignment.exception.SclAutoAlignmentErrorCode.VOLTAGELEVEL_NOT_FOUND_ERROR_CODE;
 
 public class SclAutoAlignmentGraphBuilder {
     private RawGraphBuilder rawGraphBuilder;
@@ -86,7 +89,7 @@ public class SclAutoAlignmentGraphBuilder {
                 .findFirst()
                 .map(terminal -> ((GenericConductingEquipment) terminal.getParent()).getParent().getParent())
                 .map(genericVoltageLevel -> path2VoltageLevelBuilder.get(genericVoltageLevel.getFullName()))
-                .orElse(null);
+                .orElseThrow(() -> new SclAutoAlignmentException(VOLTAGELEVEL_NOT_FOUND_ERROR_CODE, "No voltage level found."));
     }
 
     private void createVoltageLevelGraph(GenericSubstation substation,
