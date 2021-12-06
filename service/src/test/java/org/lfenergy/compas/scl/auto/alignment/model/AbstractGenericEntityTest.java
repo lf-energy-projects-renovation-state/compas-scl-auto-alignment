@@ -11,14 +11,13 @@ import java.util.stream.Collectors;
 
 import static org.junit.jupiter.api.Assertions.*;
 import static org.lfenergy.compas.scl.auto.alignment.SclAutoAlignmentConstants.SCLXY_NS_URI;
-import static org.lfenergy.compas.scl.auto.alignment.SclAutoAlignmentConstants.SCL_NS_URI;
 import static org.lfenergy.compas.scl.auto.alignment.TestUtil.readSCLElement;
 import static org.lfenergy.compas.scl.auto.alignment.model.GenericSCLTest.BASIC_SCD_FILENAME;
 import static org.lfenergy.compas.scl.auto.alignment.model.GenericSubstationTest.SUBSTATION_NAME;
 import static org.lfenergy.compas.scl.auto.alignment.model.GenericVoltageLevelTest.VOLTAGE_LEVEL_NAME;
 
-class AbstractCompasEntityTest {
-    private AbstractCompasEntity entity;
+class AbstractGenericEntityTest {
+    private AbstractGenericEntity<GenericSubstation> entity;
 
     @BeforeEach
     void setup() throws IOException {
@@ -44,22 +43,6 @@ class AbstractCompasEntityTest {
     @Test
     void getElementsStream_WhenCallingForUnknownElement_ThenReturnEmptyList() {
         var result = entity.getElementsStream("Unknown")
-                .collect(Collectors.toList());
-
-        assertTrue(result.isEmpty());
-    }
-
-    @Test
-    void getElementsStream_WhenCallingForKnownElementAndNS_ThenReturnElements() {
-        var result = entity.getElementsStream(SCL_NS_URI, "Bay")
-                .collect(Collectors.toList());
-
-        assertEquals(7, result.size());
-    }
-
-    @Test
-    void getElementsStream_WhenCallingForUnknownElementAndNS_ThenReturnEmptyList() {
-        var result = entity.getElementsStream(SCL_NS_URI, "Unknown")
                 .collect(Collectors.toList());
 
         assertTrue(result.isEmpty());

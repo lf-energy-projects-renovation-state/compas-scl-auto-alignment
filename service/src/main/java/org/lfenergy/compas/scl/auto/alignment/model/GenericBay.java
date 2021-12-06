@@ -8,9 +8,11 @@ import org.w3c.dom.Element;
 import java.util.List;
 import java.util.stream.Collectors;
 
-public class GenericBay extends AbstractCompasNameEntity {
-    public GenericBay(Element element) {
-        super(element);
+public class GenericBay extends AbstractGenericNameEntity<GenericVoltageLevel> {
+    private List<GenericConnectivityNode> connectivityNodes;
+
+    public GenericBay(GenericVoltageLevel parent, Element element) {
+        super(parent, element);
     }
 
     public boolean isBusbar() {
@@ -18,14 +20,17 @@ public class GenericBay extends AbstractCompasNameEntity {
     }
 
     public List<GenericConnectivityNode> getConnectivityNodes() {
-        return getElementsStream("ConnectivityNode")
-                .map(GenericConnectivityNode::new)
-                .collect(Collectors.toList());
+        if (connectivityNodes == null) {
+            connectivityNodes = getElementsStream("ConnectivityNode")
+                    .map(element -> new GenericConnectivityNode(this, element))
+                    .collect(Collectors.toList());
+        }
+        return connectivityNodes;
     }
 
     public List<GenericConductingEquipment> getConductingEquipments() {
         return getElementsStream("ConductingEquipment")
-                .map(GenericConductingEquipment::new)
+                .map(element -> new GenericConductingEquipment(this, element))
                 .collect(Collectors.toList());
     }
 }

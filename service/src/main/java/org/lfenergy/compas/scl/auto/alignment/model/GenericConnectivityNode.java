@@ -5,9 +5,9 @@ package org.lfenergy.compas.scl.auto.alignment.model;
 
 import org.w3c.dom.Element;
 
-public class GenericConnectivityNode extends AbstractCompasNameEntity {
-    public GenericConnectivityNode(Element element) {
-        super(element);
+public class GenericConnectivityNode extends AbstractGenericNameEntity<GenericBay> {
+    public GenericConnectivityNode(GenericBay parent, Element element) {
+        super(parent, element);
     }
 
     public String getPathName() {

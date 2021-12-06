@@ -5,9 +5,9 @@ package org.lfenergy.compas.scl.auto.alignment.model;
 
 import org.w3c.dom.Element;
 
-public class GenericTerminal extends AbstractCompasNameEntity {
-    public GenericTerminal(Element element) {
-        super(element);
+public class GenericTerminal extends AbstractGenericNameEntity<AbstractGenericNameEntity<?>> {
+    public GenericTerminal(AbstractGenericNameEntity<?> parent, Element element) {
+        super(parent, element);
     }
 
     public String getConnectivityNode() {

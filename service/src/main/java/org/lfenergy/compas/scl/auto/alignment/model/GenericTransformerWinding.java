@@ -8,15 +8,11 @@ import org.w3c.dom.Element;
 import java.util.List;
 import java.util.stream.Collectors;
 
-public class GenericConductingEquipment extends AbstractGenericNameEntity<GenericBay> {
+public class GenericTransformerWinding extends AbstractGenericNameEntity<GenericPowerTransformer> {
     private List<GenericTerminal> terminals;
-    
-    public GenericConductingEquipment(GenericBay parent, Element element) {
-        super(parent, element);
-    }
 
-    public String getType() {
-        return getAttribute("type");
+    public GenericTransformerWinding(GenericPowerTransformer parent, Element element) {
+        super(parent, element);
     }
 
     public List<GenericTerminal> getTerminals() {

@@ -4,9 +4,9 @@
 package org.lfenergy.compas.scl.auto.alignment.service;
 
 import com.powsybl.sld.RawGraphBuilder;
+import com.powsybl.sld.layout.HorizontalSubstationLayoutFactory;
 import com.powsybl.sld.layout.LayoutParameters;
 import com.powsybl.sld.layout.PositionVoltageLevelLayoutFactory;
-import com.powsybl.sld.layout.VerticalSubstationLayoutFactory;
 import com.powsybl.sld.library.ComponentTypeName;
 import com.powsybl.sld.library.ConvergenceComponentLibrary;
 import com.powsybl.sld.model.FeederNode;
@@ -136,11 +136,12 @@ public class SclAutoAlignmentService {
     private LayoutParameters getLayoutParameters() {
         return new LayoutParameters()
                 .setAdaptCellHeightToContent(true)
+                .setShowInternalNodes(true)
                 .setCssLocation(LayoutParameters.CssLocation.INSERTED_IN_SVG);
     }
 
     private void configureLayout(SubstationGraph graph, LayoutParameters layoutParameters) {
-        new VerticalSubstationLayoutFactory().create(graph,
+        new HorizontalSubstationLayoutFactory().create(graph,
                         new PositionVoltageLevelLayoutFactory()
                                 .setFeederStacked(false)
                                 .setHandleShunts(true))

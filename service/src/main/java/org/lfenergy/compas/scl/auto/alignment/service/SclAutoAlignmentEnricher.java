@@ -12,8 +12,8 @@ import org.lfenergy.compas.scl.auto.alignment.model.GenericVoltageLevel;
 import java.util.concurrent.atomic.AtomicLong;
 
 public class SclAutoAlignmentEnricher {
-    private GenericSCL scl;
-    private String jsonGraphInfo;
+    private final GenericSCL scl;
+    private final String jsonGraphInfo;
 
     public SclAutoAlignmentEnricher(GenericSCL scl, String jsonGraphInfo) {
         this.scl = scl;
@@ -29,15 +29,25 @@ public class SclAutoAlignmentEnricher {
                 jsonSubstation.getAsJsonArray("voltageLevels")
                         .forEach(jsonVoltageLevel -> enrichVoltageLevel(substation, jsonVoltageLevel.getAsJsonObject()));
             }
+
+            AtomicLong pwtCoordinate = new AtomicLong(1);
+            substation.getPowerTransformers().forEach(powerTransformer ->
+                    powerTransformer.setXYCoordinates(pwtCoordinate.get(), pwtCoordinate.getAndIncrement()));
         });
     }
 
     private void enrichVoltageLevel(GenericSubstation substation, JsonObject jsonVoltageLevel) {
-        var voltageLevelName = jsonVoltageLevel.get("voltageLevelInfos").getAsJsonObject().get("id").getAsString();
-        var sclVoltageLevel = substation.getVoltageLevel(voltageLevelName);
+        var voltageLevelPathName = jsonVoltageLevel.get("voltageLevelInfos").getAsJsonObject().get("id").getAsString();
+        var sclVoltageLevel = substation.getVoltageLevelByPathName(voltageLevelPathName);
         sclVoltageLevel.ifPresent(voltageLevel -> {
             voltageLevel.setXYCoordinates(getCoordinate(jsonVoltageLevel, "x"),
                     getCoordinate(jsonVoltageLevel, "y"));
+
+            AtomicLong bayXCoordinate = new AtomicLong(1);
+            voltageLevel.getBays()
+                    .stream()
+                    .filter(bay -> !bay.isBusbar())
+                    .forEach(bay -> bay.setXYCoordinates(bayXCoordinate.getAndIncrement(), 1));
 
             if (jsonVoltageLevel.has("nodes")) {
                 jsonVoltageLevel.getAsJsonArray("nodes")
@@ -50,34 +60,26 @@ public class SclAutoAlignmentEnricher {
                             }
                         });
             }
-
-            AtomicLong bayXCoordinate = new AtomicLong(1);
-            voltageLevel.getBays()
-                    .stream()
-                    .filter(bay -> !bay.isBusbar())
-                    .forEach(bay -> bay.setXYCoordinates(bayXCoordinate.getAndIncrement() * 10, 1));
         });
     }
 
     private void enrichBusbar(GenericVoltageLevel voltageLevel, JsonObject jsonBusbar) {
-        var name = jsonBusbar.get("id").getAsString();
-        var sclBusbar = voltageLevel.getBusbar(name);
-        sclBusbar.ifPresent(busbar -> {
-            busbar.setXYCoordinates(getCoordinate(jsonBusbar, "x"), getCoordinate(jsonBusbar, "y"));
-        });
+        var pathName = jsonBusbar.get("id").getAsString();
+        var sclBusbar = voltageLevel.getBusbarByPathName(pathName);
+        sclBusbar.ifPresent(busbar ->
+                busbar.setXYCoordinates(getCoordinate(jsonBusbar, "x"), getCoordinate(jsonBusbar, "y")));
     }
 
     private void enrichConductingEquipment(GenericVoltageLevel voltageLevel, JsonObject jsonCoductingEquipment) {
-        var ceName = jsonCoductingEquipment.get("id").getAsString();
-        var sclConductingEquipment = voltageLevel.getConductingEquipment(ceName);
-        sclConductingEquipment.ifPresent(conductingEquipment -> {
-            conductingEquipment.setXYCoordinates(getCoordinate(jsonCoductingEquipment, "x"),
-                    getCoordinate(jsonCoductingEquipment, "y"));
-        });
+        var pathName = jsonCoductingEquipment.get("id").getAsString();
+        var sclConductingEquipment = voltageLevel.getConductingEquipmentByPathName(pathName);
+        sclConductingEquipment.ifPresent(conductingEquipment ->
+                conductingEquipment.setXYCoordinates(getCoordinate(jsonCoductingEquipment, "x"),
+                        getCoordinate(jsonCoductingEquipment, "y")));
     }
 
     private long getCoordinate(JsonObject jsonObject, String fieldName) {
         var coordinate = jsonObject.get(fieldName).getAsLong();
-        return Math.max(coordinate / 10, 1);
+        return Math.max(coordinate / 20, 1);
     }
 }

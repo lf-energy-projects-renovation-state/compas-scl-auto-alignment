@@ -2,17 +2,138 @@
   "substationId" : "_af9a4ae3-ba2e-4c34-8e47-5af894ee20f4",
   "voltageLevels" : [ {
     "voltageLevelInfos" : {
-      "id" : "S1 380kV",
-      "name" : "S1 380kV",
+      "id" : "_af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 380kV",
+      "name" : "_af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 380kV",
       "nominalVoltage" : 380.0
     },
     "x" : 40.0,
-    "y" : 80.0,
+    "y" : 105.0,
     "nodes" : [ {
+      "type" : "FICTITIOUS",
+      "id" : "BUSCO__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 380kV/BAY_68-116_0/DISCONNECTOR57",
+      "equipmentId" : null,
+      "componentType" : "BUS_CONNECTION",
+      "fictitious" : true,
+      "x" : 25.0,
+      "y" : 227.0,
+      "open" : false
+    }, {
+      "type" : "FICTITIOUS",
+      "id" : "BUSCO__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 380kV/BAY_T3_0/DISCONNECTOR51",
+      "equipmentId" : null,
+      "componentType" : "BUS_CONNECTION",
+      "fictitious" : true,
+      "x" : 75.0,
+      "y" : 227.0,
+      "open" : false
+    }, {
+      "type" : "FICTITIOUS",
+      "id" : "BUSCO__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 380kV/BAY_T4_2/DISCONNECTOR49",
+      "equipmentId" : null,
+      "componentType" : "BUS_CONNECTION",
+      "fictitious" : true,
+      "x" : 125.0,
+      "y" : 227.0,
+      "open" : false
+    }, {
+      "type" : "FICTITIOUS",
+      "id" : "INTERNAL__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 380kV_INTERNAL__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 380kV__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 380kV/BAY_68-116_0/CONNECTIVITY_NODE98",
+      "equipmentId" : null,
+      "componentType" : "NODE",
+      "fictitious" : true,
+      "x" : 25.0,
+      "y" : 62.0,
+      "open" : false
+    }, {
+      "type" : "FEEDER",
+      "id" : "INTERNAL__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 380kV__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 380kV/BAY_68-116_0/CONNECTIVITY_NODE98",
+      "name" : "INTERNAL__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 380kV__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 380kV/BAY_68-116_0/CONNECTIVITY_NODE98",
+      "equipmentId" : "INTERNAL__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 380kV__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 380kV/BAY_68-116_0/CONNECTIVITY_NODE98",
+      "componentType" : "NODE",
+      "fictitious" : true,
+      "x" : 25.0,
+      "y" : 0.0,
+      "open" : false,
+      "feederType" : "FICTITIOUS",
+      "order" : -1,
+      "direction" : "TOP"
+    }, {
+      "type" : "FICTITIOUS",
+      "id" : "INTERNAL__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 380kV__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 380kV/BAY_68-116_0/DISCONNECTOR57",
+      "equipmentId" : null,
+      "componentType" : "NODE",
+      "fictitious" : true,
+      "x" : 25.0,
+      "y" : 143.0,
+      "open" : false
+    }, {
+      "type" : "FICTITIOUS",
+      "id" : "INTERNAL__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 380kV__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 380kV/BAY_68-116_0/DISCONNECTOR57",
+      "equipmentId" : null,
+      "componentType" : "NODE",
+      "fictitious" : true,
+      "x" : 25.0,
+      "y" : 197.0,
+      "open" : false
+    }, {
+      "type" : "FICTITIOUS",
+      "id" : "INTERNAL__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 380kV__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 380kV/BAY_T3_0/CONNECTIVITY_NODE88_ONE",
+      "equipmentId" : null,
+      "componentType" : "NODE",
+      "fictitious" : true,
+      "x" : 75.0,
+      "y" : 62.0,
+      "open" : false
+    }, {
+      "type" : "FICTITIOUS",
+      "id" : "INTERNAL__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 380kV__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 380kV/BAY_T3_0/DISCONNECTOR51",
+      "equipmentId" : null,
+      "componentType" : "NODE",
+      "fictitious" : true,
+      "x" : 75.0,
+      "y" : 143.0,
+      "open" : false
+    }, {
+      "type" : "FICTITIOUS",
+      "id" : "INTERNAL__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 380kV__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 380kV/BAY_T3_0/DISCONNECTOR51",
+      "equipmentId" : null,
+      "componentType" : "NODE",
+      "fictitious" : true,
+      "x" : 75.0,
+      "y" : 197.0,
+      "open" : false
+    }, {
+      "type" : "FICTITIOUS",
+      "id" : "INTERNAL__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 380kV__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 380kV/BAY_T4_2/CONNECTIVITY_NODE85_THREE",
+      "equipmentId" : null,
+      "componentType" : "NODE",
+      "fictitious" : true,
+      "x" : 125.0,
+      "y" : 62.0,
+      "open" : false
+    }, {
+      "type" : "FICTITIOUS",
+      "id" : "INTERNAL__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 380kV__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 380kV/BAY_T4_2/DISCONNECTOR49",
+      "equipmentId" : null,
+      "componentType" : "NODE",
+      "fictitious" : true,
+      "x" : 125.0,
+      "y" : 143.0,
+      "open" : false
+    }, {
+      "type" : "FICTITIOUS",
+      "id" : "INTERNAL__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 380kV__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 380kV/BAY_T4_2/DISCONNECTOR49",
+      "equipmentId" : null,
+      "componentType" : "NODE",
+      "fictitious" : true,
+      "x" : 125.0,
+      "y" : 197.0,
+      "open" : false
+    }, {
       "type" : "SWITCH",
-      "id" : "BREAKER25",
-      "name" : "BREAKER25",
-      "equipmentId" : "BREAKER25",
+      "id" : "_af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 380kV/BAY_68-116_0/BREAKER29",
+      "name" : "_af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 380kV/BAY_68-116_0/BREAKER29",
+      "equipmentId" : "_af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 380kV/BAY_68-116_0/BREAKER29",
       "componentType" : "BREAKER",
       "fictitious" : false,
       "x" : 25.0,
@@ -21,9 +142,31 @@
       "kind" : "BREAKER"
     }, {
       "type" : "SWITCH",
-      "id" : "BREAKER26",
-      "name" : "BREAKER26",
-      "equipmentId" : "BREAKER26",
+      "id" : "_af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 380kV/BAY_68-116_0/DISCONNECTOR57",
+      "name" : "_af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 380kV/BAY_68-116_0/DISCONNECTOR57",
+      "equipmentId" : "_af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 380kV/BAY_68-116_0/DISCONNECTOR57",
+      "componentType" : "BREAKER",
+      "fictitious" : false,
+      "x" : 25.0,
+      "y" : 170.0,
+      "open" : false,
+      "kind" : "BREAKER"
+    }, {
+      "type" : "SWITCH",
+      "id" : "_af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 380kV/BAY_68-116_0/DISCONNECTOR58",
+      "name" : "_af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 380kV/BAY_68-116_0/DISCONNECTOR58",
+      "equipmentId" : "_af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 380kV/BAY_68-116_0/DISCONNECTOR58",
+      "componentType" : "BREAKER",
+      "fictitious" : false,
+      "x" : 25.0,
+      "y" : 89.0,
+      "open" : false,
+      "kind" : "BREAKER"
+    }, {
+      "type" : "SWITCH",
+      "id" : "_af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 380kV/BAY_T3_0/BREAKER26",
+      "name" : "_af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 380kV/BAY_T3_0/BREAKER26",
+      "equipmentId" : "_af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 380kV/BAY_T3_0/BREAKER26",
       "componentType" : "BREAKER",
       "fictitious" : false,
       "x" : 75.0,
@@ -31,10 +174,52 @@
       "open" : false,
       "kind" : "BREAKER"
     }, {
+      "type" : "FEEDER",
+      "id" : "_af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 380kV/BAY_T3_0/CONNECTIVITY_NODE88_ONE",
+      "name" : "_af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 380kV/BAY_T3_0/CONNECTIVITY_NODE88",
+      "equipmentId" : "_af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 380kV/BAY_T3_0/CONNECTIVITY_NODE88",
+      "componentType" : "THREE_WINDINGS_TRANSFORMER_LEG",
+      "fictitious" : false,
+      "x" : 75.0,
+      "y" : 0.0,
+      "open" : false,
+      "label" : "_af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 380kV/BAY_T3_0/CONNECTIVITY_NODE881",
+      "feederType" : "THREE_WINDINGS_TRANSFORMER_LEG",
+      "order" : -1,
+      "direction" : "TOP",
+      "side" : "ONE",
+      "otherSideVoltageLevelInfos" : {
+        "id" : "_af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 380kV",
+        "name" : "_af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 380kV",
+        "nominalVoltage" : 380.0
+      }
+    }, {
       "type" : "SWITCH",
-      "id" : "BREAKER29",
-      "name" : "BREAKER29",
-      "equipmentId" : "BREAKER29",
+      "id" : "_af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 380kV/BAY_T3_0/DISCONNECTOR51",
+      "name" : "_af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 380kV/BAY_T3_0/DISCONNECTOR51",
+      "equipmentId" : "_af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 380kV/BAY_T3_0/DISCONNECTOR51",
+      "componentType" : "BREAKER",
+      "fictitious" : false,
+      "x" : 75.0,
+      "y" : 170.0,
+      "open" : false,
+      "kind" : "BREAKER"
+    }, {
+      "type" : "SWITCH",
+      "id" : "_af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 380kV/BAY_T3_0/DISCONNECTOR52",
+      "name" : "_af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 380kV/BAY_T3_0/DISCONNECTOR52",
+      "equipmentId" : "_af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 380kV/BAY_T3_0/DISCONNECTOR52",
+      "componentType" : "BREAKER",
+      "fictitious" : false,
+      "x" : 75.0,
+      "y" : 89.0,
+      "open" : false,
+      "kind" : "BREAKER"
+    }, {
+      "type" : "SWITCH",
+      "id" : "_af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 380kV/BAY_T4_2/BREAKER25",
+      "name" : "_af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 380kV/BAY_T4_2/BREAKER25",
+      "equipmentId" : "_af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 380kV/BAY_T4_2/BREAKER25",
       "componentType" : "BREAKER",
       "fictitious" : false,
       "x" : 125.0,
@@ -42,14 +227,56 @@
       "open" : false,
       "kind" : "BREAKER"
     }, {
+      "type" : "FEEDER",
+      "id" : "_af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 380kV/BAY_T4_2/CONNECTIVITY_NODE85_THREE",
+      "name" : "_af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 380kV/BAY_T4_2/CONNECTIVITY_NODE85",
+      "equipmentId" : "_af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 380kV/BAY_T4_2/CONNECTIVITY_NODE85",
+      "componentType" : "THREE_WINDINGS_TRANSFORMER_LEG",
+      "fictitious" : false,
+      "x" : 125.0,
+      "y" : 0.0,
+      "open" : false,
+      "label" : "_af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 380kV/BAY_T4_2/CONNECTIVITY_NODE853",
+      "feederType" : "THREE_WINDINGS_TRANSFORMER_LEG",
+      "order" : -1,
+      "direction" : "TOP",
+      "side" : "THREE",
+      "otherSideVoltageLevelInfos" : {
+        "id" : "_af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 380kV",
+        "name" : "_af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 380kV",
+        "nominalVoltage" : 380.0
+      }
+    }, {
+      "type" : "SWITCH",
+      "id" : "_af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 380kV/BAY_T4_2/DISCONNECTOR49",
+      "name" : "_af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 380kV/BAY_T4_2/DISCONNECTOR49",
+      "equipmentId" : "_af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 380kV/BAY_T4_2/DISCONNECTOR49",
+      "componentType" : "BREAKER",
+      "fictitious" : false,
+      "x" : 125.0,
+      "y" : 170.0,
+      "open" : false,
+      "kind" : "BREAKER"
+    }, {
+      "type" : "SWITCH",
+      "id" : "_af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 380kV/BAY_T4_2/DISCONNECTOR50",
+      "name" : "_af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 380kV/BAY_T4_2/DISCONNECTOR50",
+      "equipmentId" : "_af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 380kV/BAY_T4_2/DISCONNECTOR50",
+      "componentType" : "BREAKER",
+      "fictitious" : false,
+      "x" : 125.0,
+      "y" : 89.0,
+      "open" : false,
+      "kind" : "BREAKER"
+    }, {
       "type" : "BUS",
-      "id" : "BUSBAR10",
-      "name" : "BUSBAR10",
-      "equipmentId" : "BUSBAR10",
+      "id" : "_af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 380kV/BUSBAR10",
+      "name" : "_af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 380kV/BUSBAR10",
+      "equipmentId" : "_af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 380kV/BUSBAR10",
       "componentType" : "BUSBAR_SECTION",
       "fictitious" : false,
       "x" : 12.5,
-      "y" : 173.0,
+      "y" : 227.0,
       "open" : false,
       "pxWidth" : 125.0,
       "busbarIndex" : 1,
@@ -60,165 +287,6 @@
         "hSpan" : 6,
         "vSpan" : 0
       }
-    }, {
-      "type" : "SWITCH",
-      "id" : "DISCONNECTOR49",
-      "name" : "DISCONNECTOR49",
-      "equipmentId" : "DISCONNECTOR49",
-      "componentType" : "DISCONNECTOR",
-      "fictitious" : false,
-      "x" : 25.0,
-      "y" : 173.0,
-      "open" : false,
-      "kind" : "DISCONNECTOR"
-    }, {
-      "type" : "SWITCH",
-      "id" : "DISCONNECTOR50",
-      "name" : "DISCONNECTOR50",
-      "equipmentId" : "DISCONNECTOR50",
-      "componentType" : "DISCONNECTOR",
-      "fictitious" : false,
-      "x" : 25.0,
-      "y" : 89.0,
-      "open" : false,
-      "kind" : "DISCONNECTOR"
-    }, {
-      "type" : "SWITCH",
-      "id" : "DISCONNECTOR51",
-      "name" : "DISCONNECTOR51",
-      "equipmentId" : "DISCONNECTOR51",
-      "componentType" : "DISCONNECTOR",
-      "fictitious" : false,
-      "x" : 75.0,
-      "y" : 173.0,
-      "open" : false,
-      "kind" : "DISCONNECTOR"
-    }, {
-      "type" : "SWITCH",
-      "id" : "DISCONNECTOR52",
-      "name" : "DISCONNECTOR52",
-      "equipmentId" : "DISCONNECTOR52",
-      "componentType" : "DISCONNECTOR",
-      "fictitious" : false,
-      "x" : 75.0,
-      "y" : 89.0,
-      "open" : false,
-      "kind" : "DISCONNECTOR"
-    }, {
-      "type" : "SWITCH",
-      "id" : "DISCONNECTOR57",
-      "name" : "DISCONNECTOR57",
-      "equipmentId" : "DISCONNECTOR57",
-      "componentType" : "DISCONNECTOR",
-      "fictitious" : false,
-      "x" : 125.0,
-      "y" : 173.0,
-      "open" : false,
-      "kind" : "DISCONNECTOR"
-    }, {
-      "type" : "SWITCH",
-      "id" : "DISCONNECTOR58",
-      "name" : "DISCONNECTOR58",
-      "equipmentId" : "DISCONNECTOR58",
-      "componentType" : "DISCONNECTOR",
-      "fictitious" : false,
-      "x" : 125.0,
-      "y" : 89.0,
-      "open" : false,
-      "kind" : "DISCONNECTOR"
-    }, {
-      "type" : "FICTITIOUS",
-      "id" : "INTERNAL_S1 380kV_DISCONNECTOR49",
-      "equipmentId" : null,
-      "componentType" : "NODE",
-      "fictitious" : true,
-      "x" : 25.0,
-      "y" : 143.0,
-      "open" : false
-    }, {
-      "type" : "FICTITIOUS",
-      "id" : "INTERNAL_S1 380kV_DISCONNECTOR51",
-      "equipmentId" : null,
-      "componentType" : "NODE",
-      "fictitious" : true,
-      "x" : 75.0,
-      "y" : 143.0,
-      "open" : false
-    }, {
-      "type" : "FICTITIOUS",
-      "id" : "INTERNAL_S1 380kV_DISCONNECTOR57",
-      "equipmentId" : null,
-      "componentType" : "NODE",
-      "fictitious" : true,
-      "x" : 125.0,
-      "y" : 143.0,
-      "open" : false
-    }, {
-      "type" : "FICTITIOUS",
-      "id" : "INTERNAL_S1 380kV_INTERNAL_S1 380kV__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 380kV/BAY_68-116_0/CONNECTIVITY_NODE98",
-      "equipmentId" : null,
-      "componentType" : "NODE",
-      "fictitious" : true,
-      "x" : 125.0,
-      "y" : 62.0,
-      "open" : false
-    }, {
-      "type" : "FICTITIOUS",
-      "id" : "INTERNAL_S1 380kV_INTERNAL_S1 380kV__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 380kV/BAY_T3_0/CONNECTIVITY_NODE88",
-      "equipmentId" : null,
-      "componentType" : "NODE",
-      "fictitious" : true,
-      "x" : 75.0,
-      "y" : 62.0,
-      "open" : false
-    }, {
-      "type" : "FICTITIOUS",
-      "id" : "INTERNAL_S1 380kV_INTERNAL_S1 380kV__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 380kV/BAY_T4_2/CONNECTIVITY_NODE85",
-      "equipmentId" : null,
-      "componentType" : "NODE",
-      "fictitious" : true,
-      "x" : 25.0,
-      "y" : 62.0,
-      "open" : false
-    }, {
-      "type" : "FEEDER",
-      "id" : "INTERNAL_S1 380kV__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 380kV/BAY_68-116_0/CONNECTIVITY_NODE98",
-      "name" : "INTERNAL_S1 380kV__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 380kV/BAY_68-116_0/CONNECTIVITY_NODE98",
-      "equipmentId" : "INTERNAL_S1 380kV__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 380kV/BAY_68-116_0/CONNECTIVITY_NODE98",
-      "componentType" : "NODE",
-      "fictitious" : true,
-      "x" : 125.0,
-      "y" : 0.0,
-      "open" : false,
-      "feederType" : "FICTITIOUS",
-      "order" : -1,
-      "direction" : "TOP"
-    }, {
-      "type" : "FEEDER",
-      "id" : "INTERNAL_S1 380kV__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 380kV/BAY_T3_0/CONNECTIVITY_NODE88",
-      "name" : "INTERNAL_S1 380kV__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 380kV/BAY_T3_0/CONNECTIVITY_NODE88",
-      "equipmentId" : "INTERNAL_S1 380kV__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 380kV/BAY_T3_0/CONNECTIVITY_NODE88",
-      "componentType" : "NODE",
-      "fictitious" : true,
-      "x" : 75.0,
-      "y" : 0.0,
-      "open" : false,
-      "feederType" : "FICTITIOUS",
-      "order" : -1,
-      "direction" : "TOP"
-    }, {
-      "type" : "FEEDER",
-      "id" : "INTERNAL_S1 380kV__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 380kV/BAY_T4_2/CONNECTIVITY_NODE85",
-      "name" : "INTERNAL_S1 380kV__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 380kV/BAY_T4_2/CONNECTIVITY_NODE85",
-      "equipmentId" : "INTERNAL_S1 380kV__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 380kV/BAY_T4_2/CONNECTIVITY_NODE85",
-      "componentType" : "NODE",
-      "fictitious" : true,
-      "x" : 25.0,
-      "y" : 0.0,
-      "open" : false,
-      "feederType" : "FICTITIOUS",
-      "order" : -1,
-      "direction" : "TOP"
     } ],
     "cells" : [ {
       "type" : "EXTERN",
@@ -233,17 +301,17 @@
           "END" : 1
         } ],
         "position" : {
-          "h" : 0,
+          "h" : 4,
           "v" : 0,
           "hSpan" : 2,
-          "vSpan" : 6,
+          "vSpan" : 10,
           "orientation" : "UP"
         },
         "coord" : {
-          "x" : 25.0,
-          "y" : 102.5,
+          "x" : 125.0,
+          "y" : 129.5,
           "xSpan" : 50.0,
-          "ySpan" : 81.0
+          "ySpan" : 135.0
         },
         "subBlocks" : [ {
           "type" : "LEGPRIMARY",
@@ -260,12 +328,12 @@
             "orientation" : "UP"
           },
           "coord" : {
-            "x" : 25.0,
-            "y" : 143.0,
+            "x" : 125.0,
+            "y" : 197.0,
             "xSpan" : 50.0,
             "ySpan" : 0.0
           },
-          "nodes" : [ "BUSBAR10", "DISCONNECTOR49", "INTERNAL_S1 380kV_DISCONNECTOR49" ]
+          "nodes" : [ "_af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 380kV/BUSBAR10", "BUSCO__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 380kV/BAY_T4_2/DISCONNECTOR49", "INTERNAL__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 380kV__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 380kV/BAY_T4_2/DISCONNECTOR49" ]
         }, {
           "type" : "BODYPRIMARY",
           "cardinalities" : [ {
@@ -277,16 +345,37 @@
             "h" : 0,
             "v" : 0,
             "hSpan" : 2,
+            "vSpan" : 4,
+            "orientation" : "UP"
+          },
+          "coord" : {
+            "x" : 125.0,
+            "y" : 170.0,
+            "xSpan" : 50.0,
+            "ySpan" : 54.0
+          },
+          "nodes" : [ "INTERNAL__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 380kV__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 380kV/BAY_T4_2/DISCONNECTOR49", "_af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 380kV/BAY_T4_2/DISCONNECTOR49", "INTERNAL__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 380kV__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 380kV/BAY_T4_2/DISCONNECTOR49" ]
+        }, {
+          "type" : "BODYPRIMARY",
+          "cardinalities" : [ {
+            "START" : 1
+          }, {
+            "END" : 1
+          } ],
+          "position" : {
+            "h" : 0,
+            "v" : 4,
+            "hSpan" : 2,
             "vSpan" : 6,
             "orientation" : "UP"
           },
           "coord" : {
-            "x" : 25.0,
+            "x" : 125.0,
             "y" : 102.5,
             "xSpan" : 50.0,
             "ySpan" : 81.0
           },
-          "nodes" : [ "INTERNAL_S1 380kV_DISCONNECTOR49", "BREAKER25", "DISCONNECTOR50", "INTERNAL_S1 380kV_INTERNAL_S1 380kV__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 380kV/BAY_T4_2/CONNECTIVITY_NODE85" ]
+          "nodes" : [ "INTERNAL__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 380kV__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 380kV/BAY_T4_2/DISCONNECTOR49", "_af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 380kV/BAY_T4_2/BREAKER25", "_af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 380kV/BAY_T4_2/DISCONNECTOR50", "INTERNAL__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 380kV__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 380kV/BAY_T4_2/CONNECTIVITY_NODE85_THREE" ]
         }, {
           "type" : "FEEDERPRIMARY",
           "cardinalities" : [ {
@@ -296,18 +385,18 @@
           } ],
           "position" : {
             "h" : 0,
-            "v" : 6,
+            "v" : 10,
             "hSpan" : 2,
             "vSpan" : 0,
             "orientation" : "UP"
           },
           "coord" : {
-            "x" : 25.0,
+            "x" : 125.0,
             "y" : 62.0,
             "xSpan" : 50.0,
             "ySpan" : 0.0
           },
-          "nodes" : [ "INTERNAL_S1 380kV_INTERNAL_S1 380kV__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 380kV/BAY_T4_2/CONNECTIVITY_NODE85", "INTERNAL_S1 380kV__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 380kV/BAY_T4_2/CONNECTIVITY_NODE85" ]
+          "nodes" : [ "INTERNAL__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 380kV__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 380kV/BAY_T4_2/CONNECTIVITY_NODE85_THREE", "_af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 380kV/BAY_T4_2/CONNECTIVITY_NODE85_THREE" ]
         } ]
       }
     }, {
@@ -326,14 +415,14 @@
           "h" : 2,
           "v" : 0,
           "hSpan" : 2,
-          "vSpan" : 6,
+          "vSpan" : 10,
           "orientation" : "UP"
         },
         "coord" : {
           "x" : 75.0,
-          "y" : 102.5,
+          "y" : 129.5,
           "xSpan" : 50.0,
-          "ySpan" : 81.0
+          "ySpan" : 135.0
         },
         "subBlocks" : [ {
           "type" : "LEGPRIMARY",
@@ -351,11 +440,11 @@
           },
           "coord" : {
             "x" : 75.0,
-            "y" : 143.0,
+            "y" : 197.0,
             "xSpan" : 50.0,
             "ySpan" : 0.0
           },
-          "nodes" : [ "BUSBAR10", "DISCONNECTOR51", "INTERNAL_S1 380kV_DISCONNECTOR51" ]
+          "nodes" : [ "_af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 380kV/BUSBAR10", "BUSCO__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 380kV/BAY_T3_0/DISCONNECTOR51", "INTERNAL__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 380kV__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 380kV/BAY_T3_0/DISCONNECTOR51" ]
         }, {
           "type" : "BODYPRIMARY",
           "cardinalities" : [ {
@@ -367,6 +456,27 @@
             "h" : 0,
             "v" : 0,
             "hSpan" : 2,
+            "vSpan" : 4,
+            "orientation" : "UP"
+          },
+          "coord" : {
+            "x" : 75.0,
+            "y" : 170.0,
+            "xSpan" : 50.0,
+            "ySpan" : 54.0
+          },
+          "nodes" : [ "INTERNAL__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 380kV__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 380kV/BAY_T3_0/DISCONNECTOR51", "_af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 380kV/BAY_T3_0/DISCONNECTOR51", "INTERNAL__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 380kV__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 380kV/BAY_T3_0/DISCONNECTOR51" ]
+        }, {
+          "type" : "BODYPRIMARY",
+          "cardinalities" : [ {
+            "START" : 1
+          }, {
+            "END" : 1
+          } ],
+          "position" : {
+            "h" : 0,
+            "v" : 4,
+            "hSpan" : 2,
             "vSpan" : 6,
             "orientation" : "UP"
           },
@@ -376,7 +486,7 @@
             "xSpan" : 50.0,
             "ySpan" : 81.0
           },
-          "nodes" : [ "INTERNAL_S1 380kV_DISCONNECTOR51", "BREAKER26", "DISCONNECTOR52", "INTERNAL_S1 380kV_INTERNAL_S1 380kV__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 380kV/BAY_T3_0/CONNECTIVITY_NODE88" ]
+          "nodes" : [ "INTERNAL__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 380kV__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 380kV/BAY_T3_0/DISCONNECTOR51", "_af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 380kV/BAY_T3_0/BREAKER26", "_af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 380kV/BAY_T3_0/DISCONNECTOR52", "INTERNAL__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 380kV__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 380kV/BAY_T3_0/CONNECTIVITY_NODE88_ONE" ]
         }, {
           "type" : "FEEDERPRIMARY",
           "cardinalities" : [ {
@@ -386,7 +496,7 @@
           } ],
           "position" : {
             "h" : 0,
-            "v" : 6,
+            "v" : 10,
             "hSpan" : 2,
             "vSpan" : 0,
             "orientation" : "UP"
@@ -397,7 +507,1369 @@
             "xSpan" : 50.0,
             "ySpan" : 0.0
           },
-          "nodes" : [ "INTERNAL_S1 380kV_INTERNAL_S1 380kV__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 380kV/BAY_T3_0/CONNECTIVITY_NODE88", "INTERNAL_S1 380kV__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 380kV/BAY_T3_0/CONNECTIVITY_NODE88" ]
+          "nodes" : [ "INTERNAL__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 380kV__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 380kV/BAY_T3_0/CONNECTIVITY_NODE88_ONE", "_af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 380kV/BAY_T3_0/CONNECTIVITY_NODE88_ONE" ]
+        } ]
+      }
+    }, {
+      "type" : "EXTERN",
+      "number" : 2,
+      "direction" : "TOP",
+      "order" : -1,
+      "rootBlock" : {
+        "type" : "SERIAL",
+        "cardinalities" : [ {
+          "START" : 1
+        }, {
+          "END" : 1
+        } ],
+        "position" : {
+          "h" : 0,
+          "v" : 0,
+          "hSpan" : 2,
+          "vSpan" : 10,
+          "orientation" : "UP"
+        },
+        "coord" : {
+          "x" : 25.0,
+          "y" : 129.5,
+          "xSpan" : 50.0,
+          "ySpan" : 135.0
+        },
+        "subBlocks" : [ {
+          "type" : "LEGPRIMARY",
+          "cardinalities" : [ {
+            "START" : 1
+          }, {
+            "END" : 1
+          } ],
+          "position" : {
+            "h" : 0,
+            "v" : 0,
+            "hSpan" : 2,
+            "vSpan" : 0,
+            "orientation" : "UP"
+          },
+          "coord" : {
+            "x" : 25.0,
+            "y" : 197.0,
+            "xSpan" : 50.0,
+            "ySpan" : 0.0
+          },
+          "nodes" : [ "_af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 380kV/BUSBAR10", "BUSCO__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 380kV/BAY_68-116_0/DISCONNECTOR57", "INTERNAL__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 380kV__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 380kV/BAY_68-116_0/DISCONNECTOR57" ]
+        }, {
+          "type" : "BODYPRIMARY",
+          "cardinalities" : [ {
+            "START" : 1
+          }, {
+            "END" : 1
+          } ],
+          "position" : {
+            "h" : 0,
+            "v" : 0,
+            "hSpan" : 2,
+            "vSpan" : 4,
+            "orientation" : "UP"
+          },
+          "coord" : {
+            "x" : 25.0,
+            "y" : 170.0,
+            "xSpan" : 50.0,
+            "ySpan" : 54.0
+          },
+          "nodes" : [ "INTERNAL__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 380kV__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 380kV/BAY_68-116_0/DISCONNECTOR57", "_af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 380kV/BAY_68-116_0/DISCONNECTOR57", "INTERNAL__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 380kV__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 380kV/BAY_68-116_0/DISCONNECTOR57" ]
+        }, {
+          "type" : "BODYPRIMARY",
+          "cardinalities" : [ {
+            "START" : 1
+          }, {
+            "END" : 1
+          } ],
+          "position" : {
+            "h" : 0,
+            "v" : 4,
+            "hSpan" : 2,
+            "vSpan" : 6,
+            "orientation" : "UP"
+          },
+          "coord" : {
+            "x" : 25.0,
+            "y" : 102.5,
+            "xSpan" : 50.0,
+            "ySpan" : 81.0
+          },
+          "nodes" : [ "INTERNAL__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 380kV__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 380kV/BAY_68-116_0/DISCONNECTOR57", "_af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 380kV/BAY_68-116_0/BREAKER29", "_af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 380kV/BAY_68-116_0/DISCONNECTOR58", "INTERNAL__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 380kV_INTERNAL__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 380kV__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 380kV/BAY_68-116_0/CONNECTIVITY_NODE98" ]
+        }, {
+          "type" : "FEEDERPRIMARY",
+          "cardinalities" : [ {
+            "START" : 1
+          }, {
+            "END" : 1
+          } ],
+          "position" : {
+            "h" : 0,
+            "v" : 10,
+            "hSpan" : 2,
+            "vSpan" : 0,
+            "orientation" : "UP"
+          },
+          "coord" : {
+            "x" : 25.0,
+            "y" : 62.0,
+            "xSpan" : 50.0,
+            "ySpan" : 0.0
+          },
+          "nodes" : [ "INTERNAL__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 380kV_INTERNAL__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 380kV__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 380kV/BAY_68-116_0/CONNECTIVITY_NODE98", "INTERNAL__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 380kV__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 380kV/BAY_68-116_0/CONNECTIVITY_NODE98" ]
+        } ]
+      }
+    } ],
+    "edges" : [ {
+      "node1" : "_af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 380kV/BAY_T4_2/BREAKER25",
+      "node2" : "_af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 380kV/BAY_T4_2/DISCONNECTOR50"
+    }, {
+      "node1" : "_af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 380kV/BAY_T3_0/BREAKER26",
+      "node2" : "_af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 380kV/BAY_T3_0/DISCONNECTOR52"
+    }, {
+      "node1" : "_af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 380kV/BAY_68-116_0/BREAKER29",
+      "node2" : "_af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 380kV/BAY_68-116_0/DISCONNECTOR58"
+    }, {
+      "node1" : "_af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 380kV/BAY_T4_2/DISCONNECTOR50",
+      "node2" : "INTERNAL__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 380kV__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 380kV/BAY_T4_2/CONNECTIVITY_NODE85_THREE"
+    }, {
+      "node1" : "INTERNAL__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 380kV__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 380kV/BAY_T4_2/CONNECTIVITY_NODE85_THREE",
+      "node2" : "_af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 380kV/BAY_T4_2/CONNECTIVITY_NODE85_THREE"
+    }, {
+      "node1" : "_af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 380kV/BAY_T3_0/DISCONNECTOR52",
+      "node2" : "INTERNAL__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 380kV__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 380kV/BAY_T3_0/CONNECTIVITY_NODE88_ONE"
+    }, {
+      "node1" : "INTERNAL__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 380kV__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 380kV/BAY_T3_0/CONNECTIVITY_NODE88_ONE",
+      "node2" : "_af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 380kV/BAY_T3_0/CONNECTIVITY_NODE88_ONE"
+    }, {
+      "node1" : "_af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 380kV/BAY_68-116_0/DISCONNECTOR58",
+      "node2" : "INTERNAL__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 380kV_INTERNAL__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 380kV__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 380kV/BAY_68-116_0/CONNECTIVITY_NODE98"
+    }, {
+      "node1" : "INTERNAL__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 380kV_INTERNAL__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 380kV__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 380kV/BAY_68-116_0/CONNECTIVITY_NODE98",
+      "node2" : "INTERNAL__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 380kV__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 380kV/BAY_68-116_0/CONNECTIVITY_NODE98"
+    }, {
+      "node1" : "_af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 380kV/BAY_T4_2/BREAKER25",
+      "node2" : "INTERNAL__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 380kV__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 380kV/BAY_T4_2/DISCONNECTOR49"
+    }, {
+      "node1" : "_af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 380kV/BAY_T4_2/DISCONNECTOR49",
+      "node2" : "INTERNAL__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 380kV__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 380kV/BAY_T4_2/DISCONNECTOR49"
+    }, {
+      "node1" : "_af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 380kV/BAY_T3_0/BREAKER26",
+      "node2" : "INTERNAL__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 380kV__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 380kV/BAY_T3_0/DISCONNECTOR51"
+    }, {
+      "node1" : "_af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 380kV/BAY_T3_0/DISCONNECTOR51",
+      "node2" : "INTERNAL__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 380kV__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 380kV/BAY_T3_0/DISCONNECTOR51"
+    }, {
+      "node1" : "_af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 380kV/BAY_68-116_0/BREAKER29",
+      "node2" : "INTERNAL__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 380kV__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 380kV/BAY_68-116_0/DISCONNECTOR57"
+    }, {
+      "node1" : "_af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 380kV/BAY_68-116_0/DISCONNECTOR57",
+      "node2" : "INTERNAL__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 380kV__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 380kV/BAY_68-116_0/DISCONNECTOR57"
+    }, {
+      "node1" : "_af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 380kV/BUSBAR10",
+      "node2" : "BUSCO__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 380kV/BAY_T4_2/DISCONNECTOR49"
+    }, {
+      "node1" : "BUSCO__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 380kV/BAY_T4_2/DISCONNECTOR49",
+      "node2" : "INTERNAL__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 380kV__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 380kV/BAY_T4_2/DISCONNECTOR49"
+    }, {
+      "node1" : "INTERNAL__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 380kV__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 380kV/BAY_T4_2/DISCONNECTOR49",
+      "node2" : "_af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 380kV/BAY_T4_2/DISCONNECTOR49"
+    }, {
+      "node1" : "_af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 380kV/BUSBAR10",
+      "node2" : "BUSCO__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 380kV/BAY_T3_0/DISCONNECTOR51"
+    }, {
+      "node1" : "BUSCO__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 380kV/BAY_T3_0/DISCONNECTOR51",
+      "node2" : "INTERNAL__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 380kV__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 380kV/BAY_T3_0/DISCONNECTOR51"
+    }, {
+      "node1" : "INTERNAL__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 380kV__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 380kV/BAY_T3_0/DISCONNECTOR51",
+      "node2" : "_af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 380kV/BAY_T3_0/DISCONNECTOR51"
+    }, {
+      "node1" : "_af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 380kV/BUSBAR10",
+      "node2" : "BUSCO__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 380kV/BAY_68-116_0/DISCONNECTOR57"
+    }, {
+      "node1" : "BUSCO__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 380kV/BAY_68-116_0/DISCONNECTOR57",
+      "node2" : "INTERNAL__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 380kV__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 380kV/BAY_68-116_0/DISCONNECTOR57"
+    }, {
+      "node1" : "INTERNAL__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 380kV__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 380kV/BAY_68-116_0/DISCONNECTOR57",
+      "node2" : "_af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 380kV/BAY_68-116_0/DISCONNECTOR57"
+    } ],
+    "multitermNodes" : [ ],
+    "twtEdges" : [ ],
+    "lineEdges" : [ ]
+  }, {
+    "voltageLevelInfos" : {
+      "id" : "_af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 30kV",
+      "name" : "_af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 30kV",
+      "nominalVoltage" : 30.0
+    },
+    "x" : 230.0,
+    "y" : 105.0,
+    "nodes" : [ {
+      "type" : "FICTITIOUS",
+      "id" : "BUSCO__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 30kV/BAY_T3_2/DISCONNECTOR55",
+      "equipmentId" : null,
+      "componentType" : "BUS_CONNECTION",
+      "fictitious" : true,
+      "x" : 25.0,
+      "y" : 252.0,
+      "open" : false
+    }, {
+      "type" : "FICTITIOUS",
+      "id" : "BUSCO__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 30kV/BAY_T4_0/DISCONNECTOR45",
+      "equipmentId" : null,
+      "componentType" : "BUS_CONNECTION",
+      "fictitious" : true,
+      "x" : 75.0,
+      "y" : 227.0,
+      "open" : false
+    }, {
+      "type" : "FICTITIOUS",
+      "id" : "INTERNAL__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 30kV__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 30kV/BAY_T3_2/CONNECTIVITY_NODE95_THREE",
+      "equipmentId" : null,
+      "componentType" : "NODE",
+      "fictitious" : true,
+      "x" : 25.0,
+      "y" : 62.0,
+      "open" : false
+    }, {
+      "type" : "FICTITIOUS",
+      "id" : "INTERNAL__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 30kV__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 30kV/BAY_T3_2/DISCONNECTOR55",
+      "equipmentId" : null,
+      "componentType" : "NODE",
+      "fictitious" : true,
+      "x" : 25.0,
+      "y" : 143.0,
+      "open" : false
+    }, {
+      "type" : "FICTITIOUS",
+      "id" : "INTERNAL__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 30kV__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 30kV/BAY_T3_2/DISCONNECTOR55",
+      "equipmentId" : null,
+      "componentType" : "NODE",
+      "fictitious" : true,
+      "x" : 25.0,
+      "y" : 197.0,
+      "open" : false
+    }, {
+      "type" : "FICTITIOUS",
+      "id" : "INTERNAL__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 30kV__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 30kV/BAY_T4_0/CONNECTIVITY_NODE78_ONE",
+      "equipmentId" : null,
+      "componentType" : "NODE",
+      "fictitious" : true,
+      "x" : 75.0,
+      "y" : 62.0,
+      "open" : false
+    }, {
+      "type" : "FICTITIOUS",
+      "id" : "INTERNAL__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 30kV__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 30kV/BAY_T4_0/DISCONNECTOR45",
+      "equipmentId" : null,
+      "componentType" : "NODE",
+      "fictitious" : true,
+      "x" : 75.0,
+      "y" : 143.0,
+      "open" : false
+    }, {
+      "type" : "FICTITIOUS",
+      "id" : "INTERNAL__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 30kV__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 30kV/BAY_T4_0/DISCONNECTOR45",
+      "equipmentId" : null,
+      "componentType" : "NODE",
+      "fictitious" : true,
+      "x" : 75.0,
+      "y" : 197.0,
+      "open" : false
+    }, {
+      "type" : "SWITCH",
+      "id" : "_af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 30kV/BAY_T3_2/BREAKER28",
+      "name" : "_af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 30kV/BAY_T3_2/BREAKER28",
+      "equipmentId" : "_af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 30kV/BAY_T3_2/BREAKER28",
+      "componentType" : "BREAKER",
+      "fictitious" : false,
+      "x" : 25.0,
+      "y" : 116.0,
+      "open" : false,
+      "kind" : "BREAKER"
+    }, {
+      "type" : "FEEDER",
+      "id" : "_af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 30kV/BAY_T3_2/CONNECTIVITY_NODE95_THREE",
+      "name" : "_af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 30kV/BAY_T3_2/CONNECTIVITY_NODE95",
+      "equipmentId" : "_af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 30kV/BAY_T3_2/CONNECTIVITY_NODE95",
+      "componentType" : "THREE_WINDINGS_TRANSFORMER_LEG",
+      "fictitious" : false,
+      "x" : 25.0,
+      "y" : 0.0,
+      "open" : false,
+      "label" : "_af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 30kV/BAY_T3_2/CONNECTIVITY_NODE953",
+      "feederType" : "THREE_WINDINGS_TRANSFORMER_LEG",
+      "order" : -1,
+      "direction" : "TOP",
+      "side" : "THREE",
+      "otherSideVoltageLevelInfos" : {
+        "id" : "_af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 30kV",
+        "name" : "_af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 30kV",
+        "nominalVoltage" : 30.0
+      }
+    }, {
+      "type" : "SWITCH",
+      "id" : "_af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 30kV/BAY_T3_2/DISCONNECTOR55",
+      "name" : "_af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 30kV/BAY_T3_2/DISCONNECTOR55",
+      "equipmentId" : "_af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 30kV/BAY_T3_2/DISCONNECTOR55",
+      "componentType" : "BREAKER",
+      "fictitious" : false,
+      "x" : 25.0,
+      "y" : 170.0,
+      "open" : false,
+      "kind" : "BREAKER"
+    }, {
+      "type" : "SWITCH",
+      "id" : "_af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 30kV/BAY_T3_2/DISCONNECTOR56",
+      "name" : "_af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 30kV/BAY_T3_2/DISCONNECTOR56",
+      "equipmentId" : "_af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 30kV/BAY_T3_2/DISCONNECTOR56",
+      "componentType" : "BREAKER",
+      "fictitious" : false,
+      "x" : 25.0,
+      "y" : 89.0,
+      "open" : false,
+      "kind" : "BREAKER"
+    }, {
+      "type" : "SWITCH",
+      "id" : "_af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 30kV/BAY_T4_0/BREAKER23",
+      "name" : "_af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 30kV/BAY_T4_0/BREAKER23",
+      "equipmentId" : "_af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 30kV/BAY_T4_0/BREAKER23",
+      "componentType" : "BREAKER",
+      "fictitious" : false,
+      "x" : 75.0,
+      "y" : 116.0,
+      "open" : false,
+      "kind" : "BREAKER"
+    }, {
+      "type" : "FEEDER",
+      "id" : "_af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 30kV/BAY_T4_0/CONNECTIVITY_NODE78_ONE",
+      "name" : "_af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 30kV/BAY_T4_0/CONNECTIVITY_NODE78",
+      "equipmentId" : "_af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 30kV/BAY_T4_0/CONNECTIVITY_NODE78",
+      "componentType" : "THREE_WINDINGS_TRANSFORMER_LEG",
+      "fictitious" : false,
+      "x" : 75.0,
+      "y" : 0.0,
+      "open" : false,
+      "label" : "_af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 30kV/BAY_T4_0/CONNECTIVITY_NODE781",
+      "feederType" : "THREE_WINDINGS_TRANSFORMER_LEG",
+      "order" : -1,
+      "direction" : "TOP",
+      "side" : "ONE",
+      "otherSideVoltageLevelInfos" : {
+        "id" : "_af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 30kV",
+        "name" : "_af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 30kV",
+        "nominalVoltage" : 30.0
+      }
+    }, {
+      "type" : "SWITCH",
+      "id" : "_af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 30kV/BAY_T4_0/DISCONNECTOR45",
+      "name" : "_af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 30kV/BAY_T4_0/DISCONNECTOR45",
+      "equipmentId" : "_af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 30kV/BAY_T4_0/DISCONNECTOR45",
+      "componentType" : "BREAKER",
+      "fictitious" : false,
+      "x" : 75.0,
+      "y" : 170.0,
+      "open" : false,
+      "kind" : "BREAKER"
+    }, {
+      "type" : "SWITCH",
+      "id" : "_af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 30kV/BAY_T4_0/DISCONNECTOR46",
+      "name" : "_af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 30kV/BAY_T4_0/DISCONNECTOR46",
+      "equipmentId" : "_af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 30kV/BAY_T4_0/DISCONNECTOR46",
+      "componentType" : "BREAKER",
+      "fictitious" : false,
+      "x" : 75.0,
+      "y" : 89.0,
+      "open" : false,
+      "kind" : "BREAKER"
+    }, {
+      "type" : "BUS",
+      "id" : "_af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 30kV/BUSBAR11",
+      "name" : "_af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 30kV/BUSBAR11",
+      "equipmentId" : "_af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 30kV/BUSBAR11",
+      "componentType" : "BUSBAR_SECTION",
+      "fictitious" : false,
+      "x" : 12.5,
+      "y" : 252.0,
+      "open" : false,
+      "pxWidth" : 75.0,
+      "busbarIndex" : 2,
+      "sectionIndex" : 1,
+      "position" : {
+        "h" : 0,
+        "v" : 1,
+        "hSpan" : 4,
+        "vSpan" : 0
+      }
+    }, {
+      "type" : "BUS",
+      "id" : "_af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 30kV/BUSBAR9",
+      "name" : "_af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 30kV/BUSBAR9",
+      "equipmentId" : "_af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 30kV/BUSBAR9",
+      "componentType" : "BUSBAR_SECTION",
+      "fictitious" : false,
+      "x" : 12.5,
+      "y" : 227.0,
+      "open" : false,
+      "pxWidth" : 75.0,
+      "busbarIndex" : 1,
+      "sectionIndex" : 1,
+      "position" : {
+        "h" : 0,
+        "v" : 0,
+        "hSpan" : 4,
+        "vSpan" : 0
+      }
+    } ],
+    "cells" : [ {
+      "type" : "EXTERN",
+      "number" : 0,
+      "direction" : "TOP",
+      "order" : -1,
+      "rootBlock" : {
+        "type" : "SERIAL",
+        "cardinalities" : [ {
+          "START" : 1
+        }, {
+          "END" : 1
+        } ],
+        "position" : {
+          "h" : 2,
+          "v" : 0,
+          "hSpan" : 2,
+          "vSpan" : 10,
+          "orientation" : "UP"
+        },
+        "coord" : {
+          "x" : 75.0,
+          "y" : 129.5,
+          "xSpan" : 50.0,
+          "ySpan" : 135.0
+        },
+        "subBlocks" : [ {
+          "type" : "LEGPRIMARY",
+          "cardinalities" : [ {
+            "START" : 1
+          }, {
+            "END" : 1
+          } ],
+          "position" : {
+            "h" : 0,
+            "v" : 0,
+            "hSpan" : 2,
+            "vSpan" : 0,
+            "orientation" : "UP"
+          },
+          "coord" : {
+            "x" : 75.0,
+            "y" : 197.0,
+            "xSpan" : 50.0,
+            "ySpan" : 0.0
+          },
+          "nodes" : [ "_af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 30kV/BUSBAR9", "BUSCO__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 30kV/BAY_T4_0/DISCONNECTOR45", "INTERNAL__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 30kV__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 30kV/BAY_T4_0/DISCONNECTOR45" ]
+        }, {
+          "type" : "BODYPRIMARY",
+          "cardinalities" : [ {
+            "START" : 1
+          }, {
+            "END" : 1
+          } ],
+          "position" : {
+            "h" : 0,
+            "v" : 0,
+            "hSpan" : 2,
+            "vSpan" : 4,
+            "orientation" : "UP"
+          },
+          "coord" : {
+            "x" : 75.0,
+            "y" : 170.0,
+            "xSpan" : 50.0,
+            "ySpan" : 54.0
+          },
+          "nodes" : [ "INTERNAL__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 30kV__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 30kV/BAY_T4_0/DISCONNECTOR45", "_af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 30kV/BAY_T4_0/DISCONNECTOR45", "INTERNAL__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 30kV__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 30kV/BAY_T4_0/DISCONNECTOR45" ]
+        }, {
+          "type" : "BODYPRIMARY",
+          "cardinalities" : [ {
+            "START" : 1
+          }, {
+            "END" : 1
+          } ],
+          "position" : {
+            "h" : 0,
+            "v" : 4,
+            "hSpan" : 2,
+            "vSpan" : 6,
+            "orientation" : "UP"
+          },
+          "coord" : {
+            "x" : 75.0,
+            "y" : 102.5,
+            "xSpan" : 50.0,
+            "ySpan" : 81.0
+          },
+          "nodes" : [ "INTERNAL__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 30kV__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 30kV/BAY_T4_0/DISCONNECTOR45", "_af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 30kV/BAY_T4_0/BREAKER23", "_af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 30kV/BAY_T4_0/DISCONNECTOR46", "INTERNAL__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 30kV__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 30kV/BAY_T4_0/CONNECTIVITY_NODE78_ONE" ]
+        }, {
+          "type" : "FEEDERPRIMARY",
+          "cardinalities" : [ {
+            "START" : 1
+          }, {
+            "END" : 1
+          } ],
+          "position" : {
+            "h" : 0,
+            "v" : 10,
+            "hSpan" : 2,
+            "vSpan" : 0,
+            "orientation" : "UP"
+          },
+          "coord" : {
+            "x" : 75.0,
+            "y" : 62.0,
+            "xSpan" : 50.0,
+            "ySpan" : 0.0
+          },
+          "nodes" : [ "INTERNAL__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 30kV__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 30kV/BAY_T4_0/CONNECTIVITY_NODE78_ONE", "_af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 30kV/BAY_T4_0/CONNECTIVITY_NODE78_ONE" ]
+        } ]
+      }
+    }, {
+      "type" : "EXTERN",
+      "number" : 1,
+      "direction" : "TOP",
+      "order" : -1,
+      "rootBlock" : {
+        "type" : "SERIAL",
+        "cardinalities" : [ {
+          "START" : 1
+        }, {
+          "END" : 1
+        } ],
+        "position" : {
+          "h" : 0,
+          "v" : 0,
+          "hSpan" : 2,
+          "vSpan" : 10,
+          "orientation" : "UP"
+        },
+        "coord" : {
+          "x" : 25.0,
+          "y" : 129.5,
+          "xSpan" : 50.0,
+          "ySpan" : 135.0
+        },
+        "subBlocks" : [ {
+          "type" : "LEGPRIMARY",
+          "cardinalities" : [ {
+            "START" : 1
+          }, {
+            "END" : 1
+          } ],
+          "position" : {
+            "h" : 0,
+            "v" : 0,
+            "hSpan" : 2,
+            "vSpan" : 0,
+            "orientation" : "UP"
+          },
+          "coord" : {
+            "x" : 25.0,
+            "y" : 197.0,
+            "xSpan" : 50.0,
+            "ySpan" : 0.0
+          },
+          "nodes" : [ "_af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 30kV/BUSBAR11", "BUSCO__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 30kV/BAY_T3_2/DISCONNECTOR55", "INTERNAL__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 30kV__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 30kV/BAY_T3_2/DISCONNECTOR55" ]
+        }, {
+          "type" : "BODYPRIMARY",
+          "cardinalities" : [ {
+            "START" : 1
+          }, {
+            "END" : 1
+          } ],
+          "position" : {
+            "h" : 0,
+            "v" : 0,
+            "hSpan" : 2,
+            "vSpan" : 4,
+            "orientation" : "UP"
+          },
+          "coord" : {
+            "x" : 25.0,
+            "y" : 170.0,
+            "xSpan" : 50.0,
+            "ySpan" : 54.0
+          },
+          "nodes" : [ "INTERNAL__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 30kV__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 30kV/BAY_T3_2/DISCONNECTOR55", "_af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 30kV/BAY_T3_2/DISCONNECTOR55", "INTERNAL__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 30kV__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 30kV/BAY_T3_2/DISCONNECTOR55" ]
+        }, {
+          "type" : "BODYPRIMARY",
+          "cardinalities" : [ {
+            "START" : 1
+          }, {
+            "END" : 1
+          } ],
+          "position" : {
+            "h" : 0,
+            "v" : 4,
+            "hSpan" : 2,
+            "vSpan" : 6,
+            "orientation" : "UP"
+          },
+          "coord" : {
+            "x" : 25.0,
+            "y" : 102.5,
+            "xSpan" : 50.0,
+            "ySpan" : 81.0
+          },
+          "nodes" : [ "INTERNAL__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 30kV__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 30kV/BAY_T3_2/DISCONNECTOR55", "_af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 30kV/BAY_T3_2/BREAKER28", "_af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 30kV/BAY_T3_2/DISCONNECTOR56", "INTERNAL__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 30kV__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 30kV/BAY_T3_2/CONNECTIVITY_NODE95_THREE" ]
+        }, {
+          "type" : "FEEDERPRIMARY",
+          "cardinalities" : [ {
+            "START" : 1
+          }, {
+            "END" : 1
+          } ],
+          "position" : {
+            "h" : 0,
+            "v" : 10,
+            "hSpan" : 2,
+            "vSpan" : 0,
+            "orientation" : "UP"
+          },
+          "coord" : {
+            "x" : 25.0,
+            "y" : 62.0,
+            "xSpan" : 50.0,
+            "ySpan" : 0.0
+          },
+          "nodes" : [ "INTERNAL__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 30kV__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 30kV/BAY_T3_2/CONNECTIVITY_NODE95_THREE", "_af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 30kV/BAY_T3_2/CONNECTIVITY_NODE95_THREE" ]
+        } ]
+      }
+    } ],
+    "edges" : [ {
+      "node1" : "_af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 30kV/BAY_T4_0/BREAKER23",
+      "node2" : "_af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 30kV/BAY_T4_0/DISCONNECTOR46"
+    }, {
+      "node1" : "_af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 30kV/BAY_T3_2/BREAKER28",
+      "node2" : "_af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 30kV/BAY_T3_2/DISCONNECTOR56"
+    }, {
+      "node1" : "_af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 30kV/BAY_T4_0/DISCONNECTOR46",
+      "node2" : "INTERNAL__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 30kV__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 30kV/BAY_T4_0/CONNECTIVITY_NODE78_ONE"
+    }, {
+      "node1" : "INTERNAL__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 30kV__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 30kV/BAY_T4_0/CONNECTIVITY_NODE78_ONE",
+      "node2" : "_af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 30kV/BAY_T4_0/CONNECTIVITY_NODE78_ONE"
+    }, {
+      "node1" : "_af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 30kV/BAY_T3_2/DISCONNECTOR56",
+      "node2" : "INTERNAL__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 30kV__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 30kV/BAY_T3_2/CONNECTIVITY_NODE95_THREE"
+    }, {
+      "node1" : "INTERNAL__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 30kV__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 30kV/BAY_T3_2/CONNECTIVITY_NODE95_THREE",
+      "node2" : "_af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 30kV/BAY_T3_2/CONNECTIVITY_NODE95_THREE"
+    }, {
+      "node1" : "_af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 30kV/BAY_T4_0/BREAKER23",
+      "node2" : "INTERNAL__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 30kV__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 30kV/BAY_T4_0/DISCONNECTOR45"
+    }, {
+      "node1" : "_af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 30kV/BAY_T4_0/DISCONNECTOR45",
+      "node2" : "INTERNAL__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 30kV__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 30kV/BAY_T4_0/DISCONNECTOR45"
+    }, {
+      "node1" : "_af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 30kV/BAY_T3_2/BREAKER28",
+      "node2" : "INTERNAL__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 30kV__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 30kV/BAY_T3_2/DISCONNECTOR55"
+    }, {
+      "node1" : "_af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 30kV/BAY_T3_2/DISCONNECTOR55",
+      "node2" : "INTERNAL__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 30kV__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 30kV/BAY_T3_2/DISCONNECTOR55"
+    }, {
+      "node1" : "_af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 30kV/BUSBAR9",
+      "node2" : "BUSCO__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 30kV/BAY_T4_0/DISCONNECTOR45"
+    }, {
+      "node1" : "BUSCO__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 30kV/BAY_T4_0/DISCONNECTOR45",
+      "node2" : "INTERNAL__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 30kV__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 30kV/BAY_T4_0/DISCONNECTOR45"
+    }, {
+      "node1" : "INTERNAL__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 30kV__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 30kV/BAY_T4_0/DISCONNECTOR45",
+      "node2" : "_af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 30kV/BAY_T4_0/DISCONNECTOR45"
+    }, {
+      "node1" : "_af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 30kV/BUSBAR11",
+      "node2" : "BUSCO__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 30kV/BAY_T3_2/DISCONNECTOR55"
+    }, {
+      "node1" : "BUSCO__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 30kV/BAY_T3_2/DISCONNECTOR55",
+      "node2" : "INTERNAL__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 30kV__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 30kV/BAY_T3_2/DISCONNECTOR55"
+    }, {
+      "node1" : "INTERNAL__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 30kV__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 30kV/BAY_T3_2/DISCONNECTOR55",
+      "node2" : "_af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 30kV/BAY_T3_2/DISCONNECTOR55"
+    } ],
+    "multitermNodes" : [ ],
+    "twtEdges" : [ ],
+    "lineEdges" : [ ]
+  }, {
+    "voltageLevelInfos" : {
+      "id" : "_af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 110kV",
+      "name" : "_af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 110kV",
+      "nominalVoltage" : 110.0
+    },
+    "x" : 370.0,
+    "y" : 105.0,
+    "nodes" : [ {
+      "type" : "FICTITIOUS",
+      "id" : "BUSCO__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 110kV/BAY_L1_0/DISCONNECTOR13",
+      "equipmentId" : null,
+      "componentType" : "BUS_CONNECTION",
+      "fictitious" : true,
+      "x" : 25.0,
+      "y" : 227.0,
+      "open" : false
+    }, {
+      "type" : "FICTITIOUS",
+      "id" : "BUSCO__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 110kV/BAY_L3_a_0/DISCONNECTOR21",
+      "equipmentId" : null,
+      "componentType" : "BUS_CONNECTION",
+      "fictitious" : true,
+      "x" : 75.0,
+      "y" : 227.0,
+      "open" : false
+    }, {
+      "type" : "FICTITIOUS",
+      "id" : "BUSCO__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 110kV/BAY_L3_b_0/DISCONNECTOR25",
+      "equipmentId" : null,
+      "componentType" : "BUS_CONNECTION",
+      "fictitious" : true,
+      "x" : 125.0,
+      "y" : 227.0,
+      "open" : false
+    }, {
+      "type" : "FICTITIOUS",
+      "id" : "BUSCO__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 110kV/BAY_T3_1/DISCONNECTOR53",
+      "equipmentId" : null,
+      "componentType" : "BUS_CONNECTION",
+      "fictitious" : true,
+      "x" : 175.0,
+      "y" : 227.0,
+      "open" : false
+    }, {
+      "type" : "FICTITIOUS",
+      "id" : "BUSCO__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 110kV/BAY_T4_1/DISCONNECTOR47",
+      "equipmentId" : null,
+      "componentType" : "BUS_CONNECTION",
+      "fictitious" : true,
+      "x" : 225.0,
+      "y" : 227.0,
+      "open" : false
+    }, {
+      "type" : "FICTITIOUS",
+      "id" : "INTERNAL__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 110kV_INTERNAL__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 110kV__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 110kV/BAY_L1_0/CONNECTIVITY_NODE27",
+      "equipmentId" : null,
+      "componentType" : "NODE",
+      "fictitious" : true,
+      "x" : 25.0,
+      "y" : 62.0,
+      "open" : false
+    }, {
+      "type" : "FICTITIOUS",
+      "id" : "INTERNAL__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 110kV_INTERNAL__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 110kV__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 110kV/BAY_L3_a_0/CONNECTIVITY_NODE39",
+      "equipmentId" : null,
+      "componentType" : "NODE",
+      "fictitious" : true,
+      "x" : 75.0,
+      "y" : 62.0,
+      "open" : false
+    }, {
+      "type" : "FICTITIOUS",
+      "id" : "INTERNAL__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 110kV_INTERNAL__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 110kV__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 110kV/BAY_L3_b_0/CONNECTIVITY_NODE45",
+      "equipmentId" : null,
+      "componentType" : "NODE",
+      "fictitious" : true,
+      "x" : 125.0,
+      "y" : 62.0,
+      "open" : false
+    }, {
+      "type" : "FEEDER",
+      "id" : "INTERNAL__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 110kV__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 110kV/BAY_L1_0/CONNECTIVITY_NODE27",
+      "name" : "INTERNAL__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 110kV__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 110kV/BAY_L1_0/CONNECTIVITY_NODE27",
+      "equipmentId" : "INTERNAL__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 110kV__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 110kV/BAY_L1_0/CONNECTIVITY_NODE27",
+      "componentType" : "NODE",
+      "fictitious" : true,
+      "x" : 25.0,
+      "y" : 0.0,
+      "open" : false,
+      "feederType" : "FICTITIOUS",
+      "order" : -1,
+      "direction" : "TOP"
+    }, {
+      "type" : "FICTITIOUS",
+      "id" : "INTERNAL__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 110kV__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 110kV/BAY_L1_0/DISCONNECTOR13",
+      "equipmentId" : null,
+      "componentType" : "NODE",
+      "fictitious" : true,
+      "x" : 25.0,
+      "y" : 143.0,
+      "open" : false
+    }, {
+      "type" : "FICTITIOUS",
+      "id" : "INTERNAL__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 110kV__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 110kV/BAY_L1_0/DISCONNECTOR13",
+      "equipmentId" : null,
+      "componentType" : "NODE",
+      "fictitious" : true,
+      "x" : 25.0,
+      "y" : 197.0,
+      "open" : false
+    }, {
+      "type" : "FEEDER",
+      "id" : "INTERNAL__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 110kV__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 110kV/BAY_L3_a_0/CONNECTIVITY_NODE39",
+      "name" : "INTERNAL__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 110kV__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 110kV/BAY_L3_a_0/CONNECTIVITY_NODE39",
+      "equipmentId" : "INTERNAL__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 110kV__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 110kV/BAY_L3_a_0/CONNECTIVITY_NODE39",
+      "componentType" : "NODE",
+      "fictitious" : true,
+      "x" : 75.0,
+      "y" : 0.0,
+      "open" : false,
+      "feederType" : "FICTITIOUS",
+      "order" : -1,
+      "direction" : "TOP"
+    }, {
+      "type" : "FICTITIOUS",
+      "id" : "INTERNAL__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 110kV__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 110kV/BAY_L3_a_0/DISCONNECTOR21",
+      "equipmentId" : null,
+      "componentType" : "NODE",
+      "fictitious" : true,
+      "x" : 75.0,
+      "y" : 143.0,
+      "open" : false
+    }, {
+      "type" : "FICTITIOUS",
+      "id" : "INTERNAL__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 110kV__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 110kV/BAY_L3_a_0/DISCONNECTOR21",
+      "equipmentId" : null,
+      "componentType" : "NODE",
+      "fictitious" : true,
+      "x" : 75.0,
+      "y" : 197.0,
+      "open" : false
+    }, {
+      "type" : "FEEDER",
+      "id" : "INTERNAL__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 110kV__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 110kV/BAY_L3_b_0/CONNECTIVITY_NODE45",
+      "name" : "INTERNAL__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 110kV__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 110kV/BAY_L3_b_0/CONNECTIVITY_NODE45",
+      "equipmentId" : "INTERNAL__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 110kV__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 110kV/BAY_L3_b_0/CONNECTIVITY_NODE45",
+      "componentType" : "NODE",
+      "fictitious" : true,
+      "x" : 125.0,
+      "y" : 0.0,
+      "open" : false,
+      "feederType" : "FICTITIOUS",
+      "order" : -1,
+      "direction" : "TOP"
+    }, {
+      "type" : "FICTITIOUS",
+      "id" : "INTERNAL__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 110kV__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 110kV/BAY_L3_b_0/DISCONNECTOR25",
+      "equipmentId" : null,
+      "componentType" : "NODE",
+      "fictitious" : true,
+      "x" : 125.0,
+      "y" : 143.0,
+      "open" : false
+    }, {
+      "type" : "FICTITIOUS",
+      "id" : "INTERNAL__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 110kV__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 110kV/BAY_L3_b_0/DISCONNECTOR25",
+      "equipmentId" : null,
+      "componentType" : "NODE",
+      "fictitious" : true,
+      "x" : 125.0,
+      "y" : 197.0,
+      "open" : false
+    }, {
+      "type" : "FICTITIOUS",
+      "id" : "INTERNAL__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 110kV__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 110kV/BAY_T3_1/CONNECTIVITY_NODE91_TWO",
+      "equipmentId" : null,
+      "componentType" : "NODE",
+      "fictitious" : true,
+      "x" : 175.0,
+      "y" : 62.0,
+      "open" : false
+    }, {
+      "type" : "FICTITIOUS",
+      "id" : "INTERNAL__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 110kV__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 110kV/BAY_T3_1/DISCONNECTOR53",
+      "equipmentId" : null,
+      "componentType" : "NODE",
+      "fictitious" : true,
+      "x" : 175.0,
+      "y" : 143.0,
+      "open" : false
+    }, {
+      "type" : "FICTITIOUS",
+      "id" : "INTERNAL__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 110kV__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 110kV/BAY_T3_1/DISCONNECTOR53",
+      "equipmentId" : null,
+      "componentType" : "NODE",
+      "fictitious" : true,
+      "x" : 175.0,
+      "y" : 197.0,
+      "open" : false
+    }, {
+      "type" : "FICTITIOUS",
+      "id" : "INTERNAL__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 110kV__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 110kV/BAY_T4_1/CONNECTIVITY_NODE81_TWO",
+      "equipmentId" : null,
+      "componentType" : "NODE",
+      "fictitious" : true,
+      "x" : 225.0,
+      "y" : 62.0,
+      "open" : false
+    }, {
+      "type" : "FICTITIOUS",
+      "id" : "INTERNAL__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 110kV__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 110kV/BAY_T4_1/DISCONNECTOR47",
+      "equipmentId" : null,
+      "componentType" : "NODE",
+      "fictitious" : true,
+      "x" : 225.0,
+      "y" : 143.0,
+      "open" : false
+    }, {
+      "type" : "FICTITIOUS",
+      "id" : "INTERNAL__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 110kV__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 110kV/BAY_T4_1/DISCONNECTOR47",
+      "equipmentId" : null,
+      "componentType" : "NODE",
+      "fictitious" : true,
+      "x" : 225.0,
+      "y" : 197.0,
+      "open" : false
+    }, {
+      "type" : "SWITCH",
+      "id" : "_af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 110kV/BAY_L1_0/BREAKER7",
+      "name" : "_af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 110kV/BAY_L1_0/BREAKER7",
+      "equipmentId" : "_af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 110kV/BAY_L1_0/BREAKER7",
+      "componentType" : "BREAKER",
+      "fictitious" : false,
+      "x" : 25.0,
+      "y" : 116.0,
+      "open" : false,
+      "kind" : "BREAKER"
+    }, {
+      "type" : "SWITCH",
+      "id" : "_af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 110kV/BAY_L1_0/DISCONNECTOR13",
+      "name" : "_af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 110kV/BAY_L1_0/DISCONNECTOR13",
+      "equipmentId" : "_af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 110kV/BAY_L1_0/DISCONNECTOR13",
+      "componentType" : "BREAKER",
+      "fictitious" : false,
+      "x" : 25.0,
+      "y" : 170.0,
+      "open" : false,
+      "kind" : "BREAKER"
+    }, {
+      "type" : "SWITCH",
+      "id" : "_af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 110kV/BAY_L1_0/DISCONNECTOR14",
+      "name" : "_af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 110kV/BAY_L1_0/DISCONNECTOR14",
+      "equipmentId" : "_af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 110kV/BAY_L1_0/DISCONNECTOR14",
+      "componentType" : "BREAKER",
+      "fictitious" : false,
+      "x" : 25.0,
+      "y" : 89.0,
+      "open" : false,
+      "kind" : "BREAKER"
+    }, {
+      "type" : "SWITCH",
+      "id" : "_af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 110kV/BAY_L3_a_0/BREAKER11",
+      "name" : "_af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 110kV/BAY_L3_a_0/BREAKER11",
+      "equipmentId" : "_af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 110kV/BAY_L3_a_0/BREAKER11",
+      "componentType" : "BREAKER",
+      "fictitious" : false,
+      "x" : 75.0,
+      "y" : 116.0,
+      "open" : false,
+      "kind" : "BREAKER"
+    }, {
+      "type" : "SWITCH",
+      "id" : "_af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 110kV/BAY_L3_a_0/DISCONNECTOR21",
+      "name" : "_af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 110kV/BAY_L3_a_0/DISCONNECTOR21",
+      "equipmentId" : "_af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 110kV/BAY_L3_a_0/DISCONNECTOR21",
+      "componentType" : "BREAKER",
+      "fictitious" : false,
+      "x" : 75.0,
+      "y" : 170.0,
+      "open" : false,
+      "kind" : "BREAKER"
+    }, {
+      "type" : "SWITCH",
+      "id" : "_af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 110kV/BAY_L3_a_0/DISCONNECTOR22",
+      "name" : "_af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 110kV/BAY_L3_a_0/DISCONNECTOR22",
+      "equipmentId" : "_af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 110kV/BAY_L3_a_0/DISCONNECTOR22",
+      "componentType" : "BREAKER",
+      "fictitious" : false,
+      "x" : 75.0,
+      "y" : 89.0,
+      "open" : false,
+      "kind" : "BREAKER"
+    }, {
+      "type" : "SWITCH",
+      "id" : "_af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 110kV/BAY_L3_b_0/BREAKER13",
+      "name" : "_af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 110kV/BAY_L3_b_0/BREAKER13",
+      "equipmentId" : "_af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 110kV/BAY_L3_b_0/BREAKER13",
+      "componentType" : "BREAKER",
+      "fictitious" : false,
+      "x" : 125.0,
+      "y" : 116.0,
+      "open" : false,
+      "kind" : "BREAKER"
+    }, {
+      "type" : "SWITCH",
+      "id" : "_af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 110kV/BAY_L3_b_0/DISCONNECTOR25",
+      "name" : "_af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 110kV/BAY_L3_b_0/DISCONNECTOR25",
+      "equipmentId" : "_af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 110kV/BAY_L3_b_0/DISCONNECTOR25",
+      "componentType" : "BREAKER",
+      "fictitious" : false,
+      "x" : 125.0,
+      "y" : 170.0,
+      "open" : false,
+      "kind" : "BREAKER"
+    }, {
+      "type" : "SWITCH",
+      "id" : "_af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 110kV/BAY_L3_b_0/DISCONNECTOR26",
+      "name" : "_af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 110kV/BAY_L3_b_0/DISCONNECTOR26",
+      "equipmentId" : "_af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 110kV/BAY_L3_b_0/DISCONNECTOR26",
+      "componentType" : "BREAKER",
+      "fictitious" : false,
+      "x" : 125.0,
+      "y" : 89.0,
+      "open" : false,
+      "kind" : "BREAKER"
+    }, {
+      "type" : "SWITCH",
+      "id" : "_af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 110kV/BAY_T3_1/BREAKER27",
+      "name" : "_af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 110kV/BAY_T3_1/BREAKER27",
+      "equipmentId" : "_af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 110kV/BAY_T3_1/BREAKER27",
+      "componentType" : "BREAKER",
+      "fictitious" : false,
+      "x" : 175.0,
+      "y" : 116.0,
+      "open" : false,
+      "kind" : "BREAKER"
+    }, {
+      "type" : "FEEDER",
+      "id" : "_af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 110kV/BAY_T3_1/CONNECTIVITY_NODE91_TWO",
+      "name" : "_af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 110kV/BAY_T3_1/CONNECTIVITY_NODE91",
+      "equipmentId" : "_af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 110kV/BAY_T3_1/CONNECTIVITY_NODE91",
+      "componentType" : "THREE_WINDINGS_TRANSFORMER_LEG",
+      "fictitious" : false,
+      "x" : 175.0,
+      "y" : 0.0,
+      "open" : false,
+      "label" : "_af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 110kV/BAY_T3_1/CONNECTIVITY_NODE912",
+      "feederType" : "THREE_WINDINGS_TRANSFORMER_LEG",
+      "order" : -1,
+      "direction" : "TOP",
+      "side" : "TWO",
+      "otherSideVoltageLevelInfos" : {
+        "id" : "_af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 110kV",
+        "name" : "_af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 110kV",
+        "nominalVoltage" : 110.0
+      }
+    }, {
+      "type" : "SWITCH",
+      "id" : "_af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 110kV/BAY_T3_1/DISCONNECTOR53",
+      "name" : "_af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 110kV/BAY_T3_1/DISCONNECTOR53",
+      "equipmentId" : "_af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 110kV/BAY_T3_1/DISCONNECTOR53",
+      "componentType" : "BREAKER",
+      "fictitious" : false,
+      "x" : 175.0,
+      "y" : 170.0,
+      "open" : false,
+      "kind" : "BREAKER"
+    }, {
+      "type" : "SWITCH",
+      "id" : "_af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 110kV/BAY_T3_1/DISCONNECTOR54",
+      "name" : "_af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 110kV/BAY_T3_1/DISCONNECTOR54",
+      "equipmentId" : "_af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 110kV/BAY_T3_1/DISCONNECTOR54",
+      "componentType" : "BREAKER",
+      "fictitious" : false,
+      "x" : 175.0,
+      "y" : 89.0,
+      "open" : false,
+      "kind" : "BREAKER"
+    }, {
+      "type" : "SWITCH",
+      "id" : "_af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 110kV/BAY_T4_1/BREAKER24",
+      "name" : "_af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 110kV/BAY_T4_1/BREAKER24",
+      "equipmentId" : "_af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 110kV/BAY_T4_1/BREAKER24",
+      "componentType" : "BREAKER",
+      "fictitious" : false,
+      "x" : 225.0,
+      "y" : 116.0,
+      "open" : false,
+      "kind" : "BREAKER"
+    }, {
+      "type" : "FEEDER",
+      "id" : "_af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 110kV/BAY_T4_1/CONNECTIVITY_NODE81_TWO",
+      "name" : "_af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 110kV/BAY_T4_1/CONNECTIVITY_NODE81",
+      "equipmentId" : "_af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 110kV/BAY_T4_1/CONNECTIVITY_NODE81",
+      "componentType" : "THREE_WINDINGS_TRANSFORMER_LEG",
+      "fictitious" : false,
+      "x" : 225.0,
+      "y" : 0.0,
+      "open" : false,
+      "label" : "_af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 110kV/BAY_T4_1/CONNECTIVITY_NODE812",
+      "feederType" : "THREE_WINDINGS_TRANSFORMER_LEG",
+      "order" : -1,
+      "direction" : "TOP",
+      "side" : "TWO",
+      "otherSideVoltageLevelInfos" : {
+        "id" : "_af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 110kV",
+        "name" : "_af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 110kV",
+        "nominalVoltage" : 110.0
+      }
+    }, {
+      "type" : "SWITCH",
+      "id" : "_af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 110kV/BAY_T4_1/DISCONNECTOR47",
+      "name" : "_af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 110kV/BAY_T4_1/DISCONNECTOR47",
+      "equipmentId" : "_af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 110kV/BAY_T4_1/DISCONNECTOR47",
+      "componentType" : "BREAKER",
+      "fictitious" : false,
+      "x" : 225.0,
+      "y" : 170.0,
+      "open" : false,
+      "kind" : "BREAKER"
+    }, {
+      "type" : "SWITCH",
+      "id" : "_af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 110kV/BAY_T4_1/DISCONNECTOR48",
+      "name" : "_af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 110kV/BAY_T4_1/DISCONNECTOR48",
+      "equipmentId" : "_af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 110kV/BAY_T4_1/DISCONNECTOR48",
+      "componentType" : "BREAKER",
+      "fictitious" : false,
+      "x" : 225.0,
+      "y" : 89.0,
+      "open" : false,
+      "kind" : "BREAKER"
+    }, {
+      "type" : "BUS",
+      "id" : "_af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 110kV/BUSBAR6",
+      "name" : "_af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 110kV/BUSBAR6",
+      "equipmentId" : "_af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 110kV/BUSBAR6",
+      "componentType" : "BUSBAR_SECTION",
+      "fictitious" : false,
+      "x" : 12.5,
+      "y" : 227.0,
+      "open" : false,
+      "pxWidth" : 225.0,
+      "busbarIndex" : 1,
+      "sectionIndex" : 1,
+      "position" : {
+        "h" : 0,
+        "v" : 0,
+        "hSpan" : 10,
+        "vSpan" : 0
+      }
+    } ],
+    "cells" : [ {
+      "type" : "EXTERN",
+      "number" : 0,
+      "direction" : "TOP",
+      "order" : -1,
+      "rootBlock" : {
+        "type" : "SERIAL",
+        "cardinalities" : [ {
+          "START" : 1
+        }, {
+          "END" : 1
+        } ],
+        "position" : {
+          "h" : 0,
+          "v" : 0,
+          "hSpan" : 2,
+          "vSpan" : 10,
+          "orientation" : "UP"
+        },
+        "coord" : {
+          "x" : 25.0,
+          "y" : 129.5,
+          "xSpan" : 50.0,
+          "ySpan" : 135.0
+        },
+        "subBlocks" : [ {
+          "type" : "LEGPRIMARY",
+          "cardinalities" : [ {
+            "START" : 1
+          }, {
+            "END" : 1
+          } ],
+          "position" : {
+            "h" : 0,
+            "v" : 0,
+            "hSpan" : 2,
+            "vSpan" : 0,
+            "orientation" : "UP"
+          },
+          "coord" : {
+            "x" : 25.0,
+            "y" : 197.0,
+            "xSpan" : 50.0,
+            "ySpan" : 0.0
+          },
+          "nodes" : [ "_af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 110kV/BUSBAR6", "BUSCO__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 110kV/BAY_L1_0/DISCONNECTOR13", "INTERNAL__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 110kV__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 110kV/BAY_L1_0/DISCONNECTOR13" ]
+        }, {
+          "type" : "BODYPRIMARY",
+          "cardinalities" : [ {
+            "START" : 1
+          }, {
+            "END" : 1
+          } ],
+          "position" : {
+            "h" : 0,
+            "v" : 0,
+            "hSpan" : 2,
+            "vSpan" : 4,
+            "orientation" : "UP"
+          },
+          "coord" : {
+            "x" : 25.0,
+            "y" : 170.0,
+            "xSpan" : 50.0,
+            "ySpan" : 54.0
+          },
+          "nodes" : [ "INTERNAL__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 110kV__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 110kV/BAY_L1_0/DISCONNECTOR13", "_af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 110kV/BAY_L1_0/DISCONNECTOR13", "INTERNAL__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 110kV__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 110kV/BAY_L1_0/DISCONNECTOR13" ]
+        }, {
+          "type" : "BODYPRIMARY",
+          "cardinalities" : [ {
+            "START" : 1
+          }, {
+            "END" : 1
+          } ],
+          "position" : {
+            "h" : 0,
+            "v" : 4,
+            "hSpan" : 2,
+            "vSpan" : 6,
+            "orientation" : "UP"
+          },
+          "coord" : {
+            "x" : 25.0,
+            "y" : 102.5,
+            "xSpan" : 50.0,
+            "ySpan" : 81.0
+          },
+          "nodes" : [ "INTERNAL__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 110kV__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 110kV/BAY_L1_0/DISCONNECTOR13", "_af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 110kV/BAY_L1_0/BREAKER7", "_af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 110kV/BAY_L1_0/DISCONNECTOR14", "INTERNAL__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 110kV_INTERNAL__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 110kV__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 110kV/BAY_L1_0/CONNECTIVITY_NODE27" ]
+        }, {
+          "type" : "FEEDERPRIMARY",
+          "cardinalities" : [ {
+            "START" : 1
+          }, {
+            "END" : 1
+          } ],
+          "position" : {
+            "h" : 0,
+            "v" : 10,
+            "hSpan" : 2,
+            "vSpan" : 0,
+            "orientation" : "UP"
+          },
+          "coord" : {
+            "x" : 25.0,
+            "y" : 62.0,
+            "xSpan" : 50.0,
+            "ySpan" : 0.0
+          },
+          "nodes" : [ "INTERNAL__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 110kV_INTERNAL__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 110kV__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 110kV/BAY_L1_0/CONNECTIVITY_NODE27", "INTERNAL__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 110kV__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 110kV/BAY_L1_0/CONNECTIVITY_NODE27" ]
+        } ]
+      }
+    }, {
+      "type" : "EXTERN",
+      "number" : 1,
+      "direction" : "TOP",
+      "order" : -1,
+      "rootBlock" : {
+        "type" : "SERIAL",
+        "cardinalities" : [ {
+          "START" : 1
+        }, {
+          "END" : 1
+        } ],
+        "position" : {
+          "h" : 2,
+          "v" : 0,
+          "hSpan" : 2,
+          "vSpan" : 10,
+          "orientation" : "UP"
+        },
+        "coord" : {
+          "x" : 75.0,
+          "y" : 129.5,
+          "xSpan" : 50.0,
+          "ySpan" : 135.0
+        },
+        "subBlocks" : [ {
+          "type" : "LEGPRIMARY",
+          "cardinalities" : [ {
+            "START" : 1
+          }, {
+            "END" : 1
+          } ],
+          "position" : {
+            "h" : 0,
+            "v" : 0,
+            "hSpan" : 2,
+            "vSpan" : 0,
+            "orientation" : "UP"
+          },
+          "coord" : {
+            "x" : 75.0,
+            "y" : 197.0,
+            "xSpan" : 50.0,
+            "ySpan" : 0.0
+          },
+          "nodes" : [ "_af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 110kV/BUSBAR6", "BUSCO__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 110kV/BAY_L3_a_0/DISCONNECTOR21", "INTERNAL__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 110kV__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 110kV/BAY_L3_a_0/DISCONNECTOR21" ]
+        }, {
+          "type" : "BODYPRIMARY",
+          "cardinalities" : [ {
+            "START" : 1
+          }, {
+            "END" : 1
+          } ],
+          "position" : {
+            "h" : 0,
+            "v" : 0,
+            "hSpan" : 2,
+            "vSpan" : 4,
+            "orientation" : "UP"
+          },
+          "coord" : {
+            "x" : 75.0,
+            "y" : 170.0,
+            "xSpan" : 50.0,
+            "ySpan" : 54.0
+          },
+          "nodes" : [ "INTERNAL__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 110kV__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 110kV/BAY_L3_a_0/DISCONNECTOR21", "_af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 110kV/BAY_L3_a_0/DISCONNECTOR21", "INTERNAL__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 110kV__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 110kV/BAY_L3_a_0/DISCONNECTOR21" ]
+        }, {
+          "type" : "BODYPRIMARY",
+          "cardinalities" : [ {
+            "START" : 1
+          }, {
+            "END" : 1
+          } ],
+          "position" : {
+            "h" : 0,
+            "v" : 4,
+            "hSpan" : 2,
+            "vSpan" : 6,
+            "orientation" : "UP"
+          },
+          "coord" : {
+            "x" : 75.0,
+            "y" : 102.5,
+            "xSpan" : 50.0,
+            "ySpan" : 81.0
+          },
+          "nodes" : [ "INTERNAL__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 110kV__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 110kV/BAY_L3_a_0/DISCONNECTOR21", "_af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 110kV/BAY_L3_a_0/BREAKER11", "_af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 110kV/BAY_L3_a_0/DISCONNECTOR22", "INTERNAL__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 110kV_INTERNAL__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 110kV__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 110kV/BAY_L3_a_0/CONNECTIVITY_NODE39" ]
+        }, {
+          "type" : "FEEDERPRIMARY",
+          "cardinalities" : [ {
+            "START" : 1
+          }, {
+            "END" : 1
+          } ],
+          "position" : {
+            "h" : 0,
+            "v" : 10,
+            "hSpan" : 2,
+            "vSpan" : 0,
+            "orientation" : "UP"
+          },
+          "coord" : {
+            "x" : 75.0,
+            "y" : 62.0,
+            "xSpan" : 50.0,
+            "ySpan" : 0.0
+          },
+          "nodes" : [ "INTERNAL__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 110kV_INTERNAL__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 110kV__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 110kV/BAY_L3_a_0/CONNECTIVITY_NODE39", "INTERNAL__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 110kV__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 110kV/BAY_L3_a_0/CONNECTIVITY_NODE39" ]
         } ]
       }
     }, {
@@ -416,14 +1888,14 @@
           "h" : 4,
           "v" : 0,
           "hSpan" : 2,
-          "vSpan" : 6,
+          "vSpan" : 10,
           "orientation" : "UP"
         },
         "coord" : {
           "x" : 125.0,
-          "y" : 102.5,
+          "y" : 129.5,
           "xSpan" : 50.0,
-          "ySpan" : 81.0
+          "ySpan" : 135.0
         },
         "subBlocks" : [ {
           "type" : "LEGPRIMARY",
@@ -441,11 +1913,11 @@
           },
           "coord" : {
             "x" : 125.0,
-            "y" : 143.0,
+            "y" : 197.0,
             "xSpan" : 50.0,
             "ySpan" : 0.0
           },
-          "nodes" : [ "BUSBAR10", "DISCONNECTOR57", "INTERNAL_S1 380kV_DISCONNECTOR57" ]
+          "nodes" : [ "_af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 110kV/BUSBAR6", "BUSCO__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 110kV/BAY_L3_b_0/DISCONNECTOR25", "INTERNAL__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 110kV__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 110kV/BAY_L3_b_0/DISCONNECTOR25" ]
         }, {
           "type" : "BODYPRIMARY",
           "cardinalities" : [ {
@@ -456,6 +1928,27 @@
           "position" : {
             "h" : 0,
             "v" : 0,
+            "hSpan" : 2,
+            "vSpan" : 4,
+            "orientation" : "UP"
+          },
+          "coord" : {
+            "x" : 125.0,
+            "y" : 170.0,
+            "xSpan" : 50.0,
+            "ySpan" : 54.0
+          },
+          "nodes" : [ "INTERNAL__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 110kV__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 110kV/BAY_L3_b_0/DISCONNECTOR25", "_af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 110kV/BAY_L3_b_0/DISCONNECTOR25", "INTERNAL__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 110kV__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 110kV/BAY_L3_b_0/DISCONNECTOR25" ]
+        }, {
+          "type" : "BODYPRIMARY",
+          "cardinalities" : [ {
+            "START" : 1
+          }, {
+            "END" : 1
+          } ],
+          "position" : {
+            "h" : 0,
+            "v" : 4,
             "hSpan" : 2,
             "vSpan" : 6,
             "orientation" : "UP"
@@ -466,7 +1959,7 @@
             "xSpan" : 50.0,
             "ySpan" : 81.0
           },
-          "nodes" : [ "INTERNAL_S1 380kV_DISCONNECTOR57", "BREAKER29", "DISCONNECTOR58", "INTERNAL_S1 380kV_INTERNAL_S1 380kV__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 380kV/BAY_68-116_0/CONNECTIVITY_NODE98" ]
+          "nodes" : [ "INTERNAL__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 110kV__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 110kV/BAY_L3_b_0/DISCONNECTOR25", "_af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 110kV/BAY_L3_b_0/BREAKER13", "_af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 110kV/BAY_L3_b_0/DISCONNECTOR26", "INTERNAL__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 110kV_INTERNAL__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 110kV__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 110kV/BAY_L3_b_0/CONNECTIVITY_NODE45" ]
         }, {
           "type" : "FEEDERPRIMARY",
           "cardinalities" : [ {
@@ -476,7 +1969,7 @@
           } ],
           "position" : {
             "h" : 0,
-            "v" : 6,
+            "v" : 10,
             "hSpan" : 2,
             "vSpan" : 0,
             "orientation" : "UP"
@@ -487,1080 +1980,7 @@
             "xSpan" : 50.0,
             "ySpan" : 0.0
           },
-          "nodes" : [ "INTERNAL_S1 380kV_INTERNAL_S1 380kV__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 380kV/BAY_68-116_0/CONNECTIVITY_NODE98", "INTERNAL_S1 380kV__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 380kV/BAY_68-116_0/CONNECTIVITY_NODE98" ]
-        } ]
-      }
-    } ],
-    "edges" : [ {
-      "node1" : "DISCONNECTOR49",
-      "node2" : "BUSBAR10"
-    }, {
-      "node1" : "DISCONNECTOR51",
-      "node2" : "BUSBAR10"
-    }, {
-      "node1" : "DISCONNECTOR57",
-      "node2" : "BUSBAR10"
-    }, {
-      "node1" : "BREAKER25",
-      "node2" : "DISCONNECTOR50"
-    }, {
-      "node1" : "BREAKER26",
-      "node2" : "DISCONNECTOR52"
-    }, {
-      "node1" : "BREAKER29",
-      "node2" : "DISCONNECTOR58"
-    }, {
-      "node1" : "DISCONNECTOR50",
-      "node2" : "INTERNAL_S1 380kV_INTERNAL_S1 380kV__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 380kV/BAY_T4_2/CONNECTIVITY_NODE85"
-    }, {
-      "node1" : "INTERNAL_S1 380kV_INTERNAL_S1 380kV__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 380kV/BAY_T4_2/CONNECTIVITY_NODE85",
-      "node2" : "INTERNAL_S1 380kV__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 380kV/BAY_T4_2/CONNECTIVITY_NODE85"
-    }, {
-      "node1" : "DISCONNECTOR52",
-      "node2" : "INTERNAL_S1 380kV_INTERNAL_S1 380kV__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 380kV/BAY_T3_0/CONNECTIVITY_NODE88"
-    }, {
-      "node1" : "INTERNAL_S1 380kV_INTERNAL_S1 380kV__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 380kV/BAY_T3_0/CONNECTIVITY_NODE88",
-      "node2" : "INTERNAL_S1 380kV__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 380kV/BAY_T3_0/CONNECTIVITY_NODE88"
-    }, {
-      "node1" : "DISCONNECTOR58",
-      "node2" : "INTERNAL_S1 380kV_INTERNAL_S1 380kV__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 380kV/BAY_68-116_0/CONNECTIVITY_NODE98"
-    }, {
-      "node1" : "INTERNAL_S1 380kV_INTERNAL_S1 380kV__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 380kV/BAY_68-116_0/CONNECTIVITY_NODE98",
-      "node2" : "INTERNAL_S1 380kV__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 380kV/BAY_68-116_0/CONNECTIVITY_NODE98"
-    }, {
-      "node1" : "BREAKER25",
-      "node2" : "INTERNAL_S1 380kV_DISCONNECTOR49"
-    }, {
-      "node1" : "DISCONNECTOR49",
-      "node2" : "INTERNAL_S1 380kV_DISCONNECTOR49"
-    }, {
-      "node1" : "BREAKER26",
-      "node2" : "INTERNAL_S1 380kV_DISCONNECTOR51"
-    }, {
-      "node1" : "DISCONNECTOR51",
-      "node2" : "INTERNAL_S1 380kV_DISCONNECTOR51"
-    }, {
-      "node1" : "BREAKER29",
-      "node2" : "INTERNAL_S1 380kV_DISCONNECTOR57"
-    }, {
-      "node1" : "DISCONNECTOR57",
-      "node2" : "INTERNAL_S1 380kV_DISCONNECTOR57"
-    } ],
-    "multitermNodes" : [ ],
-    "twtEdges" : [ ],
-    "lineEdges" : [ ]
-  }, {
-    "voltageLevelInfos" : {
-      "id" : "S1 30kV",
-      "name" : "S1 30kV",
-      "nominalVoltage" : 30.0
-    },
-    "x" : 40.0,
-    "y" : 545.0,
-    "nodes" : [ {
-      "type" : "SWITCH",
-      "id" : "BREAKER23",
-      "name" : "BREAKER23",
-      "equipmentId" : "BREAKER23",
-      "componentType" : "BREAKER",
-      "fictitious" : false,
-      "x" : 25.0,
-      "y" : 116.0,
-      "open" : false,
-      "kind" : "BREAKER"
-    }, {
-      "type" : "SWITCH",
-      "id" : "BREAKER28",
-      "name" : "BREAKER28",
-      "equipmentId" : "BREAKER28",
-      "componentType" : "BREAKER",
-      "fictitious" : false,
-      "x" : 75.0,
-      "y" : 116.0,
-      "open" : false,
-      "kind" : "BREAKER"
-    }, {
-      "type" : "BUS",
-      "id" : "BUSBAR11",
-      "name" : "BUSBAR11",
-      "equipmentId" : "BUSBAR11",
-      "componentType" : "BUSBAR_SECTION",
-      "fictitious" : false,
-      "x" : 12.5,
-      "y" : 198.0,
-      "open" : false,
-      "pxWidth" : 75.0,
-      "busbarIndex" : 2,
-      "sectionIndex" : 1,
-      "position" : {
-        "h" : 0,
-        "v" : 1,
-        "hSpan" : 4,
-        "vSpan" : 0
-      }
-    }, {
-      "type" : "BUS",
-      "id" : "BUSBAR9",
-      "name" : "BUSBAR9",
-      "equipmentId" : "BUSBAR9",
-      "componentType" : "BUSBAR_SECTION",
-      "fictitious" : false,
-      "x" : 12.5,
-      "y" : 173.0,
-      "open" : false,
-      "pxWidth" : 75.0,
-      "busbarIndex" : 1,
-      "sectionIndex" : 1,
-      "position" : {
-        "h" : 0,
-        "v" : 0,
-        "hSpan" : 4,
-        "vSpan" : 0
-      }
-    }, {
-      "type" : "SWITCH",
-      "id" : "DISCONNECTOR45",
-      "name" : "DISCONNECTOR45",
-      "equipmentId" : "DISCONNECTOR45",
-      "componentType" : "DISCONNECTOR",
-      "fictitious" : false,
-      "x" : 25.0,
-      "y" : 173.0,
-      "open" : false,
-      "kind" : "DISCONNECTOR"
-    }, {
-      "type" : "SWITCH",
-      "id" : "DISCONNECTOR46",
-      "name" : "DISCONNECTOR46",
-      "equipmentId" : "DISCONNECTOR46",
-      "componentType" : "DISCONNECTOR",
-      "fictitious" : false,
-      "x" : 25.0,
-      "y" : 89.0,
-      "open" : false,
-      "kind" : "DISCONNECTOR"
-    }, {
-      "type" : "SWITCH",
-      "id" : "DISCONNECTOR55",
-      "name" : "DISCONNECTOR55",
-      "equipmentId" : "DISCONNECTOR55",
-      "componentType" : "DISCONNECTOR",
-      "fictitious" : false,
-      "x" : 75.0,
-      "y" : 198.0,
-      "open" : false,
-      "kind" : "DISCONNECTOR"
-    }, {
-      "type" : "SWITCH",
-      "id" : "DISCONNECTOR56",
-      "name" : "DISCONNECTOR56",
-      "equipmentId" : "DISCONNECTOR56",
-      "componentType" : "DISCONNECTOR",
-      "fictitious" : false,
-      "x" : 75.0,
-      "y" : 89.0,
-      "open" : false,
-      "kind" : "DISCONNECTOR"
-    }, {
-      "type" : "FICTITIOUS",
-      "id" : "INTERNAL_S1 30kV_DISCONNECTOR45",
-      "equipmentId" : null,
-      "componentType" : "NODE",
-      "fictitious" : true,
-      "x" : 25.0,
-      "y" : 143.0,
-      "open" : false
-    }, {
-      "type" : "FICTITIOUS",
-      "id" : "INTERNAL_S1 30kV_DISCONNECTOR55",
-      "equipmentId" : null,
-      "componentType" : "NODE",
-      "fictitious" : true,
-      "x" : 75.0,
-      "y" : 143.0,
-      "open" : false
-    }, {
-      "type" : "FICTITIOUS",
-      "id" : "INTERNAL_S1 30kV_INTERNAL_S1 30kV__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 30kV/BAY_T3_2/CONNECTIVITY_NODE95",
-      "equipmentId" : null,
-      "componentType" : "NODE",
-      "fictitious" : true,
-      "x" : 75.0,
-      "y" : 62.0,
-      "open" : false
-    }, {
-      "type" : "FICTITIOUS",
-      "id" : "INTERNAL_S1 30kV_INTERNAL_S1 30kV__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 30kV/BAY_T4_0/CONNECTIVITY_NODE78",
-      "equipmentId" : null,
-      "componentType" : "NODE",
-      "fictitious" : true,
-      "x" : 25.0,
-      "y" : 62.0,
-      "open" : false
-    }, {
-      "type" : "FEEDER",
-      "id" : "INTERNAL_S1 30kV__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 30kV/BAY_T3_2/CONNECTIVITY_NODE95",
-      "name" : "INTERNAL_S1 30kV__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 30kV/BAY_T3_2/CONNECTIVITY_NODE95",
-      "equipmentId" : "INTERNAL_S1 30kV__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 30kV/BAY_T3_2/CONNECTIVITY_NODE95",
-      "componentType" : "NODE",
-      "fictitious" : true,
-      "x" : 75.0,
-      "y" : 0.0,
-      "open" : false,
-      "feederType" : "FICTITIOUS",
-      "order" : -1,
-      "direction" : "TOP"
-    }, {
-      "type" : "FEEDER",
-      "id" : "INTERNAL_S1 30kV__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 30kV/BAY_T4_0/CONNECTIVITY_NODE78",
-      "name" : "INTERNAL_S1 30kV__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 30kV/BAY_T4_0/CONNECTIVITY_NODE78",
-      "equipmentId" : "INTERNAL_S1 30kV__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 30kV/BAY_T4_0/CONNECTIVITY_NODE78",
-      "componentType" : "NODE",
-      "fictitious" : true,
-      "x" : 25.0,
-      "y" : 0.0,
-      "open" : false,
-      "feederType" : "FICTITIOUS",
-      "order" : -1,
-      "direction" : "TOP"
-    } ],
-    "cells" : [ {
-      "type" : "EXTERN",
-      "number" : 0,
-      "direction" : "TOP",
-      "order" : -1,
-      "rootBlock" : {
-        "type" : "SERIAL",
-        "cardinalities" : [ {
-          "START" : 1
-        }, {
-          "END" : 1
-        } ],
-        "position" : {
-          "h" : 0,
-          "v" : 0,
-          "hSpan" : 2,
-          "vSpan" : 6,
-          "orientation" : "UP"
-        },
-        "coord" : {
-          "x" : 25.0,
-          "y" : 102.5,
-          "xSpan" : 50.0,
-          "ySpan" : 81.0
-        },
-        "subBlocks" : [ {
-          "type" : "LEGPRIMARY",
-          "cardinalities" : [ {
-            "START" : 1
-          }, {
-            "END" : 1
-          } ],
-          "position" : {
-            "h" : 0,
-            "v" : 0,
-            "hSpan" : 2,
-            "vSpan" : 0,
-            "orientation" : "UP"
-          },
-          "coord" : {
-            "x" : 25.0,
-            "y" : 143.0,
-            "xSpan" : 50.0,
-            "ySpan" : 0.0
-          },
-          "nodes" : [ "BUSBAR9", "DISCONNECTOR45", "INTERNAL_S1 30kV_DISCONNECTOR45" ]
-        }, {
-          "type" : "BODYPRIMARY",
-          "cardinalities" : [ {
-            "START" : 1
-          }, {
-            "END" : 1
-          } ],
-          "position" : {
-            "h" : 0,
-            "v" : 0,
-            "hSpan" : 2,
-            "vSpan" : 6,
-            "orientation" : "UP"
-          },
-          "coord" : {
-            "x" : 25.0,
-            "y" : 102.5,
-            "xSpan" : 50.0,
-            "ySpan" : 81.0
-          },
-          "nodes" : [ "INTERNAL_S1 30kV_DISCONNECTOR45", "BREAKER23", "DISCONNECTOR46", "INTERNAL_S1 30kV_INTERNAL_S1 30kV__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 30kV/BAY_T4_0/CONNECTIVITY_NODE78" ]
-        }, {
-          "type" : "FEEDERPRIMARY",
-          "cardinalities" : [ {
-            "START" : 1
-          }, {
-            "END" : 1
-          } ],
-          "position" : {
-            "h" : 0,
-            "v" : 6,
-            "hSpan" : 2,
-            "vSpan" : 0,
-            "orientation" : "UP"
-          },
-          "coord" : {
-            "x" : 25.0,
-            "y" : 62.0,
-            "xSpan" : 50.0,
-            "ySpan" : 0.0
-          },
-          "nodes" : [ "INTERNAL_S1 30kV_INTERNAL_S1 30kV__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 30kV/BAY_T4_0/CONNECTIVITY_NODE78", "INTERNAL_S1 30kV__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 30kV/BAY_T4_0/CONNECTIVITY_NODE78" ]
-        } ]
-      }
-    }, {
-      "type" : "EXTERN",
-      "number" : 1,
-      "direction" : "TOP",
-      "order" : -1,
-      "rootBlock" : {
-        "type" : "SERIAL",
-        "cardinalities" : [ {
-          "START" : 1
-        }, {
-          "END" : 1
-        } ],
-        "position" : {
-          "h" : 2,
-          "v" : 0,
-          "hSpan" : 2,
-          "vSpan" : 6,
-          "orientation" : "UP"
-        },
-        "coord" : {
-          "x" : 75.0,
-          "y" : 102.5,
-          "xSpan" : 50.0,
-          "ySpan" : 81.0
-        },
-        "subBlocks" : [ {
-          "type" : "LEGPRIMARY",
-          "cardinalities" : [ {
-            "START" : 1
-          }, {
-            "END" : 1
-          } ],
-          "position" : {
-            "h" : 0,
-            "v" : 0,
-            "hSpan" : 2,
-            "vSpan" : 0,
-            "orientation" : "UP"
-          },
-          "coord" : {
-            "x" : 75.0,
-            "y" : 143.0,
-            "xSpan" : 50.0,
-            "ySpan" : 0.0
-          },
-          "nodes" : [ "BUSBAR11", "DISCONNECTOR55", "INTERNAL_S1 30kV_DISCONNECTOR55" ]
-        }, {
-          "type" : "BODYPRIMARY",
-          "cardinalities" : [ {
-            "START" : 1
-          }, {
-            "END" : 1
-          } ],
-          "position" : {
-            "h" : 0,
-            "v" : 0,
-            "hSpan" : 2,
-            "vSpan" : 6,
-            "orientation" : "UP"
-          },
-          "coord" : {
-            "x" : 75.0,
-            "y" : 102.5,
-            "xSpan" : 50.0,
-            "ySpan" : 81.0
-          },
-          "nodes" : [ "INTERNAL_S1 30kV_DISCONNECTOR55", "BREAKER28", "DISCONNECTOR56", "INTERNAL_S1 30kV_INTERNAL_S1 30kV__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 30kV/BAY_T3_2/CONNECTIVITY_NODE95" ]
-        }, {
-          "type" : "FEEDERPRIMARY",
-          "cardinalities" : [ {
-            "START" : 1
-          }, {
-            "END" : 1
-          } ],
-          "position" : {
-            "h" : 0,
-            "v" : 6,
-            "hSpan" : 2,
-            "vSpan" : 0,
-            "orientation" : "UP"
-          },
-          "coord" : {
-            "x" : 75.0,
-            "y" : 62.0,
-            "xSpan" : 50.0,
-            "ySpan" : 0.0
-          },
-          "nodes" : [ "INTERNAL_S1 30kV_INTERNAL_S1 30kV__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 30kV/BAY_T3_2/CONNECTIVITY_NODE95", "INTERNAL_S1 30kV__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 30kV/BAY_T3_2/CONNECTIVITY_NODE95" ]
-        } ]
-      }
-    } ],
-    "edges" : [ {
-      "node1" : "DISCONNECTOR45",
-      "node2" : "BUSBAR9"
-    }, {
-      "node1" : "DISCONNECTOR55",
-      "node2" : "BUSBAR11"
-    }, {
-      "node1" : "BREAKER23",
-      "node2" : "DISCONNECTOR46"
-    }, {
-      "node1" : "BREAKER28",
-      "node2" : "DISCONNECTOR56"
-    }, {
-      "node1" : "DISCONNECTOR46",
-      "node2" : "INTERNAL_S1 30kV_INTERNAL_S1 30kV__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 30kV/BAY_T4_0/CONNECTIVITY_NODE78"
-    }, {
-      "node1" : "INTERNAL_S1 30kV_INTERNAL_S1 30kV__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 30kV/BAY_T4_0/CONNECTIVITY_NODE78",
-      "node2" : "INTERNAL_S1 30kV__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 30kV/BAY_T4_0/CONNECTIVITY_NODE78"
-    }, {
-      "node1" : "DISCONNECTOR56",
-      "node2" : "INTERNAL_S1 30kV_INTERNAL_S1 30kV__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 30kV/BAY_T3_2/CONNECTIVITY_NODE95"
-    }, {
-      "node1" : "INTERNAL_S1 30kV_INTERNAL_S1 30kV__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 30kV/BAY_T3_2/CONNECTIVITY_NODE95",
-      "node2" : "INTERNAL_S1 30kV__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 30kV/BAY_T3_2/CONNECTIVITY_NODE95"
-    }, {
-      "node1" : "BREAKER23",
-      "node2" : "INTERNAL_S1 30kV_DISCONNECTOR45"
-    }, {
-      "node1" : "DISCONNECTOR45",
-      "node2" : "INTERNAL_S1 30kV_DISCONNECTOR45"
-    }, {
-      "node1" : "BREAKER28",
-      "node2" : "INTERNAL_S1 30kV_DISCONNECTOR55"
-    }, {
-      "node1" : "DISCONNECTOR55",
-      "node2" : "INTERNAL_S1 30kV_DISCONNECTOR55"
-    } ],
-    "multitermNodes" : [ ],
-    "twtEdges" : [ ],
-    "lineEdges" : [ ]
-  }, {
-    "voltageLevelInfos" : {
-      "id" : "S1 110kV",
-      "name" : "S1 110kV",
-      "nominalVoltage" : 110.0
-    },
-    "x" : 40.0,
-    "y" : 1035.0,
-    "nodes" : [ {
-      "type" : "SWITCH",
-      "id" : "BREAKER11",
-      "name" : "BREAKER11",
-      "equipmentId" : "BREAKER11",
-      "componentType" : "BREAKER",
-      "fictitious" : false,
-      "x" : 25.0,
-      "y" : 116.0,
-      "open" : false,
-      "kind" : "BREAKER"
-    }, {
-      "type" : "SWITCH",
-      "id" : "BREAKER13",
-      "name" : "BREAKER13",
-      "equipmentId" : "BREAKER13",
-      "componentType" : "BREAKER",
-      "fictitious" : false,
-      "x" : 75.0,
-      "y" : 116.0,
-      "open" : false,
-      "kind" : "BREAKER"
-    }, {
-      "type" : "SWITCH",
-      "id" : "BREAKER24",
-      "name" : "BREAKER24",
-      "equipmentId" : "BREAKER24",
-      "componentType" : "BREAKER",
-      "fictitious" : false,
-      "x" : 125.0,
-      "y" : 116.0,
-      "open" : false,
-      "kind" : "BREAKER"
-    }, {
-      "type" : "SWITCH",
-      "id" : "BREAKER27",
-      "name" : "BREAKER27",
-      "equipmentId" : "BREAKER27",
-      "componentType" : "BREAKER",
-      "fictitious" : false,
-      "x" : 175.0,
-      "y" : 116.0,
-      "open" : false,
-      "kind" : "BREAKER"
-    }, {
-      "type" : "SWITCH",
-      "id" : "BREAKER7",
-      "name" : "BREAKER7",
-      "equipmentId" : "BREAKER7",
-      "componentType" : "BREAKER",
-      "fictitious" : false,
-      "x" : 225.0,
-      "y" : 116.0,
-      "open" : false,
-      "kind" : "BREAKER"
-    }, {
-      "type" : "BUS",
-      "id" : "BUSBAR6",
-      "name" : "BUSBAR6",
-      "equipmentId" : "BUSBAR6",
-      "componentType" : "BUSBAR_SECTION",
-      "fictitious" : false,
-      "x" : 12.5,
-      "y" : 173.0,
-      "open" : false,
-      "pxWidth" : 225.0,
-      "busbarIndex" : 1,
-      "sectionIndex" : 1,
-      "position" : {
-        "h" : 0,
-        "v" : 0,
-        "hSpan" : 10,
-        "vSpan" : 0
-      }
-    }, {
-      "type" : "SWITCH",
-      "id" : "DISCONNECTOR13",
-      "name" : "DISCONNECTOR13",
-      "equipmentId" : "DISCONNECTOR13",
-      "componentType" : "DISCONNECTOR",
-      "fictitious" : false,
-      "x" : 225.0,
-      "y" : 173.0,
-      "open" : false,
-      "kind" : "DISCONNECTOR"
-    }, {
-      "type" : "SWITCH",
-      "id" : "DISCONNECTOR14",
-      "name" : "DISCONNECTOR14",
-      "equipmentId" : "DISCONNECTOR14",
-      "componentType" : "DISCONNECTOR",
-      "fictitious" : false,
-      "x" : 225.0,
-      "y" : 89.0,
-      "open" : false,
-      "kind" : "DISCONNECTOR"
-    }, {
-      "type" : "SWITCH",
-      "id" : "DISCONNECTOR21",
-      "name" : "DISCONNECTOR21",
-      "equipmentId" : "DISCONNECTOR21",
-      "componentType" : "DISCONNECTOR",
-      "fictitious" : false,
-      "x" : 25.0,
-      "y" : 173.0,
-      "open" : false,
-      "kind" : "DISCONNECTOR"
-    }, {
-      "type" : "SWITCH",
-      "id" : "DISCONNECTOR22",
-      "name" : "DISCONNECTOR22",
-      "equipmentId" : "DISCONNECTOR22",
-      "componentType" : "DISCONNECTOR",
-      "fictitious" : false,
-      "x" : 25.0,
-      "y" : 89.0,
-      "open" : false,
-      "kind" : "DISCONNECTOR"
-    }, {
-      "type" : "SWITCH",
-      "id" : "DISCONNECTOR25",
-      "name" : "DISCONNECTOR25",
-      "equipmentId" : "DISCONNECTOR25",
-      "componentType" : "DISCONNECTOR",
-      "fictitious" : false,
-      "x" : 75.0,
-      "y" : 173.0,
-      "open" : false,
-      "kind" : "DISCONNECTOR"
-    }, {
-      "type" : "SWITCH",
-      "id" : "DISCONNECTOR26",
-      "name" : "DISCONNECTOR26",
-      "equipmentId" : "DISCONNECTOR26",
-      "componentType" : "DISCONNECTOR",
-      "fictitious" : false,
-      "x" : 75.0,
-      "y" : 89.0,
-      "open" : false,
-      "kind" : "DISCONNECTOR"
-    }, {
-      "type" : "SWITCH",
-      "id" : "DISCONNECTOR47",
-      "name" : "DISCONNECTOR47",
-      "equipmentId" : "DISCONNECTOR47",
-      "componentType" : "DISCONNECTOR",
-      "fictitious" : false,
-      "x" : 125.0,
-      "y" : 173.0,
-      "open" : false,
-      "kind" : "DISCONNECTOR"
-    }, {
-      "type" : "SWITCH",
-      "id" : "DISCONNECTOR48",
-      "name" : "DISCONNECTOR48",
-      "equipmentId" : "DISCONNECTOR48",
-      "componentType" : "DISCONNECTOR",
-      "fictitious" : false,
-      "x" : 125.0,
-      "y" : 89.0,
-      "open" : false,
-      "kind" : "DISCONNECTOR"
-    }, {
-      "type" : "SWITCH",
-      "id" : "DISCONNECTOR53",
-      "name" : "DISCONNECTOR53",
-      "equipmentId" : "DISCONNECTOR53",
-      "componentType" : "DISCONNECTOR",
-      "fictitious" : false,
-      "x" : 175.0,
-      "y" : 173.0,
-      "open" : false,
-      "kind" : "DISCONNECTOR"
-    }, {
-      "type" : "SWITCH",
-      "id" : "DISCONNECTOR54",
-      "name" : "DISCONNECTOR54",
-      "equipmentId" : "DISCONNECTOR54",
-      "componentType" : "DISCONNECTOR",
-      "fictitious" : false,
-      "x" : 175.0,
-      "y" : 89.0,
-      "open" : false,
-      "kind" : "DISCONNECTOR"
-    }, {
-      "type" : "FICTITIOUS",
-      "id" : "INTERNAL_S1 110kV_DISCONNECTOR13",
-      "equipmentId" : null,
-      "componentType" : "NODE",
-      "fictitious" : true,
-      "x" : 225.0,
-      "y" : 143.0,
-      "open" : false
-    }, {
-      "type" : "FICTITIOUS",
-      "id" : "INTERNAL_S1 110kV_DISCONNECTOR21",
-      "equipmentId" : null,
-      "componentType" : "NODE",
-      "fictitious" : true,
-      "x" : 25.0,
-      "y" : 143.0,
-      "open" : false
-    }, {
-      "type" : "FICTITIOUS",
-      "id" : "INTERNAL_S1 110kV_DISCONNECTOR25",
-      "equipmentId" : null,
-      "componentType" : "NODE",
-      "fictitious" : true,
-      "x" : 75.0,
-      "y" : 143.0,
-      "open" : false
-    }, {
-      "type" : "FICTITIOUS",
-      "id" : "INTERNAL_S1 110kV_DISCONNECTOR47",
-      "equipmentId" : null,
-      "componentType" : "NODE",
-      "fictitious" : true,
-      "x" : 125.0,
-      "y" : 143.0,
-      "open" : false
-    }, {
-      "type" : "FICTITIOUS",
-      "id" : "INTERNAL_S1 110kV_DISCONNECTOR53",
-      "equipmentId" : null,
-      "componentType" : "NODE",
-      "fictitious" : true,
-      "x" : 175.0,
-      "y" : 143.0,
-      "open" : false
-    }, {
-      "type" : "FICTITIOUS",
-      "id" : "INTERNAL_S1 110kV_INTERNAL_S1 110kV__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 110kV/BAY_L1_0/CONNECTIVITY_NODE27",
-      "equipmentId" : null,
-      "componentType" : "NODE",
-      "fictitious" : true,
-      "x" : 225.0,
-      "y" : 62.0,
-      "open" : false
-    }, {
-      "type" : "FICTITIOUS",
-      "id" : "INTERNAL_S1 110kV_INTERNAL_S1 110kV__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 110kV/BAY_L3_a_0/CONNECTIVITY_NODE39",
-      "equipmentId" : null,
-      "componentType" : "NODE",
-      "fictitious" : true,
-      "x" : 25.0,
-      "y" : 62.0,
-      "open" : false
-    }, {
-      "type" : "FICTITIOUS",
-      "id" : "INTERNAL_S1 110kV_INTERNAL_S1 110kV__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 110kV/BAY_L3_b_0/CONNECTIVITY_NODE45",
-      "equipmentId" : null,
-      "componentType" : "NODE",
-      "fictitious" : true,
-      "x" : 75.0,
-      "y" : 62.0,
-      "open" : false
-    }, {
-      "type" : "FICTITIOUS",
-      "id" : "INTERNAL_S1 110kV_INTERNAL_S1 110kV__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 110kV/BAY_T3_1/CONNECTIVITY_NODE91",
-      "equipmentId" : null,
-      "componentType" : "NODE",
-      "fictitious" : true,
-      "x" : 175.0,
-      "y" : 62.0,
-      "open" : false
-    }, {
-      "type" : "FICTITIOUS",
-      "id" : "INTERNAL_S1 110kV_INTERNAL_S1 110kV__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 110kV/BAY_T4_1/CONNECTIVITY_NODE81",
-      "equipmentId" : null,
-      "componentType" : "NODE",
-      "fictitious" : true,
-      "x" : 125.0,
-      "y" : 62.0,
-      "open" : false
-    }, {
-      "type" : "FEEDER",
-      "id" : "INTERNAL_S1 110kV__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 110kV/BAY_L1_0/CONNECTIVITY_NODE27",
-      "name" : "INTERNAL_S1 110kV__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 110kV/BAY_L1_0/CONNECTIVITY_NODE27",
-      "equipmentId" : "INTERNAL_S1 110kV__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 110kV/BAY_L1_0/CONNECTIVITY_NODE27",
-      "componentType" : "NODE",
-      "fictitious" : true,
-      "x" : 225.0,
-      "y" : 0.0,
-      "open" : false,
-      "feederType" : "FICTITIOUS",
-      "order" : -1,
-      "direction" : "TOP"
-    }, {
-      "type" : "FEEDER",
-      "id" : "INTERNAL_S1 110kV__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 110kV/BAY_L3_a_0/CONNECTIVITY_NODE39",
-      "name" : "INTERNAL_S1 110kV__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 110kV/BAY_L3_a_0/CONNECTIVITY_NODE39",
-      "equipmentId" : "INTERNAL_S1 110kV__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 110kV/BAY_L3_a_0/CONNECTIVITY_NODE39",
-      "componentType" : "NODE",
-      "fictitious" : true,
-      "x" : 25.0,
-      "y" : 0.0,
-      "open" : false,
-      "feederType" : "FICTITIOUS",
-      "order" : -1,
-      "direction" : "TOP"
-    }, {
-      "type" : "FEEDER",
-      "id" : "INTERNAL_S1 110kV__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 110kV/BAY_L3_b_0/CONNECTIVITY_NODE45",
-      "name" : "INTERNAL_S1 110kV__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 110kV/BAY_L3_b_0/CONNECTIVITY_NODE45",
-      "equipmentId" : "INTERNAL_S1 110kV__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 110kV/BAY_L3_b_0/CONNECTIVITY_NODE45",
-      "componentType" : "NODE",
-      "fictitious" : true,
-      "x" : 75.0,
-      "y" : 0.0,
-      "open" : false,
-      "feederType" : "FICTITIOUS",
-      "order" : -1,
-      "direction" : "TOP"
-    }, {
-      "type" : "FEEDER",
-      "id" : "INTERNAL_S1 110kV__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 110kV/BAY_T3_1/CONNECTIVITY_NODE91",
-      "name" : "INTERNAL_S1 110kV__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 110kV/BAY_T3_1/CONNECTIVITY_NODE91",
-      "equipmentId" : "INTERNAL_S1 110kV__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 110kV/BAY_T3_1/CONNECTIVITY_NODE91",
-      "componentType" : "NODE",
-      "fictitious" : true,
-      "x" : 175.0,
-      "y" : 0.0,
-      "open" : false,
-      "feederType" : "FICTITIOUS",
-      "order" : -1,
-      "direction" : "TOP"
-    }, {
-      "type" : "FEEDER",
-      "id" : "INTERNAL_S1 110kV__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 110kV/BAY_T4_1/CONNECTIVITY_NODE81",
-      "name" : "INTERNAL_S1 110kV__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 110kV/BAY_T4_1/CONNECTIVITY_NODE81",
-      "equipmentId" : "INTERNAL_S1 110kV__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 110kV/BAY_T4_1/CONNECTIVITY_NODE81",
-      "componentType" : "NODE",
-      "fictitious" : true,
-      "x" : 125.0,
-      "y" : 0.0,
-      "open" : false,
-      "feederType" : "FICTITIOUS",
-      "order" : -1,
-      "direction" : "TOP"
-    } ],
-    "cells" : [ {
-      "type" : "EXTERN",
-      "number" : 0,
-      "direction" : "TOP",
-      "order" : -1,
-      "rootBlock" : {
-        "type" : "SERIAL",
-        "cardinalities" : [ {
-          "START" : 1
-        }, {
-          "END" : 1
-        } ],
-        "position" : {
-          "h" : 8,
-          "v" : 0,
-          "hSpan" : 2,
-          "vSpan" : 6,
-          "orientation" : "UP"
-        },
-        "coord" : {
-          "x" : 225.0,
-          "y" : 102.5,
-          "xSpan" : 50.0,
-          "ySpan" : 81.0
-        },
-        "subBlocks" : [ {
-          "type" : "LEGPRIMARY",
-          "cardinalities" : [ {
-            "START" : 1
-          }, {
-            "END" : 1
-          } ],
-          "position" : {
-            "h" : 0,
-            "v" : 0,
-            "hSpan" : 2,
-            "vSpan" : 0,
-            "orientation" : "UP"
-          },
-          "coord" : {
-            "x" : 225.0,
-            "y" : 143.0,
-            "xSpan" : 50.0,
-            "ySpan" : 0.0
-          },
-          "nodes" : [ "BUSBAR6", "DISCONNECTOR13", "INTERNAL_S1 110kV_DISCONNECTOR13" ]
-        }, {
-          "type" : "BODYPRIMARY",
-          "cardinalities" : [ {
-            "START" : 1
-          }, {
-            "END" : 1
-          } ],
-          "position" : {
-            "h" : 0,
-            "v" : 0,
-            "hSpan" : 2,
-            "vSpan" : 6,
-            "orientation" : "UP"
-          },
-          "coord" : {
-            "x" : 225.0,
-            "y" : 102.5,
-            "xSpan" : 50.0,
-            "ySpan" : 81.0
-          },
-          "nodes" : [ "INTERNAL_S1 110kV_DISCONNECTOR13", "BREAKER7", "DISCONNECTOR14", "INTERNAL_S1 110kV_INTERNAL_S1 110kV__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 110kV/BAY_L1_0/CONNECTIVITY_NODE27" ]
-        }, {
-          "type" : "FEEDERPRIMARY",
-          "cardinalities" : [ {
-            "START" : 1
-          }, {
-            "END" : 1
-          } ],
-          "position" : {
-            "h" : 0,
-            "v" : 6,
-            "hSpan" : 2,
-            "vSpan" : 0,
-            "orientation" : "UP"
-          },
-          "coord" : {
-            "x" : 225.0,
-            "y" : 62.0,
-            "xSpan" : 50.0,
-            "ySpan" : 0.0
-          },
-          "nodes" : [ "INTERNAL_S1 110kV_INTERNAL_S1 110kV__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 110kV/BAY_L1_0/CONNECTIVITY_NODE27", "INTERNAL_S1 110kV__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 110kV/BAY_L1_0/CONNECTIVITY_NODE27" ]
-        } ]
-      }
-    }, {
-      "type" : "EXTERN",
-      "number" : 1,
-      "direction" : "TOP",
-      "order" : -1,
-      "rootBlock" : {
-        "type" : "SERIAL",
-        "cardinalities" : [ {
-          "START" : 1
-        }, {
-          "END" : 1
-        } ],
-        "position" : {
-          "h" : 0,
-          "v" : 0,
-          "hSpan" : 2,
-          "vSpan" : 6,
-          "orientation" : "UP"
-        },
-        "coord" : {
-          "x" : 25.0,
-          "y" : 102.5,
-          "xSpan" : 50.0,
-          "ySpan" : 81.0
-        },
-        "subBlocks" : [ {
-          "type" : "LEGPRIMARY",
-          "cardinalities" : [ {
-            "START" : 1
-          }, {
-            "END" : 1
-          } ],
-          "position" : {
-            "h" : 0,
-            "v" : 0,
-            "hSpan" : 2,
-            "vSpan" : 0,
-            "orientation" : "UP"
-          },
-          "coord" : {
-            "x" : 25.0,
-            "y" : 143.0,
-            "xSpan" : 50.0,
-            "ySpan" : 0.0
-          },
-          "nodes" : [ "BUSBAR6", "DISCONNECTOR21", "INTERNAL_S1 110kV_DISCONNECTOR21" ]
-        }, {
-          "type" : "BODYPRIMARY",
-          "cardinalities" : [ {
-            "START" : 1
-          }, {
-            "END" : 1
-          } ],
-          "position" : {
-            "h" : 0,
-            "v" : 0,
-            "hSpan" : 2,
-            "vSpan" : 6,
-            "orientation" : "UP"
-          },
-          "coord" : {
-            "x" : 25.0,
-            "y" : 102.5,
-            "xSpan" : 50.0,
-            "ySpan" : 81.0
-          },
-          "nodes" : [ "INTERNAL_S1 110kV_DISCONNECTOR21", "BREAKER11", "DISCONNECTOR22", "INTERNAL_S1 110kV_INTERNAL_S1 110kV__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 110kV/BAY_L3_a_0/CONNECTIVITY_NODE39" ]
-        }, {
-          "type" : "FEEDERPRIMARY",
-          "cardinalities" : [ {
-            "START" : 1
-          }, {
-            "END" : 1
-          } ],
-          "position" : {
-            "h" : 0,
-            "v" : 6,
-            "hSpan" : 2,
-            "vSpan" : 0,
-            "orientation" : "UP"
-          },
-          "coord" : {
-            "x" : 25.0,
-            "y" : 62.0,
-            "xSpan" : 50.0,
-            "ySpan" : 0.0
-          },
-          "nodes" : [ "INTERNAL_S1 110kV_INTERNAL_S1 110kV__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 110kV/BAY_L3_a_0/CONNECTIVITY_NODE39", "INTERNAL_S1 110kV__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 110kV/BAY_L3_a_0/CONNECTIVITY_NODE39" ]
-        } ]
-      }
-    }, {
-      "type" : "EXTERN",
-      "number" : 2,
-      "direction" : "TOP",
-      "order" : -1,
-      "rootBlock" : {
-        "type" : "SERIAL",
-        "cardinalities" : [ {
-          "START" : 1
-        }, {
-          "END" : 1
-        } ],
-        "position" : {
-          "h" : 2,
-          "v" : 0,
-          "hSpan" : 2,
-          "vSpan" : 6,
-          "orientation" : "UP"
-        },
-        "coord" : {
-          "x" : 75.0,
-          "y" : 102.5,
-          "xSpan" : 50.0,
-          "ySpan" : 81.0
-        },
-        "subBlocks" : [ {
-          "type" : "LEGPRIMARY",
-          "cardinalities" : [ {
-            "START" : 1
-          }, {
-            "END" : 1
-          } ],
-          "position" : {
-            "h" : 0,
-            "v" : 0,
-            "hSpan" : 2,
-            "vSpan" : 0,
-            "orientation" : "UP"
-          },
-          "coord" : {
-            "x" : 75.0,
-            "y" : 143.0,
-            "xSpan" : 50.0,
-            "ySpan" : 0.0
-          },
-          "nodes" : [ "BUSBAR6", "DISCONNECTOR25", "INTERNAL_S1 110kV_DISCONNECTOR25" ]
-        }, {
-          "type" : "BODYPRIMARY",
-          "cardinalities" : [ {
-            "START" : 1
-          }, {
-            "END" : 1
-          } ],
-          "position" : {
-            "h" : 0,
-            "v" : 0,
-            "hSpan" : 2,
-            "vSpan" : 6,
-            "orientation" : "UP"
-          },
-          "coord" : {
-            "x" : 75.0,
-            "y" : 102.5,
-            "xSpan" : 50.0,
-            "ySpan" : 81.0
-          },
-          "nodes" : [ "INTERNAL_S1 110kV_DISCONNECTOR25", "BREAKER13", "DISCONNECTOR26", "INTERNAL_S1 110kV_INTERNAL_S1 110kV__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 110kV/BAY_L3_b_0/CONNECTIVITY_NODE45" ]
-        }, {
-          "type" : "FEEDERPRIMARY",
-          "cardinalities" : [ {
-            "START" : 1
-          }, {
-            "END" : 1
-          } ],
-          "position" : {
-            "h" : 0,
-            "v" : 6,
-            "hSpan" : 2,
-            "vSpan" : 0,
-            "orientation" : "UP"
-          },
-          "coord" : {
-            "x" : 75.0,
-            "y" : 62.0,
-            "xSpan" : 50.0,
-            "ySpan" : 0.0
-          },
-          "nodes" : [ "INTERNAL_S1 110kV_INTERNAL_S1 110kV__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 110kV/BAY_L3_b_0/CONNECTIVITY_NODE45", "INTERNAL_S1 110kV__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 110kV/BAY_L3_b_0/CONNECTIVITY_NODE45" ]
+          "nodes" : [ "INTERNAL__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 110kV_INTERNAL__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 110kV__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 110kV/BAY_L3_b_0/CONNECTIVITY_NODE45", "INTERNAL__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 110kV__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 110kV/BAY_L3_b_0/CONNECTIVITY_NODE45" ]
         } ]
       }
     }, {
@@ -1576,17 +1996,17 @@
           "END" : 1
         } ],
         "position" : {
-          "h" : 4,
+          "h" : 8,
           "v" : 0,
           "hSpan" : 2,
-          "vSpan" : 6,
+          "vSpan" : 10,
           "orientation" : "UP"
         },
         "coord" : {
-          "x" : 125.0,
-          "y" : 102.5,
+          "x" : 225.0,
+          "y" : 129.5,
           "xSpan" : 50.0,
-          "ySpan" : 81.0
+          "ySpan" : 135.0
         },
         "subBlocks" : [ {
           "type" : "LEGPRIMARY",
@@ -1603,12 +2023,12 @@
             "orientation" : "UP"
           },
           "coord" : {
-            "x" : 125.0,
-            "y" : 143.0,
+            "x" : 225.0,
+            "y" : 197.0,
             "xSpan" : 50.0,
             "ySpan" : 0.0
           },
-          "nodes" : [ "BUSBAR6", "DISCONNECTOR47", "INTERNAL_S1 110kV_DISCONNECTOR47" ]
+          "nodes" : [ "_af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 110kV/BUSBAR6", "BUSCO__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 110kV/BAY_T4_1/DISCONNECTOR47", "INTERNAL__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 110kV__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 110kV/BAY_T4_1/DISCONNECTOR47" ]
         }, {
           "type" : "BODYPRIMARY",
           "cardinalities" : [ {
@@ -1620,16 +2040,37 @@
             "h" : 0,
             "v" : 0,
             "hSpan" : 2,
+            "vSpan" : 4,
+            "orientation" : "UP"
+          },
+          "coord" : {
+            "x" : 225.0,
+            "y" : 170.0,
+            "xSpan" : 50.0,
+            "ySpan" : 54.0
+          },
+          "nodes" : [ "INTERNAL__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 110kV__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 110kV/BAY_T4_1/DISCONNECTOR47", "_af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 110kV/BAY_T4_1/DISCONNECTOR47", "INTERNAL__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 110kV__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 110kV/BAY_T4_1/DISCONNECTOR47" ]
+        }, {
+          "type" : "BODYPRIMARY",
+          "cardinalities" : [ {
+            "START" : 1
+          }, {
+            "END" : 1
+          } ],
+          "position" : {
+            "h" : 0,
+            "v" : 4,
+            "hSpan" : 2,
             "vSpan" : 6,
             "orientation" : "UP"
           },
           "coord" : {
-            "x" : 125.0,
+            "x" : 225.0,
             "y" : 102.5,
             "xSpan" : 50.0,
             "ySpan" : 81.0
           },
-          "nodes" : [ "INTERNAL_S1 110kV_DISCONNECTOR47", "BREAKER24", "DISCONNECTOR48", "INTERNAL_S1 110kV_INTERNAL_S1 110kV__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 110kV/BAY_T4_1/CONNECTIVITY_NODE81" ]
+          "nodes" : [ "INTERNAL__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 110kV__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 110kV/BAY_T4_1/DISCONNECTOR47", "_af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 110kV/BAY_T4_1/BREAKER24", "_af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 110kV/BAY_T4_1/DISCONNECTOR48", "INTERNAL__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 110kV__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 110kV/BAY_T4_1/CONNECTIVITY_NODE81_TWO" ]
         }, {
           "type" : "FEEDERPRIMARY",
           "cardinalities" : [ {
@@ -1639,18 +2080,18 @@
           } ],
           "position" : {
             "h" : 0,
-            "v" : 6,
+            "v" : 10,
             "hSpan" : 2,
             "vSpan" : 0,
             "orientation" : "UP"
           },
           "coord" : {
-            "x" : 125.0,
+            "x" : 225.0,
             "y" : 62.0,
             "xSpan" : 50.0,
             "ySpan" : 0.0
           },
-          "nodes" : [ "INTERNAL_S1 110kV_INTERNAL_S1 110kV__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 110kV/BAY_T4_1/CONNECTIVITY_NODE81", "INTERNAL_S1 110kV__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 110kV/BAY_T4_1/CONNECTIVITY_NODE81" ]
+          "nodes" : [ "INTERNAL__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 110kV__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 110kV/BAY_T4_1/CONNECTIVITY_NODE81_TWO", "_af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 110kV/BAY_T4_1/CONNECTIVITY_NODE81_TWO" ]
         } ]
       }
     }, {
@@ -1669,14 +2110,14 @@
           "h" : 6,
           "v" : 0,
           "hSpan" : 2,
-          "vSpan" : 6,
+          "vSpan" : 10,
           "orientation" : "UP"
         },
         "coord" : {
           "x" : 175.0,
-          "y" : 102.5,
+          "y" : 129.5,
           "xSpan" : 50.0,
-          "ySpan" : 81.0
+          "ySpan" : 135.0
         },
         "subBlocks" : [ {
           "type" : "LEGPRIMARY",
@@ -1694,11 +2135,11 @@
           },
           "coord" : {
             "x" : 175.0,
-            "y" : 143.0,
+            "y" : 197.0,
             "xSpan" : 50.0,
             "ySpan" : 0.0
           },
-          "nodes" : [ "BUSBAR6", "DISCONNECTOR53", "INTERNAL_S1 110kV_DISCONNECTOR53" ]
+          "nodes" : [ "_af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 110kV/BUSBAR6", "BUSCO__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 110kV/BAY_T3_1/DISCONNECTOR53", "INTERNAL__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 110kV__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 110kV/BAY_T3_1/DISCONNECTOR53" ]
         }, {
           "type" : "BODYPRIMARY",
           "cardinalities" : [ {
@@ -1710,6 +2151,27 @@
             "h" : 0,
             "v" : 0,
             "hSpan" : 2,
+            "vSpan" : 4,
+            "orientation" : "UP"
+          },
+          "coord" : {
+            "x" : 175.0,
+            "y" : 170.0,
+            "xSpan" : 50.0,
+            "ySpan" : 54.0
+          },
+          "nodes" : [ "INTERNAL__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 110kV__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 110kV/BAY_T3_1/DISCONNECTOR53", "_af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 110kV/BAY_T3_1/DISCONNECTOR53", "INTERNAL__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 110kV__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 110kV/BAY_T3_1/DISCONNECTOR53" ]
+        }, {
+          "type" : "BODYPRIMARY",
+          "cardinalities" : [ {
+            "START" : 1
+          }, {
+            "END" : 1
+          } ],
+          "position" : {
+            "h" : 0,
+            "v" : 4,
+            "hSpan" : 2,
             "vSpan" : 6,
             "orientation" : "UP"
           },
@@ -1719,7 +2181,7 @@
             "xSpan" : 50.0,
             "ySpan" : 81.0
           },
-          "nodes" : [ "INTERNAL_S1 110kV_DISCONNECTOR53", "BREAKER27", "DISCONNECTOR54", "INTERNAL_S1 110kV_INTERNAL_S1 110kV__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 110kV/BAY_T3_1/CONNECTIVITY_NODE91" ]
+          "nodes" : [ "INTERNAL__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 110kV__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 110kV/BAY_T3_1/DISCONNECTOR53", "_af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 110kV/BAY_T3_1/BREAKER27", "_af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 110kV/BAY_T3_1/DISCONNECTOR54", "INTERNAL__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 110kV__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 110kV/BAY_T3_1/CONNECTIVITY_NODE91_TWO" ]
         }, {
           "type" : "FEEDERPRIMARY",
           "cardinalities" : [ {
@@ -1729,7 +2191,7 @@
           } ],
           "position" : {
             "h" : 0,
-            "v" : 6,
+            "v" : 10,
             "hSpan" : 2,
             "vSpan" : 0,
             "orientation" : "UP"
@@ -1740,106 +2202,224 @@
             "xSpan" : 50.0,
             "ySpan" : 0.0
           },
-          "nodes" : [ "INTERNAL_S1 110kV_INTERNAL_S1 110kV__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 110kV/BAY_T3_1/CONNECTIVITY_NODE91", "INTERNAL_S1 110kV__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 110kV/BAY_T3_1/CONNECTIVITY_NODE91" ]
+          "nodes" : [ "INTERNAL__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 110kV__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 110kV/BAY_T3_1/CONNECTIVITY_NODE91_TWO", "_af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 110kV/BAY_T3_1/CONNECTIVITY_NODE91_TWO" ]
         } ]
       }
     } ],
     "edges" : [ {
-      "node1" : "DISCONNECTOR13",
-      "node2" : "BUSBAR6"
+      "node1" : "_af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 110kV/BAY_L1_0/BREAKER7",
+      "node2" : "_af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 110kV/BAY_L1_0/DISCONNECTOR14"
     }, {
-      "node1" : "DISCONNECTOR21",
-      "node2" : "BUSBAR6"
+      "node1" : "_af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 110kV/BAY_L3_a_0/BREAKER11",
+      "node2" : "_af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 110kV/BAY_L3_a_0/DISCONNECTOR22"
     }, {
-      "node1" : "DISCONNECTOR25",
-      "node2" : "BUSBAR6"
+      "node1" : "_af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 110kV/BAY_L3_b_0/BREAKER13",
+      "node2" : "_af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 110kV/BAY_L3_b_0/DISCONNECTOR26"
     }, {
-      "node1" : "DISCONNECTOR47",
-      "node2" : "BUSBAR6"
+      "node1" : "_af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 110kV/BAY_T4_1/BREAKER24",
+      "node2" : "_af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 110kV/BAY_T4_1/DISCONNECTOR48"
     }, {
-      "node1" : "DISCONNECTOR53",
-      "node2" : "BUSBAR6"
+      "node1" : "_af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 110kV/BAY_T3_1/BREAKER27",
+      "node2" : "_af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 110kV/BAY_T3_1/DISCONNECTOR54"
     }, {
-      "node1" : "BREAKER7",
-      "node2" : "DISCONNECTOR14"
+      "node1" : "_af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 110kV/BAY_T4_1/DISCONNECTOR48",
+      "node2" : "INTERNAL__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 110kV__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 110kV/BAY_T4_1/CONNECTIVITY_NODE81_TWO"
     }, {
-      "node1" : "BREAKER11",
-      "node2" : "DISCONNECTOR22"
+      "node1" : "INTERNAL__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 110kV__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 110kV/BAY_T4_1/CONNECTIVITY_NODE81_TWO",
+      "node2" : "_af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 110kV/BAY_T4_1/CONNECTIVITY_NODE81_TWO"
     }, {
-      "node1" : "BREAKER13",
-      "node2" : "DISCONNECTOR26"
+      "node1" : "_af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 110kV/BAY_T3_1/DISCONNECTOR54",
+      "node2" : "INTERNAL__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 110kV__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 110kV/BAY_T3_1/CONNECTIVITY_NODE91_TWO"
     }, {
-      "node1" : "BREAKER24",
-      "node2" : "DISCONNECTOR48"
+      "node1" : "INTERNAL__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 110kV__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 110kV/BAY_T3_1/CONNECTIVITY_NODE91_TWO",
+      "node2" : "_af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 110kV/BAY_T3_1/CONNECTIVITY_NODE91_TWO"
     }, {
-      "node1" : "BREAKER27",
-      "node2" : "DISCONNECTOR54"
+      "node1" : "_af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 110kV/BAY_L1_0/DISCONNECTOR14",
+      "node2" : "INTERNAL__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 110kV_INTERNAL__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 110kV__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 110kV/BAY_L1_0/CONNECTIVITY_NODE27"
     }, {
-      "node1" : "DISCONNECTOR14",
-      "node2" : "INTERNAL_S1 110kV_INTERNAL_S1 110kV__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 110kV/BAY_L1_0/CONNECTIVITY_NODE27"
+      "node1" : "INTERNAL__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 110kV_INTERNAL__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 110kV__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 110kV/BAY_L1_0/CONNECTIVITY_NODE27",
+      "node2" : "INTERNAL__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 110kV__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 110kV/BAY_L1_0/CONNECTIVITY_NODE27"
     }, {
-      "node1" : "INTERNAL_S1 110kV_INTERNAL_S1 110kV__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 110kV/BAY_L1_0/CONNECTIVITY_NODE27",
-      "node2" : "INTERNAL_S1 110kV__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 110kV/BAY_L1_0/CONNECTIVITY_NODE27"
+      "node1" : "_af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 110kV/BAY_L3_a_0/DISCONNECTOR22",
+      "node2" : "INTERNAL__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 110kV_INTERNAL__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 110kV__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 110kV/BAY_L3_a_0/CONNECTIVITY_NODE39"
     }, {
-      "node1" : "DISCONNECTOR22",
-      "node2" : "INTERNAL_S1 110kV_INTERNAL_S1 110kV__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 110kV/BAY_L3_a_0/CONNECTIVITY_NODE39"
+      "node1" : "INTERNAL__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 110kV_INTERNAL__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 110kV__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 110kV/BAY_L3_a_0/CONNECTIVITY_NODE39",
+      "node2" : "INTERNAL__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 110kV__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 110kV/BAY_L3_a_0/CONNECTIVITY_NODE39"
     }, {
-      "node1" : "INTERNAL_S1 110kV_INTERNAL_S1 110kV__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 110kV/BAY_L3_a_0/CONNECTIVITY_NODE39",
-      "node2" : "INTERNAL_S1 110kV__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 110kV/BAY_L3_a_0/CONNECTIVITY_NODE39"
+      "node1" : "_af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 110kV/BAY_L3_b_0/DISCONNECTOR26",
+      "node2" : "INTERNAL__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 110kV_INTERNAL__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 110kV__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 110kV/BAY_L3_b_0/CONNECTIVITY_NODE45"
     }, {
-      "node1" : "DISCONNECTOR26",
-      "node2" : "INTERNAL_S1 110kV_INTERNAL_S1 110kV__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 110kV/BAY_L3_b_0/CONNECTIVITY_NODE45"
+      "node1" : "INTERNAL__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 110kV_INTERNAL__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 110kV__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 110kV/BAY_L3_b_0/CONNECTIVITY_NODE45",
+      "node2" : "INTERNAL__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 110kV__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 110kV/BAY_L3_b_0/CONNECTIVITY_NODE45"
     }, {
-      "node1" : "INTERNAL_S1 110kV_INTERNAL_S1 110kV__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 110kV/BAY_L3_b_0/CONNECTIVITY_NODE45",
-      "node2" : "INTERNAL_S1 110kV__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 110kV/BAY_L3_b_0/CONNECTIVITY_NODE45"
+      "node1" : "_af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 110kV/BAY_L1_0/BREAKER7",
+      "node2" : "INTERNAL__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 110kV__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 110kV/BAY_L1_0/DISCONNECTOR13"
     }, {
-      "node1" : "DISCONNECTOR48",
-      "node2" : "INTERNAL_S1 110kV_INTERNAL_S1 110kV__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 110kV/BAY_T4_1/CONNECTIVITY_NODE81"
+      "node1" : "_af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 110kV/BAY_L1_0/DISCONNECTOR13",
+      "node2" : "INTERNAL__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 110kV__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 110kV/BAY_L1_0/DISCONNECTOR13"
     }, {
-      "node1" : "INTERNAL_S1 110kV_INTERNAL_S1 110kV__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 110kV/BAY_T4_1/CONNECTIVITY_NODE81",
-      "node2" : "INTERNAL_S1 110kV__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 110kV/BAY_T4_1/CONNECTIVITY_NODE81"
+      "node1" : "_af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 110kV/BAY_L3_a_0/BREAKER11",
+      "node2" : "INTERNAL__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 110kV__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 110kV/BAY_L3_a_0/DISCONNECTOR21"
     }, {
-      "node1" : "DISCONNECTOR54",
-      "node2" : "INTERNAL_S1 110kV_INTERNAL_S1 110kV__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 110kV/BAY_T3_1/CONNECTIVITY_NODE91"
+      "node1" : "_af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 110kV/BAY_L3_a_0/DISCONNECTOR21",
+      "node2" : "INTERNAL__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 110kV__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 110kV/BAY_L3_a_0/DISCONNECTOR21"
     }, {
-      "node1" : "INTERNAL_S1 110kV_INTERNAL_S1 110kV__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 110kV/BAY_T3_1/CONNECTIVITY_NODE91",
-      "node2" : "INTERNAL_S1 110kV__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 110kV/BAY_T3_1/CONNECTIVITY_NODE91"
+      "node1" : "_af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 110kV/BAY_L3_b_0/BREAKER13",
+      "node2" : "INTERNAL__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 110kV__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 110kV/BAY_L3_b_0/DISCONNECTOR25"
     }, {
-      "node1" : "BREAKER7",
-      "node2" : "INTERNAL_S1 110kV_DISCONNECTOR13"
+      "node1" : "_af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 110kV/BAY_L3_b_0/DISCONNECTOR25",
+      "node2" : "INTERNAL__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 110kV__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 110kV/BAY_L3_b_0/DISCONNECTOR25"
     }, {
-      "node1" : "DISCONNECTOR13",
-      "node2" : "INTERNAL_S1 110kV_DISCONNECTOR13"
+      "node1" : "_af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 110kV/BAY_T4_1/BREAKER24",
+      "node2" : "INTERNAL__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 110kV__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 110kV/BAY_T4_1/DISCONNECTOR47"
     }, {
-      "node1" : "BREAKER11",
-      "node2" : "INTERNAL_S1 110kV_DISCONNECTOR21"
+      "node1" : "_af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 110kV/BAY_T4_1/DISCONNECTOR47",
+      "node2" : "INTERNAL__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 110kV__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 110kV/BAY_T4_1/DISCONNECTOR47"
     }, {
-      "node1" : "DISCONNECTOR21",
-      "node2" : "INTERNAL_S1 110kV_DISCONNECTOR21"
+      "node1" : "_af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 110kV/BAY_T3_1/BREAKER27",
+      "node2" : "INTERNAL__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 110kV__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 110kV/BAY_T3_1/DISCONNECTOR53"
     }, {
-      "node1" : "BREAKER13",
-      "node2" : "INTERNAL_S1 110kV_DISCONNECTOR25"
+      "node1" : "_af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 110kV/BAY_T3_1/DISCONNECTOR53",
+      "node2" : "INTERNAL__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 110kV__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 110kV/BAY_T3_1/DISCONNECTOR53"
     }, {
-      "node1" : "DISCONNECTOR25",
-      "node2" : "INTERNAL_S1 110kV_DISCONNECTOR25"
+      "node1" : "_af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 110kV/BUSBAR6",
+      "node2" : "BUSCO__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 110kV/BAY_L1_0/DISCONNECTOR13"
     }, {
-      "node1" : "BREAKER24",
-      "node2" : "INTERNAL_S1 110kV_DISCONNECTOR47"
+      "node1" : "BUSCO__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 110kV/BAY_L1_0/DISCONNECTOR13",
+      "node2" : "INTERNAL__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 110kV__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 110kV/BAY_L1_0/DISCONNECTOR13"
     }, {
-      "node1" : "DISCONNECTOR47",
-      "node2" : "INTERNAL_S1 110kV_DISCONNECTOR47"
+      "node1" : "INTERNAL__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 110kV__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 110kV/BAY_L1_0/DISCONNECTOR13",
+      "node2" : "_af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 110kV/BAY_L1_0/DISCONNECTOR13"
     }, {
-      "node1" : "BREAKER27",
-      "node2" : "INTERNAL_S1 110kV_DISCONNECTOR53"
+      "node1" : "_af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 110kV/BUSBAR6",
+      "node2" : "BUSCO__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 110kV/BAY_L3_a_0/DISCONNECTOR21"
     }, {
-      "node1" : "DISCONNECTOR53",
-      "node2" : "INTERNAL_S1 110kV_DISCONNECTOR53"
+      "node1" : "BUSCO__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 110kV/BAY_L3_a_0/DISCONNECTOR21",
+      "node2" : "INTERNAL__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 110kV__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 110kV/BAY_L3_a_0/DISCONNECTOR21"
+    }, {
+      "node1" : "INTERNAL__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 110kV__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 110kV/BAY_L3_a_0/DISCONNECTOR21",
+      "node2" : "_af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 110kV/BAY_L3_a_0/DISCONNECTOR21"
+    }, {
+      "node1" : "_af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 110kV/BUSBAR6",
+      "node2" : "BUSCO__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 110kV/BAY_L3_b_0/DISCONNECTOR25"
+    }, {
+      "node1" : "BUSCO__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 110kV/BAY_L3_b_0/DISCONNECTOR25",
+      "node2" : "INTERNAL__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 110kV__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 110kV/BAY_L3_b_0/DISCONNECTOR25"
+    }, {
+      "node1" : "INTERNAL__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 110kV__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 110kV/BAY_L3_b_0/DISCONNECTOR25",
+      "node2" : "_af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 110kV/BAY_L3_b_0/DISCONNECTOR25"
+    }, {
+      "node1" : "_af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 110kV/BUSBAR6",
+      "node2" : "BUSCO__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 110kV/BAY_T4_1/DISCONNECTOR47"
+    }, {
+      "node1" : "BUSCO__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 110kV/BAY_T4_1/DISCONNECTOR47",
+      "node2" : "INTERNAL__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 110kV__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 110kV/BAY_T4_1/DISCONNECTOR47"
+    }, {
+      "node1" : "INTERNAL__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 110kV__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 110kV/BAY_T4_1/DISCONNECTOR47",
+      "node2" : "_af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 110kV/BAY_T4_1/DISCONNECTOR47"
+    }, {
+      "node1" : "_af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 110kV/BUSBAR6",
+      "node2" : "BUSCO__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 110kV/BAY_T3_1/DISCONNECTOR53"
+    }, {
+      "node1" : "BUSCO__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 110kV/BAY_T3_1/DISCONNECTOR53",
+      "node2" : "INTERNAL__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 110kV__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 110kV/BAY_T3_1/DISCONNECTOR53"
+    }, {
+      "node1" : "INTERNAL__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 110kV__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 110kV/BAY_T3_1/DISCONNECTOR53",
+      "node2" : "_af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 110kV/BAY_T3_1/DISCONNECTOR53"
     } ],
     "multitermNodes" : [ ],
     "twtEdges" : [ ],
     "lineEdges" : [ ]
   } ],
-  "multitermNodes" : [ ],
-  "twtEdges" : [ ],
+  "multitermNodes" : [ {
+    "type" : "FICTITIOUS",
+    "id" : "_af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/T4",
+    "name" : "_af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/T4",
+    "equipmentId" : "_af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/T4",
+    "componentType" : "THREE_WINDINGS_TRANSFORMER",
+    "fictitious" : true,
+    "open" : false,
+    "voltageLevelInfosLeg1" : {
+      "id" : "_af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 30kV",
+      "name" : "_af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 30kV",
+      "nominalVoltage" : 30.0
+    },
+    "voltageLevelInfosLeg2" : {
+      "id" : "_af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 110kV",
+      "name" : "_af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 110kV",
+      "nominalVoltage" : 110.0
+    },
+    "voltageLevelInfosLeg3" : {
+      "id" : "_af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 380kV",
+      "name" : "_af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 380kV",
+      "nominalVoltage" : 380.0
+    }
+  }, {
+    "type" : "FICTITIOUS",
+    "id" : "_af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/T3",
+    "name" : "_af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/T3",
+    "equipmentId" : "_af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/T3",
+    "componentType" : "THREE_WINDINGS_TRANSFORMER",
+    "fictitious" : true,
+    "open" : false,
+    "voltageLevelInfosLeg1" : {
+      "id" : "_af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 380kV",
+      "name" : "_af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 380kV",
+      "nominalVoltage" : 380.0
+    },
+    "voltageLevelInfosLeg2" : {
+      "id" : "_af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 110kV",
+      "name" : "_af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 110kV",
+      "nominalVoltage" : 110.0
+    },
+    "voltageLevelInfosLeg3" : {
+      "id" : "_af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 30kV",
+      "name" : "_af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 30kV",
+      "nominalVoltage" : 30.0
+    }
+  } ],
+  "twtEdges" : [ {
+    "id" : "EDGE__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 30kV/BAY_T4_0/CONNECTIVITY_NODE78_ONE",
+    "nodes" : [ {
+      "node1" : "_af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 30kV/BAY_T4_0/CONNECTIVITY_NODE78_ONE",
+      "node2" : "_af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/T4"
+    } ],
+    "snakeLine" : [ 305.0, 105.0, 305.0, 45.0, 595.0, 45.0 ]
+  }, {
+    "id" : "EDGE__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 110kV/BAY_T4_1/CONNECTIVITY_NODE81_TWO",
+    "nodes" : [ {
+      "node1" : "_af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 110kV/BAY_T4_1/CONNECTIVITY_NODE81_TWO",
+      "node2" : "_af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/T4"
+    } ],
+    "snakeLine" : [ 595.0, 105.0, 595.0, 45.0 ]
+  }, {
+    "id" : "EDGE__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 380kV/BAY_T4_2/CONNECTIVITY_NODE85_THREE",
+    "nodes" : [ {
+      "node1" : "_af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 380kV/BAY_T4_2/CONNECTIVITY_NODE85_THREE",
+      "node2" : "_af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/T4"
+    } ],
+    "snakeLine" : [ 165.0, 105.0, 165.0, 45.0, 595.0, 45.0 ]
+  }, {
+    "id" : "EDGE__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 380kV/BAY_T3_0/CONNECTIVITY_NODE88_ONE",
+    "nodes" : [ {
+      "node1" : "_af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 380kV/BAY_T3_0/CONNECTIVITY_NODE88_ONE",
+      "node2" : "_af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/T3"
+    } ],
+    "snakeLine" : [ 115.0, 105.0, 115.0, 20.0, 545.0, 20.0 ]
+  }, {
+    "id" : "EDGE__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 110kV/BAY_T3_1/CONNECTIVITY_NODE91_TWO",
+    "nodes" : [ {
+      "node1" : "_af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 110kV/BAY_T3_1/CONNECTIVITY_NODE91_TWO",
+      "node2" : "_af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/T3"
+    } ],
+    "snakeLine" : [ 545.0, 105.0, 545.0, 20.0 ]
+  }, {
+    "id" : "EDGE__af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 30kV/BAY_T3_2/CONNECTIVITY_NODE95_THREE",
+    "nodes" : [ {
+      "node1" : "_af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 30kV/BAY_T3_2/CONNECTIVITY_NODE95_THREE",
+      "node2" : "_af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/T3"
+    } ],
+    "snakeLine" : [ 255.0, 105.0, 255.0, 20.0, 545.0, 20.0 ]
+  } ],
   "lineEdges" : [ ]
 }

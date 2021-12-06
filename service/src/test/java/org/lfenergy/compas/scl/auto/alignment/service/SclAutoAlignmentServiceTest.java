@@ -49,7 +49,7 @@ class SclAutoAlignmentServiceTest {
     }
 
     @Test
-    void getSVG_WhenPassingCase1_ThenJsonReturned() throws IOException {
+    void getSVG_WhenPassingCase1_ThenSVGReturned() throws IOException {
         var filename = "scl-1";
         var sclString = readSCL(filename + ".scd");
 
@@ -59,7 +59,7 @@ class SclAutoAlignmentServiceTest {
     }
 
     @Test
-    void getSVG_WhenPassingCase2_ThenJsonReturned() throws IOException {
+    void getSVG_WhenPassingCase2_ThenSVGReturned() throws IOException {
         var filename = "scl-2";
         var sclString = readSCL(filename + ".scd");
 

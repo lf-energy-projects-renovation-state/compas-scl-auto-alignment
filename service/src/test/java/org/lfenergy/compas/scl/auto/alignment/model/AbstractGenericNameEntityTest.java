@@ -15,8 +15,8 @@ import static org.lfenergy.compas.scl.auto.alignment.model.GenericSCLTest.BASIC_
 import static org.lfenergy.compas.scl.auto.alignment.model.GenericSubstationTest.SUBSTATION_NAME;
 import static org.lfenergy.compas.scl.auto.alignment.model.GenericVoltageLevelTest.VOLTAGE_LEVEL_NAME;
 
-class AbstractCompasNameEntityTest {
-    private AbstractCompasNameEntity entity;
+class AbstractGenericNameEntityTest {
+    private AbstractGenericNameEntity<GenericSubstation> entity;
 
     @BeforeEach
     void setup() throws IOException {

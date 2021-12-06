@@ -15,7 +15,6 @@ import static org.lfenergy.compas.scl.auto.alignment.TestUtil.readSCLElement;
 import static org.lfenergy.compas.scl.auto.alignment.exception.SclAutoAlignmentErrorCode.NO_VOLTAGE_FOUND_ERROR_CODE;
 import static org.lfenergy.compas.scl.auto.alignment.model.GenericBayTest.BAY_NAME;
 import static org.lfenergy.compas.scl.auto.alignment.model.GenericBayTest.BUSBAR_NAME;
-import static org.lfenergy.compas.scl.auto.alignment.model.GenericConductingEquipmentTest.CE_NAME;
 import static org.lfenergy.compas.scl.auto.alignment.model.GenericSCLTest.BASIC_SCD_FILENAME;
 import static org.lfenergy.compas.scl.auto.alignment.model.GenericSubstationTest.SUBSTATION_NAME;
 
@@ -62,20 +61,5 @@ class GenericVoltageLevelTest {
 
         var exception = assertThrows(SclAutoAlignmentException.class, () -> voltageLevel.getVoltage());
         assertEquals(NO_VOLTAGE_FOUND_ERROR_CODE, exception.getErrorCode());
-    }
-
-    @Test
-    void getConductingEquipment_WhenCalled_ThenSpecificVoltageLevelReturned() {
-        var result = voltageLevel.getConductingEquipment(CE_NAME);
-
-        assertTrue(result.isPresent());
-        assertEquals(CE_NAME, result.get().getName());
-    }
-
-    @Test
-    void getConductingEquipment_WhenCalledWithBlankName_ThenEmptyOptional() {
-        var result = voltageLevel.getConductingEquipment("");
-
-        assertFalse(result.isPresent());
     }
 }

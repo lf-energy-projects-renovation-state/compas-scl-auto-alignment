@@ -11,19 +11,17 @@ import java.util.stream.Stream;
 
 import static org.lfenergy.compas.scl.auto.alignment.SclAutoAlignmentConstants.*;
 
-public class AbstractCompasEntity {
-    protected Element element;
+public abstract class AbstractGenericEntity<P extends GenericEntity> implements GenericEntity {
+    protected final P parent;
+    protected final Element element;
 
-    public AbstractCompasEntity(Element element) {
+    public AbstractGenericEntity(P parent, Element element) {
+        this.parent = parent;
         this.element = element;
     }
 
     protected Stream<Element> getElementsStream(String tagName) {
-        return getElementsStream(SCL_NS_URI, tagName);
-    }
-
-    protected Stream<Element> getElementsStream(String namespace, String tagName) {
-        var nodeList = element.getElementsByTagNameNS(namespace, tagName);
+        var nodeList = element.getElementsByTagNameNS(SCL_NS_URI, tagName);
         return IntStream.range(0, nodeList.getLength())
                 .mapToObj(nodeList::item)
                 .filter(Element.class::isInstance)
@@ -42,8 +40,13 @@ public class AbstractCompasEntity {
         return Double.parseDouble(element.getTextContent());
     }
 
+    @Override
     public Element getElement() {
         return element;
+    }
+
+    public P getParent() {
+        return parent;
     }
 
     public void setXYCoordinates(long x, long y) {

@@ -13,26 +13,11 @@ import java.util.stream.Collectors;
 
 import static org.lfenergy.compas.scl.auto.alignment.exception.SclAutoAlignmentErrorCode.NO_VOLTAGE_FOUND_ERROR_CODE;
 
-public class GenericVoltageLevel extends AbstractCompasNameEntity {
-    public GenericVoltageLevel(Element element) {
-        super(element);
-    }
+public class GenericVoltageLevel extends AbstractGenericNameEntity<GenericSubstation> {
+    private List<GenericBay> bays;
 
-    public List<GenericBay> getBays() {
-        return getElementsStream("Bay")
-                .map(GenericBay::new)
-                .collect(Collectors.toList());
-    }
-
-    public Optional<GenericBay> getBusbar(String name) {
-        if (StringUtils.isNotBlank(name)) {
-            return getElementsStream("Bay")
-                    .map(GenericBay::new)
-                    .filter(GenericBay::isBusbar)
-                    .filter(busbar -> name.equals(busbar.getName()))
-                    .findFirst();
-        }
-        return Optional.empty();
+    public GenericVoltageLevel(GenericSubstation parent, Element element) {
+        super(parent, element);
     }
 
     public double getVoltage() {
@@ -43,13 +28,31 @@ public class GenericVoltageLevel extends AbstractCompasNameEntity {
                         "No Voltage found for VoltageLevel '" + getName() + "'."));
     }
 
-    public Optional<GenericConductingEquipment> getConductingEquipment(String ceName) {
-        if (StringUtils.isNotBlank(ceName)) {
-            return getElementsStream("Bay")
-                    .map(GenericBay::new)
+    public List<GenericBay> getBays() {
+        if (bays == null) {
+            bays = getElementsStream("Bay")
+                    .map(element -> new GenericBay(this, element))
+                    .collect(Collectors.toList());
+        }
+        return bays;
+    }
+
+    public Optional<GenericBay> getBusbarByPathName(String pathName) {
+        if (StringUtils.isNotBlank(pathName)) {
+            return getBays().stream()
+                    .filter(GenericBay::isBusbar)
+                    .filter(busbar -> pathName.equals(busbar.getPathName()))
+                    .findFirst();
+        }
+        return Optional.empty();
+    }
+
+    public Optional<GenericConductingEquipment> getConductingEquipmentByPathName(String pathName) {
+        if (StringUtils.isNotBlank(pathName)) {
+            return getBays().stream()
                     .map(GenericBay::getConductingEquipments)
                     .flatMap(List::stream)
-                    .filter(conductingEquipment -> ceName.equals(conductingEquipment.getName()))
+                    .filter(conductingEquipment -> pathName.equals(conductingEquipment.getPathName()))
                     .findFirst();
         }
         return Optional.empty();
