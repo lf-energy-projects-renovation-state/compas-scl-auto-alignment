@@ -29,6 +29,26 @@ class SclAutoAlignmentServiceTest {
     }
 
     @Test
+    void updateSCL_WhenPassingCase1_ThenUpdatedSCLReturned() throws IOException {
+        var filename = "scl-1";
+        var sclString = readSCL(filename + ".scd");
+
+        var result = sclAutoAlignmentService.updateSCL(sclString, "AA1", "Mr. Editor");
+        assertNotNull(result);
+        writeFile(filename + "-updated-service.scd", result);
+    }
+
+    @Test
+    void updateSCL_WhenPassingCase2_ThenUpdatedSCLReturned() throws IOException {
+        var filename = "scl-2";
+        var sclString = readSCL(filename + ".scd");
+
+        var result = sclAutoAlignmentService.updateSCL(sclString, "_af9a4ae3-ba2e-4c34-8e47-5af894ee20f4", "Mr. Editor");
+        assertNotNull(result);
+        writeFile(filename + "-updated-service.scd", result);
+    }
+
+    @Test
     void getJson_WhenPassingCase1_ThenJsonReturned() throws IOException {
         var filename = "scl-1";
         var sclString = readSCL(filename + ".scd");

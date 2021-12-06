@@ -29,7 +29,7 @@ public class SclAutoAlignmentGraphBuilder {
 
     public SclAutoAlignmentGraphBuilder(GenericSubstation substation) {
         rawGraphBuilder = new RawGraphBuilder();
-        substationBuilder = rawGraphBuilder.createSubstationBuilder(substation.getPathName());
+        substationBuilder = rawGraphBuilder.createSubstationBuilder(substation.getFullName());
         substation.getVoltageLevels()
                 .forEach(voltageLevel -> createVoltageLevelGraph(substation, voltageLevel));
         substation.getPowerTransformers()
@@ -40,21 +40,18 @@ public class SclAutoAlignmentGraphBuilder {
         if (powerTransformer.isFeeder2WT()) {
             var tws = powerTransformer.getTransformerWindings();
             substationBuilder.getSsGraph().addMultiTermNode(
-                    Middle2WTNode.create(powerTransformer.getPathName(),
-                            powerTransformer.getPathName(),
+                    Middle2WTNode.create(powerTransformer.getFullName(),
+                            powerTransformer.getFullName(),
                             substationBuilder.getSsGraph(),
                             getFeeder2WTLegNode(tws.get(0)),
                             getFeeder2WTLegNode(tws.get(1)),
                             getVoltageLevelBuilder(substation, tws.get(0)).getGraph().getVoltageLevelInfos(),
                             getVoltageLevelBuilder(substation, tws.get(1)).getGraph().getVoltageLevelInfos()));
-//            substationBuilder.createFeeder2WT(powerTransformer.getPathName(),
-//                    getVoltageLevelBuilder(substation, tws.get(0)),
-//                    getVoltageLevelBuilder(substation, tws.get(1)));
         } else if (powerTransformer.isFeeder3WT()) {
             var tws = powerTransformer.getTransformerWindings();
             substationBuilder.getSsGraph().addMultiTermNode(
-                    Middle3WTNode.create(powerTransformer.getPathName(),
-                            powerTransformer.getPathName(),
+                    Middle3WTNode.create(powerTransformer.getFullName(),
+                            powerTransformer.getFullName(),
                             substationBuilder.getSsGraph(),
                             getFeeder3WTLegNode(tws.get(0)),
                             getFeeder3WTLegNode(tws.get(1)),
@@ -62,10 +59,6 @@ public class SclAutoAlignmentGraphBuilder {
                             getVoltageLevelBuilder(substation, tws.get(0)).getGraph().getVoltageLevelInfos(),
                             getVoltageLevelBuilder(substation, tws.get(1)).getGraph().getVoltageLevelInfos(),
                             getVoltageLevelBuilder(substation, tws.get(2)).getGraph().getVoltageLevelInfos()));
-//            substationBuilder.createFeeder3WT(powerTransformer.getPathName(),
-//                    getVoltageLevelBuilder(substation, tws.get(0)),
-//                    getVoltageLevelBuilder(substation, tws.get(1)),
-//                    getVoltageLevelBuilder(substation, tws.get(2)));
         }
     }
 
@@ -82,8 +75,7 @@ public class SclAutoAlignmentGraphBuilder {
     private RawGraphBuilder.VoltageLevelBuilder getVoltageLevelBuilder(GenericSubstation substation,
                                                                        GenericTransformerWinding transformerWinding) {
         var connectivityNode = transformerWinding.getTerminals().get(0).getConnectivityNode();
-        var voltageLevel = substation.getVoltageLevels()
-                .stream()
+        return substation.getVoltageLevels().stream()
                 .map(GenericVoltageLevel::getBays)
                 .flatMap(List::stream)
                 .map(GenericBay::getConductingEquipments)
@@ -93,14 +85,14 @@ public class SclAutoAlignmentGraphBuilder {
                 .filter(terminal -> connectivityNode.equals(terminal.getConnectivityNode()))
                 .findFirst()
                 .map(terminal -> ((GenericConductingEquipment) terminal.getParent()).getParent().getParent())
-                .get();
-        return path2VoltageLevelBuilder.get(voltageLevel.getPathName());
+                .map(genericVoltageLevel -> path2VoltageLevelBuilder.get(genericVoltageLevel.getFullName()))
+                .orElse(null);
     }
 
     private void createVoltageLevelGraph(GenericSubstation substation,
                                          GenericVoltageLevel voltageLevel) {
         var voltageLevelBuilder =
-                rawGraphBuilder.createVoltageLevelBuilder(voltageLevel.getPathName(), voltageLevel.getVoltage(), false);
+                rawGraphBuilder.createVoltageLevelBuilder(voltageLevel.getFullName(), voltageLevel.getVoltage(), false);
 
         // First process the Busbars.
         AtomicInteger busbarIndex = new AtomicInteger(1);
@@ -114,7 +106,7 @@ public class SclAutoAlignmentGraphBuilder {
                 .forEach(bay -> createBayNode(voltageLevelBuilder, substation, bay));
 
         substationBuilder.addVlBuilder(voltageLevelBuilder);
-        path2VoltageLevelBuilder.put(voltageLevel.getPathName(), voltageLevelBuilder);
+        path2VoltageLevelBuilder.put(voltageLevel.getFullName(), voltageLevelBuilder);
     }
 
     private void createBusbarNode(RawGraphBuilder.VoltageLevelBuilder voltageLevelBuilder,
@@ -122,7 +114,7 @@ public class SclAutoAlignmentGraphBuilder {
                                   AtomicInteger busbarIndex) {
         bay.getConnectivityNodes()
                 .forEach(connectivityNode -> path2Node.put(connectivityNode.getPathName(),
-                        voltageLevelBuilder.createBusBarSection(bay.getPathName(), busbarIndex.getAndIncrement(), 1)));
+                        voltageLevelBuilder.createBusBarSection(bay.getFullName(), busbarIndex.getAndIncrement(), 1)));
     }
 
     private void createBayNode(RawGraphBuilder.VoltageLevelBuilder voltageLevelBuilder,
@@ -150,7 +142,7 @@ public class SclAutoAlignmentGraphBuilder {
         bay.getConductingEquipments().forEach(ce -> {
             List<GenericTerminal> terminals = ce.getTerminals();
 
-            var pathName = ce.getPathName();
+            var pathName = ce.getFullName();
             var node = voltageLevelBuilder.createSwitchNode(SwitchKind.BREAKER, pathName, false, false);
 
             Node node1 = terminalToNode(voltageLevelBuilder, terminals.get(0));

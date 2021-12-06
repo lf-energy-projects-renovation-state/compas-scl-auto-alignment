@@ -8,5 +8,5 @@ import org.w3c.dom.Element;
 public interface GenericEntity {
     Element getElement();
 
-    String getPathName();
+    String getFullName();
 }

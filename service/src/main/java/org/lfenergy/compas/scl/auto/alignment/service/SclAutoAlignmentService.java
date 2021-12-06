@@ -50,6 +50,9 @@ public class SclAutoAlignmentService {
         var enricher = new SclAutoAlignmentEnricher(scl, jsonGraphInfo);
         enricher.enrich();
 
+        // Add an extra History Element to show there was a change.
+        scl.getOrCreateHeader().addHistoryItem(who, "Add or replaced the X/Y Coordinates in the SCL File.");
+
         return converter.convertToString(scl.getElement());
     }
 

@@ -56,7 +56,8 @@ public class GenericPowerTransformer extends AbstractGenericNameEntity<GenericSu
                 return FeederWithSideNode.Side.TWO;
             case 2:
                 return FeederWithSideNode.Side.THREE;
+            default:
+                return null;
         }
-        return null;
     }
 }

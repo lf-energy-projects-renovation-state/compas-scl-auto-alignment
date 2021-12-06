@@ -65,14 +65,14 @@ public class SclAutoAlignmentEnricher {
 
     private void enrichBusbar(GenericVoltageLevel voltageLevel, JsonObject jsonBusbar) {
         var pathName = jsonBusbar.get("id").getAsString();
-        var sclBusbar = voltageLevel.getBusbarByPathName(pathName);
+        var sclBusbar = voltageLevel.getBusbarByFullName(pathName);
         sclBusbar.ifPresent(busbar ->
                 busbar.setXYCoordinates(getCoordinate(jsonBusbar, "x"), getCoordinate(jsonBusbar, "y")));
     }
 
     private void enrichConductingEquipment(GenericVoltageLevel voltageLevel, JsonObject jsonCoductingEquipment) {
         var pathName = jsonCoductingEquipment.get("id").getAsString();
-        var sclConductingEquipment = voltageLevel.getConductingEquipmentByPathName(pathName);
+        var sclConductingEquipment = voltageLevel.getConductingEquipmentByFullName(pathName);
         sclConductingEquipment.ifPresent(conductingEquipment ->
                 conductingEquipment.setXYCoordinates(getCoordinate(jsonCoductingEquipment, "x"),
                         getCoordinate(jsonCoductingEquipment, "y")));

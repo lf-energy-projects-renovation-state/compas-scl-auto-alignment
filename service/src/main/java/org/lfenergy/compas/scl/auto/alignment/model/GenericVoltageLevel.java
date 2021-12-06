@@ -37,22 +37,22 @@ public class GenericVoltageLevel extends AbstractGenericNameEntity<GenericSubsta
         return bays;
     }
 
-    public Optional<GenericBay> getBusbarByPathName(String pathName) {
-        if (StringUtils.isNotBlank(pathName)) {
+    public Optional<GenericBay> getBusbarByFullName(String fullName) {
+        if (StringUtils.isNotBlank(fullName)) {
             return getBays().stream()
                     .filter(GenericBay::isBusbar)
-                    .filter(busbar -> pathName.equals(busbar.getPathName()))
+                    .filter(busbar -> fullName.equals(busbar.getFullName()))
                     .findFirst();
         }
         return Optional.empty();
     }
 
-    public Optional<GenericConductingEquipment> getConductingEquipmentByPathName(String pathName) {
-        if (StringUtils.isNotBlank(pathName)) {
+    public Optional<GenericConductingEquipment> getConductingEquipmentByFullName(String fullName) {
+        if (StringUtils.isNotBlank(fullName)) {
             return getBays().stream()
                     .map(GenericBay::getConductingEquipments)
                     .flatMap(List::stream)
-                    .filter(conductingEquipment -> pathName.equals(conductingEquipment.getPathName()))
+                    .filter(conductingEquipment -> fullName.equals(conductingEquipment.getFullName()))
                     .findFirst();
         }
         return Optional.empty();

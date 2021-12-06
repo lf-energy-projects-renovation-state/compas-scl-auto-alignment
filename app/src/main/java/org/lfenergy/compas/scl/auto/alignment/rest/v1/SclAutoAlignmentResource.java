@@ -27,7 +27,7 @@ import javax.ws.rs.core.MediaType;
 public class SclAutoAlignmentResource {
     private static final Logger LOGGER = LoggerFactory.getLogger(SclAutoAlignmentResource.class);
 
-    private SclAutoAlignmentService sclAutoAlignmentService;
+    private final SclAutoAlignmentService sclAutoAlignmentService;
 
     @Inject
     JsonWebToken jsonWebToken;

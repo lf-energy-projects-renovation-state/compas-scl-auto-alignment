@@ -20,7 +20,7 @@ public class GenericSubstation extends AbstractGenericNameEntity<GenericSCL> {
     }
 
     @Override
-    public String getPathName() {
+    public String getFullName() {
         return getName();
     }
 
@@ -54,7 +54,7 @@ public class GenericSubstation extends AbstractGenericNameEntity<GenericSCL> {
     public Optional<GenericVoltageLevel> getVoltageLevelByPathName(String pathName) {
         if (StringUtils.isNotBlank(pathName)) {
             return getVoltageLevels().stream()
-                    .filter(voltageLevel -> pathName.equals(voltageLevel.getPathName()))
+                    .filter(voltageLevel -> pathName.equals(voltageLevel.getFullName()))
                     .findFirst();
         }
         return Optional.empty();

@@ -4,12 +4,12 @@
 package org.lfenergy.compas.scl.auto.alignment.model;
 
 import org.apache.commons.lang3.StringUtils;
+import org.lfenergy.compas.scl.auto.alignment.common.ElementUtil;
 import org.w3c.dom.Element;
 
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
-import java.util.stream.IntStream;
 
 import static org.lfenergy.compas.scl.auto.alignment.SclAutoAlignmentConstants.*;
 
@@ -31,18 +31,14 @@ public class GenericSCL implements GenericEntity {
     }
 
     @Override
-    public String getPathName() {
+    public String getFullName() {
         return "";
     }
 
     public List<GenericSubstation> getSubstations() {
         if (substations == null) {
-            var nodeList = element.getElementsByTagNameNS(SCL_NS_URI, "Substation");
-            substations = IntStream.range(0, nodeList.getLength())
-                    .mapToObj(nodeList::item)
-                    .filter(Element.class::isInstance)
-                    .map(Element.class::cast)
-                    .map(element -> new GenericSubstation(this, element))
+            substations = ElementUtil.getElementsStream(element, "Substation")
+                    .map(substationElement -> new GenericSubstation(this, substationElement))
                     .collect(Collectors.toList());
         }
         return substations;
@@ -55,5 +51,17 @@ public class GenericSCL implements GenericEntity {
                     .findFirst();
         }
         return Optional.empty();
+    }
+
+    public GenericHeader getOrCreateHeader() {
+        var document = getElement().getOwnerDocument();
+        return new GenericHeader(this,
+                ElementUtil.getElementsStream(element, "Header")
+                        .findFirst()
+                        .orElseGet(() -> {
+                            Element newHeader = document.createElementNS(SCL_NS_URI, "Header");
+                            element.appendChild(newHeader);
+                            return newHeader;
+                        }));
     }
 }
