@@ -7,11 +7,10 @@ import com.powsybl.sld.RawGraphBuilder;
 import com.powsybl.sld.layout.HorizontalSubstationLayoutFactory;
 import com.powsybl.sld.layout.LayoutParameters;
 import com.powsybl.sld.layout.PositionVoltageLevelLayoutFactory;
-import com.powsybl.sld.library.ComponentTypeName;
 import com.powsybl.sld.library.ConvergenceComponentLibrary;
-import com.powsybl.sld.model.FeederNode;
 import com.powsybl.sld.model.SubstationGraph;
-import com.powsybl.sld.svg.*;
+import com.powsybl.sld.svg.DefaultDiagramStyleProvider;
+import com.powsybl.sld.svg.DefaultSVGWriter;
 import org.lfenergy.compas.core.commons.ElementConverter;
 import org.lfenergy.compas.scl.auto.alignment.exception.SclAutoAlignmentException;
 import org.lfenergy.compas.scl.auto.alignment.model.GenericSCL;
@@ -23,10 +22,11 @@ import java.io.BufferedInputStream;
 import java.io.ByteArrayInputStream;
 import java.io.StringWriter;
 import java.nio.charset.StandardCharsets;
-import java.util.*;
-import java.util.regex.Pattern;
+import java.util.Optional;
 
-import static org.lfenergy.compas.scl.auto.alignment.SclAutoAlignmentConstants.*;
+import static org.lfenergy.compas.scl.auto.alignment.SclAutoAlignmentConstants.SCL_ELEMENT_NAME;
+import static org.lfenergy.compas.scl.auto.alignment.SclAutoAlignmentConstants.SCL_NS_URI;
+import static org.lfenergy.compas.scl.auto.alignment.common.CommonUtil.cleanSXYDeclarationAndAttributes;
 import static org.lfenergy.compas.scl.auto.alignment.exception.SclAutoAlignmentErrorCode.NO_SCL_ELEMENT_FOUND_ERROR_CODE;
 import static org.lfenergy.compas.scl.auto.alignment.exception.SclAutoAlignmentErrorCode.SUBSTATION_NOT_FOUND_ERROR_CODE;
 
@@ -56,14 +56,6 @@ public class SclAutoAlignmentService {
         return converter.convertToString(scl.getElement());
     }
 
-    public String getJson(String sclData, String substationName) {
-        GenericSCL scl = readSCL(sclData);
-        RawGraphBuilder.SubstationBuilder substationBuilder =
-                createSubstationBuilder(scl.getSubstation(substationName), substationName);
-
-        return createJson(substationBuilder);
-    }
-
     public String getSVG(String sclData, String substationName) {
         GenericSCL scl = readSCL(sclData);
         RawGraphBuilder.SubstationBuilder substationBuilder =
@@ -72,7 +64,7 @@ public class SclAutoAlignmentService {
         return createSVG(substationBuilder);
     }
 
-    private GenericSCL readSCL(String sclData) {
+    GenericSCL readSCL(String sclData) {
         // First we will cleanup existing X/Y Coordinates from the SCL XML.
         var cleanSclData = cleanSXYDeclarationAndAttributes(sclData);
 
@@ -86,23 +78,8 @@ public class SclAutoAlignmentService {
         return new GenericSCL(sclElement);
     }
 
-    static String cleanSXYDeclarationAndAttributes(String data) {
-        // Find Prefix of Namespace.
-        var pattern = Pattern.compile("xmlns:([A-Za-z0-9]*)=\\\"" + SCLXY_NS_URI + "\\\"");
-        var matcher = pattern.matcher(data);
-
-        if (matcher.find()) {
-            var prefix = matcher.group(1);
-            var replacementPattern = "xmlns:[A-Za-z0-9]*=\\\"" + SCLXY_NS_URI + "\\\"" + // Remove the namespace declaration.
-                    "|" + // Combine the two regex patterns.
-                    prefix + ":[A-Za-z]*=\\\"[A-Za-z0-9]*\\\" "; // Remove the attributes using that namespace.
-            return data.replaceAll(replacementPattern, "");
-        }
-        return data;
-    }
-
-    private RawGraphBuilder.SubstationBuilder createSubstationBuilder(Optional<GenericSubstation> substation,
-                                                                      String substationName) {
+    RawGraphBuilder.SubstationBuilder createSubstationBuilder(Optional<GenericSubstation> substation,
+                                                              String substationName) {
         return substation.map(value -> {
             var builder = new SclAutoAlignmentGraphBuilder(value);
             return builder.getSubstationBuilder();
@@ -112,7 +89,7 @@ public class SclAutoAlignmentService {
         });
     }
 
-    private String createJson(RawGraphBuilder.SubstationBuilder substationBuilder) {
+    String createJson(RawGraphBuilder.SubstationBuilder substationBuilder) {
         var graph = substationBuilder.getSsGraph();
 
         LayoutParameters layoutParameters = getLayoutParameters();
@@ -124,7 +101,7 @@ public class SclAutoAlignmentService {
     }
 
 
-    private String createSVG(RawGraphBuilder.SubstationBuilder substationBuilder) {
+    String createSVG(RawGraphBuilder.SubstationBuilder substationBuilder) {
         var graph = substationBuilder.getSsGraph();
 
         LayoutParameters layoutParameters = getLayoutParameters();
@@ -132,7 +109,7 @@ public class SclAutoAlignmentService {
 
         var writer = new StringWriter();
         DefaultSVGWriter svgWriter = new DefaultSVGWriter(new ConvergenceComponentLibrary(), layoutParameters);
-        svgWriter.write("", graph, new RawDiagramLabelProvider(graph), new DefaultDiagramStyleProvider(), writer);
+        svgWriter.write("", graph, new SclAutoAlignmentDiagramLabelProvider(graph), new DefaultDiagramStyleProvider(), writer);
         return writer.toString();
     }
 
@@ -149,38 +126,5 @@ public class SclAutoAlignmentService {
                                 .setFeederStacked(false)
                                 .setHandleShunts(true))
                 .run(layoutParameters);
-    }
-
-
-    private static class RawDiagramLabelProvider implements DiagramLabelProvider {
-        private final Map<com.powsybl.sld.model.Node, List<NodeLabel>> busLabels;
-
-        public RawDiagramLabelProvider(SubstationGraph graph) {
-            this.busLabels = new HashMap<>();
-            LabelPosition labelPosition = new LabelPosition("default", 0, -5, true, 0);
-            graph.getNodes().forEach(v ->
-                    v.getNodes().forEach(n -> {
-                        List<NodeLabel> labels = new ArrayList<>();
-                        labels.add(new NodeLabel(n.getId(), labelPosition, null));
-                        busLabels.put(n, labels);
-                    })
-            );
-        }
-
-        @Override
-        public List<FeederInfo> getFeederInfos(FeederNode node) {
-            return Arrays.asList(new FeederInfo(ComponentTypeName.ARROW_ACTIVE, Direction.OUT, "", "", null),
-                    new FeederInfo(ComponentTypeName.ARROW_REACTIVE, Direction.IN, "", "", null));
-        }
-
-        @Override
-        public List<NodeLabel> getNodeLabels(com.powsybl.sld.model.Node node) {
-            return busLabels.get(node);
-        }
-
-        @Override
-        public List<NodeDecorator> getNodeDecorators(com.powsybl.sld.model.Node node) {
-            return new ArrayList<>();
-        }
     }
 }

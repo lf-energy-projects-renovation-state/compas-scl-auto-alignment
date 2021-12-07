@@ -6,8 +6,8 @@ package org.lfenergy.compas.scl.auto.alignment.rest.v1;
 import io.quarkus.security.Authenticated;
 import org.eclipse.microprofile.jwt.JsonWebToken;
 import org.lfenergy.compas.scl.auto.alignment.rest.UserInfoProperties;
-import org.lfenergy.compas.scl.auto.alignment.rest.v1.model.SclRequest;
-import org.lfenergy.compas.scl.auto.alignment.rest.v1.model.SclResponse;
+import org.lfenergy.compas.scl.auto.alignment.rest.v1.model.SclAutoAlignRequest;
+import org.lfenergy.compas.scl.auto.alignment.rest.v1.model.SclAutoAlignResponse;
 import org.lfenergy.compas.scl.auto.alignment.service.SclAutoAlignmentService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -43,28 +43,20 @@ public class SclAutoAlignmentResource {
     @POST
     @Consumes(MediaType.APPLICATION_XML)
     @Produces(MediaType.APPLICATION_XML)
-    public SclResponse updateSCL(@Valid SclRequest request) {
+    public SclAutoAlignResponse updateSCL(@Valid SclAutoAlignRequest request) {
         String who = jsonWebToken.getClaim(userInfoProperties.who());
         LOGGER.trace("Username used for Who {}", who);
 
-        var response = new SclResponse();
+        var response = new SclAutoAlignResponse();
         response.setSclData(sclAutoAlignmentService.updateSCL(request.getSclData(), request.getSubstationName(), who));
         return response;
     }
 
     @POST
     @Consumes(MediaType.APPLICATION_XML)
-    @Produces(MediaType.APPLICATION_JSON)
-    @Path("/json")
-    public String getJSON(@Valid SclRequest request) {
-        return sclAutoAlignmentService.getJson(request.getSclData(), request.getSubstationName());
-    }
-
-    @POST
-    @Consumes(MediaType.APPLICATION_XML)
     @Produces(MediaType.APPLICATION_SVG_XML)
     @Path("/svg")
-    public String getSVG(@Valid SclRequest request) {
+    public String getSVG(@Valid SclAutoAlignRequest request) {
         return sclAutoAlignmentService.getSVG(request.getSclData(), request.getSubstationName());
     }
 }

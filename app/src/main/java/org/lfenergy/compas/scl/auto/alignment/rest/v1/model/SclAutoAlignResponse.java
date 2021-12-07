@@ -13,11 +13,11 @@ import javax.xml.bind.annotation.XmlRootElement;
 import static org.lfenergy.compas.scl.auto.alignment.SclAutoAlignmentConstants.SCL_AUTO_ALIGNMENT_SERVICE_V1_NS_URI;
 
 @Schema(description = "")
-@XmlRootElement(name = "CreateResponse", namespace = SCL_AUTO_ALIGNMENT_SERVICE_V1_NS_URI)
+@XmlRootElement(name = "SclAutoAlignResponse", namespace = SCL_AUTO_ALIGNMENT_SERVICE_V1_NS_URI)
 @XmlAccessorType(XmlAccessType.FIELD)
-public class SclResponse {
+public class SclAutoAlignResponse {
     @Schema(description = "")
-    @XmlElement(name = "SCLData", namespace = SCL_AUTO_ALIGNMENT_SERVICE_V1_NS_URI)
+    @XmlElement(name = "SclData", namespace = SCL_AUTO_ALIGNMENT_SERVICE_V1_NS_URI)
     protected String sclData;
 
     public String getSclData() {

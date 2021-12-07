@@ -19,6 +19,7 @@ import static org.lfenergy.compas.scl.auto.alignment.SclAutoAlignmentConstants.S
 import static org.lfenergy.compas.scl.auto.alignment.SclAutoAlignmentConstants.SCL_NS_URI;
 import static org.lfenergy.compas.scl.auto.alignment.TestUtil.readFile;
 import static org.lfenergy.compas.scl.auto.alignment.TestUtil.readSCL;
+import static org.lfenergy.compas.scl.auto.alignment.common.CommonUtil.cleanSXYDeclarationAndAttributes;
 
 class SclAutoAlignmentEnricherTest {
     @Test
@@ -49,7 +50,7 @@ class SclAutoAlignmentEnricherTest {
 
     private Element readSCLElement(String filename) throws IOException {
         var sclData = readSCL(filename);
-        sclData = SclAutoAlignmentService.cleanSXYDeclarationAndAttributes(sclData);
+        sclData = cleanSXYDeclarationAndAttributes(sclData);
 
         ElementConverter converter = new ElementConverter();
         return converter.convertToElement(new BufferedInputStream(

@@ -1,8 +1,8 @@
 package org.lfenergy.compas.scl.auto.alignment.rest.v1.model;
 
-class SclResponseTest extends AbstractPojoTester {
+class SclAutoAlignRequestTest extends AbstractPojoTester {
     @Override
     protected Class<?> getClassToBeTested() {
-        return SclResponse.class;
+        return SclAutoAlignRequest.class;
     }
 }

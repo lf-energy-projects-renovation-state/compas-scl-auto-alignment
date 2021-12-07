@@ -15,9 +15,9 @@ import javax.xml.bind.annotation.XmlRootElement;
 import static org.lfenergy.compas.scl.auto.alignment.SclAutoAlignmentConstants.SCL_AUTO_ALIGNMENT_SERVICE_V1_NS_URI;
 
 @Schema(description = "")
-@XmlRootElement(name = "CreateRequest", namespace = SCL_AUTO_ALIGNMENT_SERVICE_V1_NS_URI)
+@XmlRootElement(name = "SclAutoAlignRequest", namespace = SCL_AUTO_ALIGNMENT_SERVICE_V1_NS_URI)
 @XmlAccessorType(XmlAccessType.FIELD)
-public class SclRequest {
+public class SclAutoAlignRequest {
     @Schema(description = "")
     @NotBlank
     @XmlElement(name = "SubstationName", namespace = SCL_AUTO_ALIGNMENT_SERVICE_V1_NS_URI)
@@ -25,7 +25,7 @@ public class SclRequest {
 
     @Schema(description = "")
     @NotBlank
-    @XmlElement(name = "SCLData", namespace = SCL_AUTO_ALIGNMENT_SERVICE_V1_NS_URI)
+    @XmlElement(name = "SclData", namespace = SCL_AUTO_ALIGNMENT_SERVICE_V1_NS_URI)
     protected String sclData;
 
     public String getSubstationName() {

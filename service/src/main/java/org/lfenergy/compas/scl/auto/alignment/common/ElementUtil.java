@@ -12,8 +12,8 @@ import java.util.stream.Stream;
 import static org.lfenergy.compas.scl.auto.alignment.SclAutoAlignmentConstants.SCL_NS_URI;
 
 public final class ElementUtil {
-    private ElementUtil() {
-        // Only allow statiuc methodes.
+    ElementUtil() {
+        throw new UnsupportedOperationException("ElementUtil class");
     }
 
     public static Stream<Element> getElementsStream(Element element, String tagName) {
