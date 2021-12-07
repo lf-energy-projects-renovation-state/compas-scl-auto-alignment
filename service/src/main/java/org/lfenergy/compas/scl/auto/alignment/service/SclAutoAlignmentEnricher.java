@@ -37,8 +37,8 @@ public class SclAutoAlignmentEnricher {
     }
 
     private void enrichVoltageLevel(GenericSubstation substation, JsonObject jsonVoltageLevel) {
-        var voltageLevelPathName = jsonVoltageLevel.get("voltageLevelInfos").getAsJsonObject().get("id").getAsString();
-        var sclVoltageLevel = substation.getVoltageLevelByPathName(voltageLevelPathName);
+        var voltageLevelFullName = jsonVoltageLevel.get("voltageLevelInfos").getAsJsonObject().get("id").getAsString();
+        var sclVoltageLevel = substation.getVoltageLevelByFullName(voltageLevelFullName);
         sclVoltageLevel.ifPresent(voltageLevel -> {
             voltageLevel.setXYCoordinates(getCoordinate(jsonVoltageLevel, "x"),
                     getCoordinate(jsonVoltageLevel, "y"));
@@ -64,15 +64,15 @@ public class SclAutoAlignmentEnricher {
     }
 
     private void enrichBusbar(GenericVoltageLevel voltageLevel, JsonObject jsonBusbar) {
-        var pathName = jsonBusbar.get("id").getAsString();
-        var sclBusbar = voltageLevel.getBusbarByFullName(pathName);
+        var fullName = jsonBusbar.get("id").getAsString();
+        var sclBusbar = voltageLevel.getBusbarByFullName(fullName);
         sclBusbar.ifPresent(busbar ->
                 busbar.setXYCoordinates(getCoordinate(jsonBusbar, "x"), getCoordinate(jsonBusbar, "y")));
     }
 
     private void enrichConductingEquipment(GenericVoltageLevel voltageLevel, JsonObject jsonCoductingEquipment) {
-        var pathName = jsonCoductingEquipment.get("id").getAsString();
-        var sclConductingEquipment = voltageLevel.getConductingEquipmentByFullName(pathName);
+        var fullName = jsonCoductingEquipment.get("id").getAsString();
+        var sclConductingEquipment = voltageLevel.getConductingEquipmentByFullName(fullName);
         sclConductingEquipment.ifPresent(conductingEquipment ->
                 conductingEquipment.setXYCoordinates(getCoordinate(jsonCoductingEquipment, "x"),
                         getCoordinate(jsonCoductingEquipment, "y")));

@@ -33,6 +33,20 @@ public class GenericSubstation extends AbstractGenericNameEntity<GenericSCL> {
         return powerTransformers;
     }
 
+    public Optional<GenericPowerTransformer> getPowerTransformerByConnectivityNode(String connectivityNode) {
+        if (StringUtils.isNotBlank(connectivityNode)) {
+            return getPowerTransformers().stream()
+                    .map(GenericPowerTransformer::getTransformerWindings)
+                    .flatMap(Collection::stream)
+                    .map(GenericTransformerWinding::getTerminals)
+                    .flatMap(Collection::stream)
+                    .filter(terminal -> connectivityNode.equals(terminal.getConnectivityNode()))
+                    .findFirst()
+                    .map(terminal -> ((GenericTransformerWinding) terminal.getParent()).getParent());
+        }
+        return Optional.empty();
+    }
+
     public List<GenericVoltageLevel> getVoltageLevels() {
         if (voltageLevels == null) {
             voltageLevels = getElementsStream("VoltageLevel")
@@ -51,27 +65,12 @@ public class GenericSubstation extends AbstractGenericNameEntity<GenericSCL> {
         return Optional.empty();
     }
 
-    public Optional<GenericVoltageLevel> getVoltageLevelByPathName(String pathName) {
-        if (StringUtils.isNotBlank(pathName)) {
+    public Optional<GenericVoltageLevel> getVoltageLevelByFullName(String fullName) {
+        if (StringUtils.isNotBlank(fullName)) {
             return getVoltageLevels().stream()
-                    .filter(voltageLevel -> pathName.equals(voltageLevel.getFullName()))
+                    .filter(voltageLevel -> fullName.equals(voltageLevel.getFullName()))
                     .findFirst();
         }
         return Optional.empty();
-    }
-
-    public GenericPowerTransformer getPowerTransformerByConnectivityNode(String connectivityNode) {
-        if (StringUtils.isNotBlank(connectivityNode)) {
-            return getPowerTransformers().stream()
-                    .map(GenericPowerTransformer::getTransformerWindings)
-                    .flatMap(Collection::stream)
-                    .map(GenericTransformerWinding::getTerminals)
-                    .flatMap(Collection::stream)
-                    .filter(terminal -> connectivityNode.equals(terminal.getConnectivityNode()))
-                    .findFirst()
-                    .map(terminal -> ((GenericTransformerWinding) terminal.getParent()).getParent())
-                    .orElse(null);
-        }
-        return null;
     }
 }

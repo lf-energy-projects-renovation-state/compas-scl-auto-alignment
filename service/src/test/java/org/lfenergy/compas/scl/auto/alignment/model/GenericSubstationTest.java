@@ -52,6 +52,24 @@ class GenericSubstationTest {
     }
 
     @Test
+    void getPowerTransformerByConnectivityNode_WhenCalledWithKnownCN_ThenPowerTransformerReturned() throws IOException {
+        var scl = new GenericSCL(readSCLElement("scl-2.scd"));
+        substation = scl.getSubstation("_af9a4ae3-ba2e-4c34-8e47-5af894ee20f4").get();
+
+        var result = substation.getPowerTransformerByConnectivityNode("_af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 30kV/BAY_T4_0/CONNECTIVITY_NODE78");
+
+        assertTrue(result.isPresent());
+        assertEquals(PT_NAME, result.get().getName());
+    }
+
+    @Test
+    void getPowerTransformerByConnectivityNode_WhenCalledWithEmptyString_ThenEmptyOptionalReturned() {
+        var result = substation.getPowerTransformerByConnectivityNode("");
+
+        assertFalse(result.isPresent());
+    }
+
+    @Test
     void getVoltageLevels_WhenCalled_ThenVoltageLevelsReturned() {
         var result = substation.getVoltageLevels();
 
@@ -74,6 +92,21 @@ class GenericSubstationTest {
     @Test
     void getVoltageLevel_WhenCalledWithBlankName_ThenEmptyOptional() {
         var result = substation.getVoltageLevel("");
+
+        assertFalse(result.isPresent());
+    }
+
+    @Test
+    void getVoltageLevelByFullName_WhenCalled_ThenSpecificVoltageLevelReturned() {
+        var result = substation.getVoltageLevelByFullName("AA1/J1");
+
+        assertTrue(result.isPresent());
+        assertEquals(VOLTAGE_LEVEL_NAME, result.get().getName());
+    }
+
+    @Test
+    void getVoltageLevelByFullName_WhenCalledWithBlankName_ThenEmptyOptional() {
+        var result = substation.getVoltageLevelByFullName("");
 
         assertFalse(result.isPresent());
     }

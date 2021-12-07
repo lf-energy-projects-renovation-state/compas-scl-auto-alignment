@@ -125,33 +125,32 @@ public class SclAutoAlignmentGraphBuilder {
                                GenericBay bay) {
         bay.getConnectivityNodes()
                 .forEach(connectivityNode -> {
-                    var powerTransformer = substation.getPowerTransformerByConnectivityNode(connectivityNode.getPathName());
-                    if (powerTransformer != null) {
-                        if (powerTransformer.isFeeder2WT()) {
-                            path2Node.put(connectivityNode.getPathName(),
-                                    voltageLevelBuilder.createFeeder2wtLegNode(connectivityNode.getPathName(),
-                                            powerTransformer.getSide(connectivityNode.getPathName()), 0, null));
-                        } else if (powerTransformer.isFeeder3WT()) {
-                            path2Node.put(connectivityNode.getPathName(),
-                                    voltageLevelBuilder.createFeeder3wtLegNode(connectivityNode.getPathName(),
-                                            powerTransformer.getSide(connectivityNode.getPathName()), 0, null));
-                        }
-                    } else {
-                        path2Node.put(connectivityNode.getPathName(),
-                                voltageLevelBuilder.createFictitiousNode(connectivityNode.getPathName()));
-                    }
+                    var genericPowerTransformer = substation.getPowerTransformerByConnectivityNode(connectivityNode.getPathName());
+                    genericPowerTransformer.ifPresentOrElse(powerTransformer -> {
+                                if (powerTransformer.isFeeder2WT()) {
+                                    path2Node.put(connectivityNode.getPathName(),
+                                            voltageLevelBuilder.createFeeder2wtLegNode(connectivityNode.getPathName(),
+                                                    powerTransformer.getSide(connectivityNode.getPathName()), 0, null));
+                                } else if (powerTransformer.isFeeder3WT()) {
+                                    path2Node.put(connectivityNode.getPathName(),
+                                            voltageLevelBuilder.createFeeder3wtLegNode(connectivityNode.getPathName(),
+                                                    powerTransformer.getSide(connectivityNode.getPathName()), 0, null));
+                                }
+                            }, () -> path2Node.put(connectivityNode.getPathName(),
+                                    voltageLevelBuilder.createFictitiousNode(connectivityNode.getPathName()))
+                    );
                 });
 
         bay.getConductingEquipments().forEach(ce -> {
             var terminals = ce.getTerminals();
-            var pathName = ce.getFullName();
-            var node = voltageLevelBuilder.createSwitchNode(SwitchKind.BREAKER, pathName, false, false);
+            var fullName = ce.getFullName();
+            var node = voltageLevelBuilder.createSwitchNode(SwitchKind.BREAKER, fullName, false, false);
 
             Node node1 = terminalToNode(voltageLevelBuilder, terminals.get(0));
             Node node2 = null;
             var termNb = terminals.size();
             if (termNb == 1) {
-                node2 = voltageLevelBuilder.createLoad(pathName + "/Grounded");
+                node2 = voltageLevelBuilder.createLoad(fullName + "/Grounded");
             } else if (termNb == 2) {
                 node2 = terminalToNode(voltageLevelBuilder, terminals.get(1));
             }
