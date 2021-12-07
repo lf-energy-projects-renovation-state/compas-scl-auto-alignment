@@ -8,8 +8,6 @@ on:
   push:
     branches:
       - '**'
-      - '!main'
-      - '!develop'
   pull_request:
     branches:
       - 'main'
@@ -17,12 +15,13 @@ on:
 
 jobs:
   build:
-    name: Build
+    name: SonarCloud
     runs-on: ubuntu-latest
     timeout-minutes: 15
 
     steps:
-      - uses: actions/checkout@v2
+      - name: Checkout
+        uses: actions/checkout@v2
         with:
           fetch-depth: 0
 
