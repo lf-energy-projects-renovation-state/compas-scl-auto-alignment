@@ -40,9 +40,8 @@ public class SclAutoAlignmentService {
     }
 
     public String updateSCL(String sclData, String substationName, String who) {
-        GenericSCL scl = readSCL(sclData);
-        RawGraphBuilder.SubstationBuilder substationBuilder =
-                createSubstationBuilder(scl.getSubstation(substationName), substationName);
+        var scl = readSCL(sclData);
+        var substationBuilder = createSubstationBuilder(scl.getSubstation(substationName), substationName);
 
         // Create the JSON With all X/Y Coordinate information.
         var jsonGraphInfo = createJson(substationBuilder);
@@ -57,9 +56,8 @@ public class SclAutoAlignmentService {
     }
 
     public String getSVG(String sclData, String substationName) {
-        GenericSCL scl = readSCL(sclData);
-        RawGraphBuilder.SubstationBuilder substationBuilder =
-                createSubstationBuilder(scl.getSubstation(substationName), substationName);
+        var scl = readSCL(sclData);
+        var substationBuilder = createSubstationBuilder(scl.getSubstation(substationName), substationName);
 
         return createSVG(substationBuilder);
     }
@@ -91,8 +89,7 @@ public class SclAutoAlignmentService {
 
     String createJson(RawGraphBuilder.SubstationBuilder substationBuilder) {
         var graph = substationBuilder.getSsGraph();
-
-        LayoutParameters layoutParameters = getLayoutParameters();
+        var layoutParameters = getLayoutParameters();
         configureLayout(graph, layoutParameters);
 
         var writer = new StringWriter();
@@ -103,12 +100,11 @@ public class SclAutoAlignmentService {
 
     String createSVG(RawGraphBuilder.SubstationBuilder substationBuilder) {
         var graph = substationBuilder.getSsGraph();
-
-        LayoutParameters layoutParameters = getLayoutParameters();
+        var layoutParameters = getLayoutParameters();
         configureLayout(graph, layoutParameters);
 
         var writer = new StringWriter();
-        DefaultSVGWriter svgWriter = new DefaultSVGWriter(new ConvergenceComponentLibrary(), layoutParameters);
+        var svgWriter = new DefaultSVGWriter(new ConvergenceComponentLibrary(), layoutParameters);
         svgWriter.write("", graph, new SclAutoAlignmentDiagramLabelProvider(graph), new DefaultDiagramStyleProvider(), writer);
         return writer.toString();
     }

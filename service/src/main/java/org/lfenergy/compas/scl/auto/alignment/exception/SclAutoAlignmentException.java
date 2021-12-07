@@ -9,8 +9,4 @@ public class SclAutoAlignmentException extends CompasException {
     public SclAutoAlignmentException(String errorCode, String message) {
         super(errorCode, message);
     }
-
-    public SclAutoAlignmentException(String errorCode, String message, Throwable cause) {
-        super(errorCode, message, cause);
-    }
 }

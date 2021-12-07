@@ -48,5 +48,8 @@ class GenericConductingEquipmentTest {
         assertNotNull(result);
         assertEquals(2, result.size());
         assertEquals(TERMINAL_NAME, result.get(0).getName());
+
+        // Second time we should get exactly the same list again (cached)
+        assertEquals(result, conductingEquipment.getTerminals());
     }
 }

@@ -26,7 +26,7 @@ public class GenericPowerTransformer extends AbstractGenericNameEntity<GenericSu
         return transformerWindings;
     }
 
-    private GenericTransformerWinding getTransformerWindingByConnectivityNode(String connectivityNode) {
+    public GenericTransformerWinding getTransformerWindingByConnectivityNode(String connectivityNode) {
         return getTransformerWindings()
                 .stream()
                 .map(GenericTransformerWinding::getTerminals)
@@ -46,8 +46,8 @@ public class GenericPowerTransformer extends AbstractGenericNameEntity<GenericSu
     }
 
     public FeederWithSideNode.Side getSide(String connectivityNode) {
-        var tw = getTransformerWindingByConnectivityNode(connectivityNode);
-        var index = getTransformerWindings().indexOf(tw);
+        var ptw = getTransformerWindingByConnectivityNode(connectivityNode);
+        var index = getTransformerWindings().indexOf(ptw);
 
         switch (index) {
             case 0:

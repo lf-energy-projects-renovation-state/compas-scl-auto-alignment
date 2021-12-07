@@ -61,6 +61,9 @@ class GenericBayTest {
         assertNotNull(result);
         assertEquals(3, result.size());
         assertEquals(CN_NAME, result.get(0).getName());
+
+        // Second time we should get exactly the same list again (cached)
+        assertEquals(result, bay.getConnectivityNodes());
     }
 
     @Test
@@ -70,5 +73,8 @@ class GenericBayTest {
         assertNotNull(result);
         assertEquals(6, result.size());
         assertEquals(CE_NAME, result.get(0).getName());
+
+        // Second time we should get exactly the same list again (cached)
+        assertEquals(result, bay.getConductingEquipments());
     }
 }

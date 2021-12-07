@@ -24,10 +24,6 @@ public class GenericHeader extends AbstractGenericEntity<GenericSCL> {
         return getAttribute("version");
     }
 
-    public String getRevision() {
-        return getAttribute("revision");
-    }
-
     public void addHistoryItem(String who, String fullmessage) {
         var formatter = new SimpleDateFormat("yyyy-MM-dd'T'hh:mm:ssXXX");
         var history = getOrCreateHistory();

@@ -19,8 +19,8 @@ public final class TestUtil {
 
     public static Element readSCLElement(String filename) throws IOException {
         var sclData = readSCL(filename);
+        var converter = new ElementConverter();
 
-        ElementConverter converter = new ElementConverter();
         return converter.convertToElement(new BufferedInputStream(
                 new ByteArrayInputStream(sclData.getBytes(StandardCharsets.UTF_8))), SCL_ELEMENT_NAME, SCL_NS_URI);
     }
@@ -38,8 +38,8 @@ public final class TestUtil {
 
     @Deprecated
     public static void writeFile(String fileName, String data) {
-        File file = new File("target", fileName);
-        try (OutputStreamWriter fw = new OutputStreamWriter(new FileOutputStream(file), StandardCharsets.UTF_8)) {
+        var file = new File("target", fileName);
+        try (var fw = new OutputStreamWriter(new FileOutputStream(file), StandardCharsets.UTF_8)) {
             fw.write(data);
         } catch (IOException e) {
             throw new UncheckedIOException(e);

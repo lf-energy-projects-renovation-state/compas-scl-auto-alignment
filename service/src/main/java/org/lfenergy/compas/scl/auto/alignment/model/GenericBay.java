@@ -10,6 +10,7 @@ import java.util.stream.Collectors;
 
 public class GenericBay extends AbstractGenericNameEntity<GenericVoltageLevel> {
     private List<GenericConnectivityNode> connectivityNodes;
+    private List<GenericConductingEquipment> conductingEquipments;
 
     public GenericBay(GenericVoltageLevel parent, Element element) {
         super(parent, element);
@@ -29,8 +30,11 @@ public class GenericBay extends AbstractGenericNameEntity<GenericVoltageLevel> {
     }
 
     public List<GenericConductingEquipment> getConductingEquipments() {
-        return getElementsStream("ConductingEquipment")
-                .map(element -> new GenericConductingEquipment(this, element))
-                .collect(Collectors.toList());
+        if (conductingEquipments == null) {
+            conductingEquipments = getElementsStream("ConductingEquipment")
+                    .map(element -> new GenericConductingEquipment(this, element))
+                    .collect(Collectors.toList());
+        }
+        return conductingEquipments;
     }
 }

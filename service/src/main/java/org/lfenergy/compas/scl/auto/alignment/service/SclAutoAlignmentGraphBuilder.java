@@ -98,7 +98,7 @@ public class SclAutoAlignmentGraphBuilder {
                 rawGraphBuilder.createVoltageLevelBuilder(voltageLevel.getFullName(), voltageLevel.getVoltage(), false);
 
         // First process the Busbars.
-        AtomicInteger busbarIndex = new AtomicInteger(1);
+        var busbarIndex = new AtomicInteger(1);
         voltageLevel.getBays().stream()
                 .filter(GenericBay::isBusbar)
                 .forEach(bay -> createBusbarNode(voltageLevelBuilder, bay, busbarIndex));
@@ -143,14 +143,13 @@ public class SclAutoAlignmentGraphBuilder {
                 });
 
         bay.getConductingEquipments().forEach(ce -> {
-            List<GenericTerminal> terminals = ce.getTerminals();
-
+            var terminals = ce.getTerminals();
             var pathName = ce.getFullName();
             var node = voltageLevelBuilder.createSwitchNode(SwitchKind.BREAKER, pathName, false, false);
 
             Node node1 = terminalToNode(voltageLevelBuilder, terminals.get(0));
             Node node2 = null;
-            double termNb = terminals.size();
+            var termNb = terminals.size();
             if (termNb == 1) {
                 node2 = voltageLevelBuilder.createLoad(pathName + "/Grounded");
             } else if (termNb == 2) {
@@ -163,7 +162,7 @@ public class SclAutoAlignmentGraphBuilder {
 
     private Node terminalToNode(RawGraphBuilder.VoltageLevelBuilder voltageLevelBuilder,
                                 GenericTerminal terminal) {
-        String pathName = terminal.getConnectivityNode();
+        var pathName = terminal.getConnectivityNode();
         if (pathName != null) {
             return path2Node.get(pathName);
         }

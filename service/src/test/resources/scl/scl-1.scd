@@ -3,7 +3,7 @@
 <!-- -->
 <!-- SPDX-License-Identifier: Apache-2.0 -->
 
-<SCL xmlns:somexy="http://www.iec.ch/61850/2003/SCLcoordinates" xmlns="http://www.iec.ch/61850/2003/SCL" xmlns:txy="http://www.iec.ch/61850/2003/Terminal" version="2007" revision="B">
+<SCL xmlns:somexy="http://www.iec.ch/61850/2003/SCLcoordinates" xmlns="http://www.iec.ch/61850/2003/SCL" xmlns:txy="http://www.iec.ch/61850/2003/Terminal" version="2007" revision="B" dummy="">
     <Header id="TrainingIEC61850" version="1" revision="54" toolID="IEC 61850 System Configurator, Version: V5.80 " nameStructure="IEDName">
         <Text>TrainingIEC61850</Text>
         <History>
