@@ -11,6 +11,7 @@ import java.io.IOException;
 
 import static org.junit.jupiter.api.Assertions.*;
 import static org.lfenergy.compas.scl.auto.alignment.TestUtil.readSCLElement;
+import static org.lfenergy.compas.scl.auto.alignment.model.GenericTransformerWindingTest.PTW_NAME;
 
 class GenericPowerTransformerTest {
     public static final String PT_NAME = "T4";
@@ -36,7 +37,7 @@ class GenericPowerTransformerTest {
 
         assertNotNull(result);
         assertEquals(3, result.size());
-        assertEquals("T4_3", result.get(0).getName());
+        assertEquals(PTW_NAME, result.get(0).getName());
 
         // Second time we should get exactly the same list again (cached)
         assertEquals(result, powerTransformer.getTransformerWindings());
@@ -47,7 +48,7 @@ class GenericPowerTransformerTest {
         var result = powerTransformer.getTransformerWindingByConnectivityNode("_af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 30kV/BAY_T4_0/CONNECTIVITY_NODE78");
 
         assertNotNull(result);
-        assertEquals("T4_3", result.getName());
+        assertEquals(PTW_NAME, result.getName());
     }
 
     @Test

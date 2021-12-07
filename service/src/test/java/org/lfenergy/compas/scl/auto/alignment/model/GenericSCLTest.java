@@ -31,7 +31,9 @@ class GenericSCLTest {
     }
 
     @Test
-    void constructor_WhenObjectCreatedAlreadyWithoutSXYNamespace_ThenElementSetAndNamespaceSet() {
+    void constructor_WhenObjectCreatedAlreadyWithoutSXYNamespace_ThenElementSetAndNamespaceSet() throws IOException {
+        scl = new GenericSCL(readSCLElement("scl-2.scd"));
+
         assertNotNull(scl.getElement());
         assertEquals(SCLXY_NS_URI, scl.getElement().getAttribute("xmlns:" + SCLXY_PREFIX));
     }
