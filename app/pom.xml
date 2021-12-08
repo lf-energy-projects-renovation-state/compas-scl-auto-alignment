@@ -18,21 +18,12 @@ SPDX-License-Identifier: Apache-2.0
     <packaging>jar</packaging>
 
     <properties>
-        <quarkus.platform.version>2.4.1.Final</quarkus.platform.version>
-
         <quarkus.container-image.group>lfenergy</quarkus.container-image.group>
         <quarkus.container-image.name>compas-scl-auto-alignment</quarkus.container-image.name>
     </properties>
 
     <dependencyManagement>
         <dependencies>
-            <dependency>
-                <groupId>io.quarkus</groupId>
-                <artifactId>quarkus-universe-bom</artifactId>
-                <version>${quarkus.platform.version}</version>
-                <type>pom</type>
-                <scope>import</scope>
-            </dependency>
         </dependencies>
     </dependencyManagement>
 
@@ -44,7 +35,7 @@ SPDX-License-Identifier: Apache-2.0
 
         <dependency>
             <groupId>org.lfenergy.compas.core</groupId>
-            <artifactId>scl2007b4</artifactId>
+            <artifactId>commons</artifactId>
         </dependency>
         <dependency>
             <groupId>org.lfenergy.compas.core</groupId>

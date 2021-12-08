@@ -25,15 +25,11 @@ SPDX-License-Identifier: Apache-2.0
         <sonarqube-plugin.version>3.2.0</sonarqube-plugin.version>
 
         <compas.core.version>0.6.0</compas.core.version>
-        <jakarta-cdi-api.version>2.0.2</jakarta-cdi-api.version>
-        <apache.commons-io.version>2.11.0</apache.commons-io.version>
-        <slf4j.version>1.7.32</slf4j.version>
-        <powsybl.version>4.5.0</powsybl.version>
-        <mapstruct.version>1.4.2.Final</mapstruct.version>
 
-        <!-- Test -->
-        <junit-jupiter.version>5.8.1</junit-jupiter.version>
-        <mockito-junit-jupiter.version>4.0.0</mockito-junit-jupiter.version>
+        <quarkus.platform.version>2.5.1.Final</quarkus.platform.version>
+        <slf4j.version>1.7.32</slf4j.version>
+        <powsybl.sld.version>2.5.1</powsybl.sld.version>
+        <gson.version>2.8.9</gson.version>
         <openpojo.version>0.9.1</openpojo.version>
     </properties>
 
@@ -61,6 +57,14 @@ SPDX-License-Identifier: Apache-2.0
     <dependencyManagement>
         <dependencies>
             <dependency>
+                <groupId>io.quarkus</groupId>
+                <artifactId>quarkus-universe-bom</artifactId>
+                <version>${quarkus.platform.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+
+            <dependency>
                 <groupId>org.lfenergy.compas.scl.auto.alignment</groupId>
                 <artifactId>service</artifactId>
                 <version>${project.version}</version>
@@ -68,7 +72,7 @@ SPDX-License-Identifier: Apache-2.0
 
             <dependency>
                 <groupId>org.lfenergy.compas.core</groupId>
-                <artifactId>scl2007b4</artifactId>
+                <artifactId>commons</artifactId>
                 <version>${compas.core.version}</version>
             </dependency>
             <dependency>
@@ -79,87 +83,32 @@ SPDX-License-Identifier: Apache-2.0
 
             <dependency>
                 <groupId>com.powsybl</groupId>
-                <artifactId>powsybl-cgmes-conversion</artifactId>
-                <version>${powsybl.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>com.powsybl</groupId>
-                <artifactId>powsybl-triple-store-impl-rdf4j</artifactId>
-                <version>${powsybl.version}</version>
+                <artifactId>powsybl-single-line-diagram-core</artifactId>
+                <version>${powsybl.sld.version}</version>
             </dependency>
 
             <dependency>
-                <groupId>org.mapstruct</groupId>
-                <artifactId>mapstruct</artifactId>
-                <version>${mapstruct.version}</version>
+                <groupId>com.google.code.gson</groupId>
+                <artifactId>gson</artifactId>
+                <version>${gson.version}</version>
             </dependency>
 
-            <dependency>
-                <groupId>commons-io</groupId>
-                <artifactId>commons-io</artifactId>
-                <version>${apache.commons-io.version}</version>
-            </dependency>
-
-            <dependency>
-                <groupId>jakarta.enterprise</groupId>
-                <artifactId>jakarta.enterprise.cdi-api</artifactId>
-                <version>${jakarta-cdi-api.version}</version>
-            </dependency>
             <dependency>
                 <groupId>org.eclipse.microprofile.openapi</groupId>
                 <artifactId>microprofile-openapi-api</artifactId>
-                <version>2.0</version>
+                <version>3.0</version>
             </dependency>
 
-            <dependency>
-                <groupId>org.slf4j</groupId>
-                <artifactId>slf4j-api</artifactId>
-                <version>${slf4j.version}</version>
-            </dependency>
             <dependency>
                 <groupId>org.slf4j</groupId>
                 <artifactId>slf4j-simple</artifactId>
                 <version>${slf4j.version}</version>
             </dependency>
-            <dependency>
-                <groupId>commons-logging</groupId>
-                <artifactId>commons-logging</artifactId>
-                <version>1.2</version>
-            </dependency>
 
-            <!-- Test -->
-            <dependency>
-                <groupId>org.junit.jupiter</groupId>
-                <artifactId>junit-jupiter-api</artifactId>
-                <version>${junit-jupiter.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>org.junit.jupiter</groupId>
-                <artifactId>junit-jupiter-engine</artifactId>
-                <version>${junit-jupiter.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>org.mockito</groupId>
-                <artifactId>mockito-junit-jupiter</artifactId>
-                <version>${mockito-junit-jupiter.version}</version>
-            </dependency>
             <dependency>
                 <groupId>com.openpojo</groupId>
                 <artifactId>openpojo</artifactId>
                 <version>${openpojo.version}</version>
-            </dependency>
-
-            <dependency>
-                <groupId>org.hibernate.validator</groupId>
-                <artifactId>hibernate-validator</artifactId>
-                <version>6.2.0.Final</version>
-                <scope>test</scope>
-            </dependency>
-            <dependency>
-                <groupId>org.glassfish</groupId>
-                <artifactId>jakarta.el</artifactId>
-                <version>3.0.4</version>
-                <scope>test</scope>
             </dependency>
         </dependencies>
     </dependencyManagement>

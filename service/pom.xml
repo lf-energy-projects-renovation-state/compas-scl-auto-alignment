@@ -20,26 +20,16 @@ SPDX-License-Identifier: Apache-2.0
     <dependencies>
         <dependency>
             <groupId>org.lfenergy.compas.core</groupId>
-            <artifactId>scl2007b4</artifactId>
+            <artifactId>commons</artifactId>
         </dependency>
 
         <dependency>
             <groupId>com.powsybl</groupId>
-            <artifactId>powsybl-cgmes-conversion</artifactId>
+            <artifactId>powsybl-single-line-diagram-core</artifactId>
         </dependency>
         <dependency>
-            <groupId>com.powsybl</groupId>
-            <artifactId>powsybl-triple-store-impl-rdf4j</artifactId>
-        </dependency>
-
-        <dependency>
-            <groupId>org.mapstruct</groupId>
-            <artifactId>mapstruct</artifactId>
-        </dependency>
-
-        <dependency>
-            <groupId>commons-io</groupId>
-            <artifactId>commons-io</artifactId>
+            <groupId>com.google.code.gson</groupId>
+            <artifactId>gson</artifactId>
         </dependency>
 
         <dependency>
@@ -77,34 +67,10 @@ SPDX-License-Identifier: Apache-2.0
             <artifactId>openpojo</artifactId>
             <scope>test</scope>
         </dependency>
-        <dependency>
-            <groupId>org.hibernate.validator</groupId>
-            <artifactId>hibernate-validator</artifactId>
-            <scope>test</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.glassfish</groupId>
-            <artifactId>jakarta.el</artifactId>
-            <scope>test</scope>
-        </dependency>
     </dependencies>
 
     <build>
         <plugins>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-compiler-plugin</artifactId>
-                <configuration>
-                    <annotationProcessorPaths>
-                        <path>
-                            <groupId>org.mapstruct</groupId>
-                            <artifactId>mapstruct-processor</artifactId>
-                            <version>${mapstruct.version}</version>
-                        </path>
-                    </annotationProcessorPaths>
-                </configuration>
-            </plugin>
-
             <plugin>
                 <groupId>org.jboss.jandex</groupId>
                 <artifactId>jandex-maven-plugin</artifactId>
