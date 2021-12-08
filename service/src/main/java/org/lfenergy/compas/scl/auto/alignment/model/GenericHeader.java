@@ -25,7 +25,7 @@ public class GenericHeader extends AbstractGenericEntity<GenericSCL> {
     }
 
     public void addHistoryItem(String who, String fullmessage) {
-        var formatter = new SimpleDateFormat("yyyy-MM-dd'T'hh:mm:ssXXX");
+        var formatter = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ssXXX");
         var history = getOrCreateHistory();
 
         var now = new Date();
