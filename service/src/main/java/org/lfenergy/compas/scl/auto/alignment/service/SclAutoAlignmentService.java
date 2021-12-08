@@ -22,11 +22,11 @@ import java.io.BufferedInputStream;
 import java.io.ByteArrayInputStream;
 import java.io.StringWriter;
 import java.nio.charset.StandardCharsets;
+import java.util.List;
 import java.util.Optional;
 
 import static org.lfenergy.compas.scl.auto.alignment.SclAutoAlignmentConstants.SCL_ELEMENT_NAME;
 import static org.lfenergy.compas.scl.auto.alignment.SclAutoAlignmentConstants.SCL_NS_URI;
-import static org.lfenergy.compas.scl.auto.alignment.common.CommonUtil.cleanSXYDeclarationAndAttributes;
 import static org.lfenergy.compas.scl.auto.alignment.exception.SclAutoAlignmentErrorCode.NO_SCL_ELEMENT_FOUND_ERROR_CODE;
 import static org.lfenergy.compas.scl.auto.alignment.exception.SclAutoAlignmentErrorCode.SUBSTATION_NOT_FOUND_ERROR_CODE;
 
@@ -39,15 +39,18 @@ public class SclAutoAlignmentService {
         this.converter = converter;
     }
 
-    public String updateSCL(String sclData, String substationName, String who) {
+    public String updateSCL(String sclData, List<String> substationNames, String who) {
         var scl = readSCL(sclData);
-        var substationBuilder = createSubstationBuilder(scl.getSubstation(substationName), substationName);
 
-        // Create the JSON With all X/Y Coordinate information.
-        var jsonGraphInfo = createJson(substationBuilder);
-        // Use that JSON to enrich the passed SCL XML with X/Y Coordinates.
-        var enricher = new SclAutoAlignmentEnricher(scl, jsonGraphInfo);
-        enricher.enrich();
+        substationNames.forEach(substationName -> {
+            var substationBuilder = createSubstationBuilder(scl.getSubstation(substationName), substationName);
+
+            // Create the JSON With all X/Y Coordinate information.
+            var jsonGraphInfo = createJson(substationBuilder);
+            // Use that JSON to enrich the passed SCL XML with X/Y Coordinates.
+            var enricher = new SclAutoAlignmentEnricher(scl, jsonGraphInfo);
+            enricher.enrich();
+        });
 
         // Add an extra History Element to show there was a change.
         scl.getOrCreateHeader().addHistoryItem(who, "Add or replaced the X/Y Coordinates in the SCL File.");
@@ -63,12 +66,9 @@ public class SclAutoAlignmentService {
     }
 
     GenericSCL readSCL(String sclData) {
-        // First we will cleanup existing X/Y Coordinates from the SCL XML.
-        var cleanSclData = cleanSXYDeclarationAndAttributes(sclData);
-
         // Next convert the String to W3C Document/Element
         var sclElement = converter.convertToElement(new BufferedInputStream(
-                new ByteArrayInputStream(cleanSclData.getBytes(StandardCharsets.UTF_8))), SCL_ELEMENT_NAME, SCL_NS_URI);
+                new ByteArrayInputStream(sclData.getBytes(StandardCharsets.UTF_8))), SCL_ELEMENT_NAME, SCL_NS_URI);
         if (sclElement == null) {
             throw new SclAutoAlignmentException(NO_SCL_ELEMENT_FOUND_ERROR_CODE, "No valid SCL found in the passed SCL Data.");
         }

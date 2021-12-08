@@ -3,27 +3,55 @@
 // SPDX-License-Identifier: Apache-2.0
 package org.lfenergy.compas.scl.auto.alignment.common;
 
-import java.util.regex.Pattern;
+import org.w3c.dom.Attr;
+import org.w3c.dom.Element;
+
+import java.util.stream.Collectors;
+import java.util.stream.IntStream;
 
 import static org.lfenergy.compas.scl.auto.alignment.SclAutoAlignmentConstants.SCLXY_NS_URI;
 
+/**
+ * Some common methods used in the Auto Alignment Service.
+ */
 public class CommonUtil {
     CommonUtil() {
         throw new UnsupportedOperationException("CommonUtil class");
     }
 
-    public static String cleanSXYDeclarationAndAttributes(String data) {
-        // Find Prefix of Namespace.
-        var pattern = Pattern.compile("xmlns:([A-Za-z0-9]*)=\\\"" + SCLXY_NS_URI + "\\\"");
-        var matcher = pattern.matcher(data);
+    /**
+     * Remove attributes from the element related to the namespace SCLXY_NS_URI
+     * {@link org.lfenergy.compas.scl.auto.alignment.SclAutoAlignmentConstants}.
+     * It will also remove the attributes from all child elements.
+     *
+     * @param element The Element to start from removing the attributes.
+     */
+    public static void cleanSXYDeclarationAndAttributes(Element element) {
+        // First collect the attributes to be removed.
+        var attributes = element.getAttributes();
+        var attributesToRemove = IntStream.range(0, attributes.getLength())
+                .mapToObj(attributes::item)
+                .filter(Attr.class::isInstance)
+                .map(Attr.class::cast)
+                .filter(attr -> SCLXY_NS_URI.equals(attr.getNamespaceURI()))
+                .collect(Collectors.toList());
+        // Remove the attribute from the element.
+        attributesToRemove.forEach(element::removeAttributeNode);
 
-        if (matcher.find()) {
-            var prefix = matcher.group(1);
-            var replacementPattern = "xmlns:[A-Za-z0-9]*=\\\"" + SCLXY_NS_URI + "\\\"" + // Remove the namespace declaration.
-                    "|" + // Combine the two regex patterns.
-                    "[ ]?" + prefix + ":[A-Za-z]*=\\\"[A-Za-z0-9]*\\\""; // Remove the attributes using that namespace.
-            return data.replaceAll(replacementPattern, "");
-        }
-        return data;
+        // Check if there is a declaration that can be removed
+        IntStream.range(0, attributes.getLength())
+                .mapToObj(attributes::item)
+                .filter(Attr.class::isInstance)
+                .map(Attr.class::cast)
+                .filter(attr -> SCLXY_NS_URI.equals(attr.getValue()))
+                .forEach(element::removeAttributeNode);
+
+        // Next cleanup all the child elements in the same way.
+        var nodes = element.getChildNodes();
+        IntStream.range(0, nodes.getLength())
+                .mapToObj(nodes::item)
+                .filter(Element.class::isInstance)
+                .map(Element.class::cast)
+                .forEach(CommonUtil::cleanSXYDeclarationAndAttributes);
     }
 }
