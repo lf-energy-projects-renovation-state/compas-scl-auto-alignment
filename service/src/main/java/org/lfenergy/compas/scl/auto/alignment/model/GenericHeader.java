@@ -28,11 +28,12 @@ public class GenericHeader extends AbstractGenericEntity<GenericSCL> {
         var formatter = new SimpleDateFormat("yyyy-MM-dd'T'hh:mm:ssXXX");
         var history = getOrCreateHistory();
 
+        var now = new Date();
         var document = getElement().getOwnerDocument();
         Element hItem = document.createElementNS(SCL_NS_URI, "Hitem");
         hItem.setAttribute("version", getVersion());
-        hItem.setAttribute("revision", "saa");
-        hItem.setAttribute("when", formatter.format(new Date()));
+        hItem.setAttribute("revision", String.valueOf(now.getTime()));
+        hItem.setAttribute("when", formatter.format(now));
         hItem.setAttribute("who", who);
         hItem.setAttribute("what", fullmessage);
         history.appendChild(hItem);

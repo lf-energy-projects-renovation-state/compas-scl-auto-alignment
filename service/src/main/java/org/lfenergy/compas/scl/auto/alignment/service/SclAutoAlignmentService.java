@@ -50,10 +50,11 @@ public class SclAutoAlignmentService {
             // Use that JSON to enrich the passed SCL XML with X/Y Coordinates.
             var enricher = new SclAutoAlignmentEnricher(scl, jsonGraphInfo);
             enricher.enrich();
-        });
 
-        // Add an extra History Element to show there was a change.
-        scl.getOrCreateHeader().addHistoryItem(who, "Add or replaced the X/Y Coordinates in the SCL File.");
+            // Add an extra History Element to show there was a change.
+            scl.getOrCreateHeader().addHistoryItem(who, "Add or replaced the X/Y Coordinates for Substation '" +
+                    substationName + "' in the SCL File.");
+        });
 
         return converter.convertToString(scl.getElement());
     }

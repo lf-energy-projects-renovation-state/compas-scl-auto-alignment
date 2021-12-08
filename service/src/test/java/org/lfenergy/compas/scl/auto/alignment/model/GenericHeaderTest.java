@@ -19,6 +19,9 @@ import static org.lfenergy.compas.scl.auto.alignment.TestUtil.readSCLElement;
 import static org.lfenergy.compas.scl.auto.alignment.model.GenericSCLTest.BASIC_SCD_FILENAME;
 
 class GenericHeaderTest {
+    private static final String USERNAME = "Test User";
+    private static final String MESSAGE = "Some message";
+
     private GenericHeader header;
 
     @BeforeEach
@@ -45,15 +48,16 @@ class GenericHeaderTest {
 
     @Test
     void addHistoryItem_WhenCalled_ThenAllElementsAreCreated() {
-        header.addHistoryItem("Test User", "Some message");
+        header.addHistoryItem(USERNAME, MESSAGE);
 
         var history = ElementUtil.getElementsStream(header.getElement(), "History").findFirst().orElse(null);
         assertNotNull(history);
         var historyItems = ElementUtil.getElementsStream(header.getElement(), "Hitem").collect(Collectors.toList());
         var historyItem = historyItems.get(historyItems.size() - 1);
         assertNotNull(historyItem);
-        assertEquals("Test User", historyItem.getAttribute("who"));
-        assertEquals("Some message", historyItem.getAttribute("what"));
+        assertNotNull(historyItem.getAttribute("revision"));
+        assertEquals(USERNAME, historyItem.getAttribute("who"));
+        assertEquals(MESSAGE, historyItem.getAttribute("what"));
     }
 
     @Test
@@ -64,7 +68,7 @@ class GenericHeaderTest {
         var scl = new GenericSCL(sclElement);
         header = scl.getOrCreateHeader();
 
-        header.addHistoryItem("Test User", "Some message");
+        header.addHistoryItem(USERNAME, MESSAGE);
 
         var history = ElementUtil.getElementsStream(header.getElement(), "History").findFirst().orElse(null);
         assertNotNull(history);
