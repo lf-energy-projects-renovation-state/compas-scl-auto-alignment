@@ -12,11 +12,13 @@ import io.quarkus.test.security.jwt.JwtSecurity;
 import io.restassured.http.ContentType;
 import org.junit.jupiter.api.Test;
 import org.lfenergy.compas.scl.auto.alignment.rest.v1.model.SclAutoAlignRequest;
+import org.lfenergy.compas.scl.auto.alignment.rest.v1.model.SclAutoAlignSVGRequest;
 import org.lfenergy.compas.scl.auto.alignment.service.SclAutoAlignmentService;
 
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
+import java.util.List;
 
 import static io.restassured.RestAssured.given;
 import static io.restassured.path.xml.config.XmlPathConfig.xmlPathConfig;
@@ -44,12 +46,13 @@ class SclAutoAlignmentResourceTest {
 
     @Test
     void updateSCL_WhenCalled_ThenExpectedResponseIsRetrieved() throws IOException {
+        var names = List.of(SUBSTATION_NAME);
         var request = new SclAutoAlignRequest();
-        request.setSubstationName(SUBSTATION_NAME);
+        request.setSubstationNames(names);
         request.setSclData(readFile());
 
         var expectedResult = "SCL XML";
-        when(sclAutoAlignmentService.updateSCL(any(), eq(SUBSTATION_NAME), eq(USERNAME))).thenReturn(expectedResult);
+        when(sclAutoAlignmentService.updateSCL(any(), eq(names), eq(USERNAME))).thenReturn(expectedResult);
 
         var response = given()
                 .contentType(ContentType.XML)
@@ -66,12 +69,12 @@ class SclAutoAlignmentResourceTest {
         var scl = xmlPath.getString("saa:SclAutoAlignmentResponse.SclData");
         assertNotNull(scl);
         assertEquals(expectedResult, scl);
-        verify(sclAutoAlignmentService, times(1)).updateSCL(any(), eq(SUBSTATION_NAME), eq(USERNAME));
+        verify(sclAutoAlignmentService, times(1)).updateSCL(any(), eq(names), eq(USERNAME));
     }
 
     @Test
     void getSVG_WhenCalled_ThenExpectedResponseIsRetrieved() throws IOException {
-        var request = new SclAutoAlignRequest();
+        var request = new SclAutoAlignSVGRequest();
         request.setSubstationName(SUBSTATION_NAME);
         request.setSclData(readFile());
 

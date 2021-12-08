@@ -8,6 +8,7 @@ import org.eclipse.microprofile.jwt.JsonWebToken;
 import org.lfenergy.compas.scl.auto.alignment.rest.UserInfoProperties;
 import org.lfenergy.compas.scl.auto.alignment.rest.v1.model.SclAutoAlignRequest;
 import org.lfenergy.compas.scl.auto.alignment.rest.v1.model.SclAutoAlignResponse;
+import org.lfenergy.compas.scl.auto.alignment.rest.v1.model.SclAutoAlignSVGRequest;
 import org.lfenergy.compas.scl.auto.alignment.service.SclAutoAlignmentService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -48,7 +49,7 @@ public class SclAutoAlignmentResource {
         LOGGER.trace("Username used for Who {}", who);
 
         var response = new SclAutoAlignResponse();
-        response.setSclData(sclAutoAlignmentService.updateSCL(request.getSclData(), request.getSubstationName(), who));
+        response.setSclData(sclAutoAlignmentService.updateSCL(request.getSclData(), request.getSubstationNames(), who));
         return response;
     }
 
@@ -56,7 +57,7 @@ public class SclAutoAlignmentResource {
     @Consumes(MediaType.APPLICATION_XML)
     @Produces(MediaType.APPLICATION_SVG_XML)
     @Path("/svg")
-    public String getSVG(@Valid SclAutoAlignRequest request) {
+    public String getSVG(@Valid SclAutoAlignSVGRequest request) {
         return sclAutoAlignmentService.getSVG(request.getSclData(), request.getSubstationName());
     }
 }

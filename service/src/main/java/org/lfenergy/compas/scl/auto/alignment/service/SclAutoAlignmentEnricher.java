@@ -11,6 +11,8 @@ import org.lfenergy.compas.scl.auto.alignment.model.GenericVoltageLevel;
 
 import java.util.concurrent.atomic.AtomicLong;
 
+import static org.lfenergy.compas.scl.auto.alignment.common.CommonUtil.cleanSXYDeclarationAndAttributes;
+
 public class SclAutoAlignmentEnricher {
     private final GenericSCL scl;
     private final String jsonGraphInfo;
@@ -25,6 +27,10 @@ public class SclAutoAlignmentEnricher {
         var substationName = jsonSubstation.get("substationId").getAsString();
         var sclSubstation = scl.getSubstation(substationName);
         sclSubstation.ifPresent(substation -> {
+            // First we will remove all old information from this Substation.
+            cleanSXYDeclarationAndAttributes(substation.getElement());
+
+            // Next process the VoltageLevels.
             if (jsonSubstation.has("voltageLevels")) {
                 jsonSubstation.getAsJsonArray("voltageLevels")
                         .forEach(jsonVoltageLevel -> enrichVoltageLevel(substation, jsonVoltageLevel.getAsJsonObject()));

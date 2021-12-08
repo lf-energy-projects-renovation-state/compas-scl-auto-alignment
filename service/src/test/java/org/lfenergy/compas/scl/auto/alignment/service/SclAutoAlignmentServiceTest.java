@@ -10,6 +10,7 @@ import org.lfenergy.compas.core.commons.ElementConverter;
 import org.mockito.junit.jupiter.MockitoExtension;
 
 import java.io.IOException;
+import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.lfenergy.compas.scl.auto.alignment.TestUtil.readSCL;
@@ -32,7 +33,7 @@ class SclAutoAlignmentServiceTest {
         var filename = "scl-1";
         var sclString = readSCL(filename + ".scd");
 
-        var result = sclAutoAlignmentService.updateSCL(sclString, "AA1", "Mr. Editor");
+        var result = sclAutoAlignmentService.updateSCL(sclString, List.of("AA1"), "Mr. Editor");
         assertNotNull(result);
         writeFile(filename + "-updated-service.scd", result);
     }
@@ -42,7 +43,7 @@ class SclAutoAlignmentServiceTest {
         var filename = "scl-2";
         var sclString = readSCL(filename + ".scd");
 
-        var result = sclAutoAlignmentService.updateSCL(sclString, "_af9a4ae3-ba2e-4c34-8e47-5af894ee20f4", "Mr. Editor");
+        var result = sclAutoAlignmentService.updateSCL(sclString, List.of("_af9a4ae3-ba2e-4c34-8e47-5af894ee20f4"), "Mr. Editor");
         assertNotNull(result);
         writeFile(filename + "-updated-service.scd", result);
     }
