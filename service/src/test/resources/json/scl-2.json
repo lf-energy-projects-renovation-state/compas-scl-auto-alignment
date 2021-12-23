@@ -55,7 +55,6 @@
       "y" : 0.0,
       "open" : false,
       "feederType" : "FICTITIOUS",
-      "order" : -1,
       "direction" : "TOP"
     }, {
       "type" : "FICTITIOUS",
@@ -185,7 +184,6 @@
       "open" : false,
       "label" : "_af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 380kV/BAY_T3_0/CONNECTIVITY_NODE881",
       "feederType" : "THREE_WINDINGS_TRANSFORMER_LEG",
-      "order" : -1,
       "direction" : "TOP",
       "side" : "ONE",
       "otherSideVoltageLevelInfos" : {
@@ -238,7 +236,6 @@
       "open" : false,
       "label" : "_af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 380kV/BAY_T4_2/CONNECTIVITY_NODE853",
       "feederType" : "THREE_WINDINGS_TRANSFORMER_LEG",
-      "order" : -1,
       "direction" : "TOP",
       "side" : "THREE",
       "otherSideVoltageLevelInfos" : {
@@ -292,7 +289,6 @@
       "type" : "EXTERN",
       "number" : 0,
       "direction" : "TOP",
-      "order" : -1,
       "rootBlock" : {
         "type" : "SERIAL",
         "cardinalities" : [ {
@@ -403,7 +399,6 @@
       "type" : "EXTERN",
       "number" : 1,
       "direction" : "TOP",
-      "order" : -1,
       "rootBlock" : {
         "type" : "SERIAL",
         "cardinalities" : [ {
@@ -514,7 +509,6 @@
       "type" : "EXTERN",
       "number" : 2,
       "direction" : "TOP",
-      "order" : -1,
       "rootBlock" : {
         "type" : "SERIAL",
         "cardinalities" : [ {
@@ -801,7 +795,6 @@
       "open" : false,
       "label" : "_af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 30kV/BAY_T3_2/CONNECTIVITY_NODE953",
       "feederType" : "THREE_WINDINGS_TRANSFORMER_LEG",
-      "order" : -1,
       "direction" : "TOP",
       "side" : "THREE",
       "otherSideVoltageLevelInfos" : {
@@ -854,7 +847,6 @@
       "open" : false,
       "label" : "_af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 30kV/BAY_T4_0/CONNECTIVITY_NODE781",
       "feederType" : "THREE_WINDINGS_TRANSFORMER_LEG",
-      "order" : -1,
       "direction" : "TOP",
       "side" : "ONE",
       "otherSideVoltageLevelInfos" : {
@@ -927,7 +919,6 @@
       "type" : "EXTERN",
       "number" : 0,
       "direction" : "TOP",
-      "order" : -1,
       "rootBlock" : {
         "type" : "SERIAL",
         "cardinalities" : [ {
@@ -1038,7 +1029,6 @@
       "type" : "EXTERN",
       "number" : 1,
       "direction" : "TOP",
-      "order" : -1,
       "rootBlock" : {
         "type" : "SERIAL",
         "cardinalities" : [ {
@@ -1289,7 +1279,6 @@
       "y" : 0.0,
       "open" : false,
       "feederType" : "FICTITIOUS",
-      "order" : -1,
       "direction" : "TOP"
     }, {
       "type" : "FICTITIOUS",
@@ -1320,7 +1309,6 @@
       "y" : 0.0,
       "open" : false,
       "feederType" : "FICTITIOUS",
-      "order" : -1,
       "direction" : "TOP"
     }, {
       "type" : "FICTITIOUS",
@@ -1351,7 +1339,6 @@
       "y" : 0.0,
       "open" : false,
       "feederType" : "FICTITIOUS",
-      "order" : -1,
       "direction" : "TOP"
     }, {
       "type" : "FICTITIOUS",
@@ -1547,7 +1534,6 @@
       "open" : false,
       "label" : "_af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 110kV/BAY_T3_1/CONNECTIVITY_NODE912",
       "feederType" : "THREE_WINDINGS_TRANSFORMER_LEG",
-      "order" : -1,
       "direction" : "TOP",
       "side" : "TWO",
       "otherSideVoltageLevelInfos" : {
@@ -1600,7 +1586,6 @@
       "open" : false,
       "label" : "_af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 110kV/BAY_T4_1/CONNECTIVITY_NODE812",
       "feederType" : "THREE_WINDINGS_TRANSFORMER_LEG",
-      "order" : -1,
       "direction" : "TOP",
       "side" : "TWO",
       "otherSideVoltageLevelInfos" : {
@@ -1654,7 +1639,6 @@
       "type" : "EXTERN",
       "number" : 0,
       "direction" : "TOP",
-      "order" : -1,
       "rootBlock" : {
         "type" : "SERIAL",
         "cardinalities" : [ {
@@ -1765,7 +1749,6 @@
       "type" : "EXTERN",
       "number" : 1,
       "direction" : "TOP",
-      "order" : -1,
       "rootBlock" : {
         "type" : "SERIAL",
         "cardinalities" : [ {
@@ -1876,7 +1859,6 @@
       "type" : "EXTERN",
       "number" : 2,
       "direction" : "TOP",
-      "order" : -1,
       "rootBlock" : {
         "type" : "SERIAL",
         "cardinalities" : [ {
@@ -1987,7 +1969,6 @@
       "type" : "EXTERN",
       "number" : 3,
       "direction" : "TOP",
-      "order" : -1,
       "rootBlock" : {
         "type" : "SERIAL",
         "cardinalities" : [ {
@@ -2098,7 +2079,6 @@
       "type" : "EXTERN",
       "number" : 4,
       "direction" : "TOP",
-      "order" : -1,
       "rootBlock" : {
         "type" : "SERIAL",
         "cardinalities" : [ {
