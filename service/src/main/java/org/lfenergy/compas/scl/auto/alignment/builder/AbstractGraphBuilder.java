@@ -6,18 +6,13 @@ package org.lfenergy.compas.scl.auto.alignment.builder;
 import com.powsybl.sld.model.BaseGraph;
 import com.powsybl.sld.model.Node;
 
-import java.util.HashMap;
 import java.util.Map;
 
 public abstract class AbstractGraphBuilder<G extends BaseGraph> {
     private G graph;
     private final Map<String, Node> path2Node;
 
-    public AbstractGraphBuilder() {
-        this(new HashMap<>());
-    }
-
-    public AbstractGraphBuilder(Map<String, Node> path2Node) {
+    protected AbstractGraphBuilder(Map<String, Node> path2Node) {
         this.path2Node = path2Node;
     }
 
