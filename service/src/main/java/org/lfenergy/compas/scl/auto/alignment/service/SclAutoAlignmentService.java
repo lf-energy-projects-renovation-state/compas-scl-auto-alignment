@@ -3,18 +3,17 @@
 // SPDX-License-Identifier: Apache-2.0
 package org.lfenergy.compas.scl.auto.alignment.service;
 
-import com.powsybl.sld.RawGraphBuilder;
 import com.powsybl.sld.layout.HorizontalSubstationLayoutFactory;
 import com.powsybl.sld.layout.LayoutParameters;
 import com.powsybl.sld.layout.PositionVoltageLevelLayoutFactory;
 import com.powsybl.sld.library.ConvergenceComponentLibrary;
 import com.powsybl.sld.model.SubstationGraph;
-import com.powsybl.sld.svg.DefaultDiagramStyleProvider;
+import com.powsybl.sld.svg.BasicStyleProvider;
 import com.powsybl.sld.svg.DefaultSVGWriter;
 import org.lfenergy.compas.core.commons.ElementConverter;
+import org.lfenergy.compas.scl.auto.alignment.builder.SubstationGraphBuilder;
 import org.lfenergy.compas.scl.auto.alignment.exception.SclAutoAlignmentException;
 import org.lfenergy.compas.scl.auto.alignment.model.GenericSCL;
-import org.lfenergy.compas.scl.auto.alignment.model.GenericSubstation;
 
 import javax.enterprise.context.ApplicationScoped;
 import javax.inject.Inject;
@@ -23,7 +22,6 @@ import java.io.ByteArrayInputStream;
 import java.io.StringWriter;
 import java.nio.charset.StandardCharsets;
 import java.util.List;
-import java.util.Optional;
 
 import static org.lfenergy.compas.scl.auto.alignment.SclAutoAlignmentConstants.SCL_ELEMENT_NAME;
 import static org.lfenergy.compas.scl.auto.alignment.SclAutoAlignmentConstants.SCL_NS_URI;
@@ -43,7 +41,7 @@ public class SclAutoAlignmentService {
         var scl = readSCL(sclData);
 
         substationNames.forEach(substationName -> {
-            var substationBuilder = createSubstationBuilder(scl.getSubstation(substationName), substationName);
+            var substationBuilder = createSubstationGraphBuilder(scl, substationName);
 
             // Create the JSON With all X/Y Coordinate information.
             var jsonGraphInfo = createJson(substationBuilder);
@@ -61,7 +59,7 @@ public class SclAutoAlignmentService {
 
     public String getSVG(String sclData, String substationName) {
         var scl = readSCL(sclData);
-        var substationBuilder = createSubstationBuilder(scl.getSubstation(substationName), substationName);
+        var substationBuilder = createSubstationGraphBuilder(scl, substationName);
 
         return createSVG(substationBuilder);
     }
@@ -77,19 +75,18 @@ public class SclAutoAlignmentService {
         return new GenericSCL(sclElement);
     }
 
-    RawGraphBuilder.SubstationBuilder createSubstationBuilder(Optional<GenericSubstation> substation,
-                                                              String substationName) {
-        return substation.map(value -> {
-            var builder = new SclAutoAlignmentGraphBuilder(value);
-            return builder.getSubstationBuilder();
-        }).orElseThrow(() -> {
-            throw new SclAutoAlignmentException(SUBSTATION_NOT_FOUND_ERROR_CODE,
-                    "No substation found with name '" + substationName + "'.");
-        });
+    SubstationGraphBuilder createSubstationGraphBuilder(GenericSCL scl,
+                                                        String substationName) {
+        return scl.getSubstation(substationName)
+                .map(SubstationGraphBuilder::new)
+                .orElseThrow(() -> {
+                    throw new SclAutoAlignmentException(SUBSTATION_NOT_FOUND_ERROR_CODE,
+                            "No substation found with name '" + substationName + "'.");
+                });
     }
 
-    String createJson(RawGraphBuilder.SubstationBuilder substationBuilder) {
-        var graph = substationBuilder.getSsGraph();
+    String createJson(SubstationGraphBuilder substationGraphBuilder) {
+        var graph = substationGraphBuilder.getGraph();
         var layoutParameters = getLayoutParameters();
         configureLayout(graph, layoutParameters);
 
@@ -99,14 +96,14 @@ public class SclAutoAlignmentService {
     }
 
 
-    String createSVG(RawGraphBuilder.SubstationBuilder substationBuilder) {
-        var graph = substationBuilder.getSsGraph();
+    String createSVG(SubstationGraphBuilder substationGraphBuilder) {
+        var graph = substationGraphBuilder.getGraph();
         var layoutParameters = getLayoutParameters();
         configureLayout(graph, layoutParameters);
 
         var writer = new StringWriter();
         var svgWriter = new DefaultSVGWriter(new ConvergenceComponentLibrary(), layoutParameters);
-        svgWriter.write("", graph, new SclAutoAlignmentDiagramLabelProvider(graph), new DefaultDiagramStyleProvider(), writer);
+        svgWriter.write("", graph, new SclAutoAlignmentDiagramLabelProvider(graph), new BasicStyleProvider(), writer);
         return writer.toString();
     }
 
@@ -114,7 +111,8 @@ public class SclAutoAlignmentService {
         return new LayoutParameters()
                 .setAdaptCellHeightToContent(true)
                 .setShowInternalNodes(true)
-                .setCssLocation(LayoutParameters.CssLocation.INSERTED_IN_SVG);
+                .setCssLocation(LayoutParameters.CssLocation.INSERTED_IN_SVG)
+                .setShowInternalNodes(true);
     }
 
     private void configureLayout(SubstationGraph graph, LayoutParameters layoutParameters) {

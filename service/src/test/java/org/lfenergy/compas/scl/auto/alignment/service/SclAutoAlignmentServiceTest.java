@@ -74,8 +74,7 @@ class SclAutoAlignmentServiceTest {
         var substationName = "AA1";
         var sclData = readSCL(filename + ".scd");
         var scl = sclAutoAlignmentService.readSCL(sclData);
-        var substationBuilder = sclAutoAlignmentService.createSubstationBuilder(
-                scl.getSubstation(substationName), substationName);
+        var substationBuilder = sclAutoAlignmentService.createSubstationGraphBuilder(scl, substationName);
 
         var result = sclAutoAlignmentService.createJson(substationBuilder);
         assertNotNull(result);
@@ -88,8 +87,7 @@ class SclAutoAlignmentServiceTest {
         var substationName = "_af9a4ae3-ba2e-4c34-8e47-5af894ee20f4";
         var sclData = readSCL(filename + ".scd");
         var scl = sclAutoAlignmentService.readSCL(sclData);
-        var substationBuilder = sclAutoAlignmentService.createSubstationBuilder(
-                scl.getSubstation(substationName), substationName);
+        var substationBuilder = sclAutoAlignmentService.createSubstationGraphBuilder(scl, substationName);
 
         var result = sclAutoAlignmentService.createJson(substationBuilder);
         assertNotNull(result);

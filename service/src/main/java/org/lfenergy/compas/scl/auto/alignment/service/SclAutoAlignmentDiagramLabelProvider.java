@@ -15,11 +15,10 @@ import org.apache.commons.lang3.StringUtils;
 import java.util.*;
 
 public class SclAutoAlignmentDiagramLabelProvider implements DiagramLabelProvider {
-    private final Map<Node, List<NodeLabel>> busLabels;
+    private final Map<Node, List<NodeLabel>> busLabels = new HashMap<>();
 
     public SclAutoAlignmentDiagramLabelProvider(SubstationGraph graph) {
-        this.busLabels = new HashMap<>();
-        graph.getNodes().forEach(voltageLevelGraph ->
+        graph.getVoltageLevels().forEach(voltageLevelGraph ->
                 voltageLevelGraph.getNodes().forEach(this::addNode)
         );
         graph.getMultiTermNodes().forEach(this::addNode);
