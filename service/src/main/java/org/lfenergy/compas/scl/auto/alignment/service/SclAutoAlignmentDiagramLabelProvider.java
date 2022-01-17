@@ -15,18 +15,20 @@ import org.apache.commons.lang3.StringUtils;
 import java.util.*;
 
 public class SclAutoAlignmentDiagramLabelProvider implements DiagramLabelProvider {
-    private final Map<Node, List<NodeLabel>> busLabels;
+    private final Map<Node, List<NodeLabel>> busLabels = new HashMap<>();
 
     public SclAutoAlignmentDiagramLabelProvider(SubstationGraph graph) {
-        this.busLabels = new HashMap<>();
-        LabelPosition labelPosition = new LabelPosition("default", 0, -5, true, 0);
-        graph.getNodes().forEach(v ->
-                v.getNodes().forEach(n -> {
-                    List<NodeLabel> labels = new ArrayList<>();
-                    labels.add(new NodeLabel(stripLabel(n.getId()), labelPosition, null));
-                    busLabels.put(n, labels);
-                })
+        graph.getVoltageLevels().forEach(voltageLevelGraph ->
+                voltageLevelGraph.getNodes().forEach(this::addNode)
         );
+        graph.getMultiTermNodes().forEach(this::addNode);
+    }
+
+    private void addNode(Node node) {
+        LabelPosition labelPosition = new LabelPosition("default", 0, -5, true, 0);
+        List<NodeLabel> labels = new ArrayList<>();
+        labels.add(new NodeLabel(stripLabel(node.getId()), labelPosition, null));
+        busLabels.put(node, labels);
     }
 
     @Override

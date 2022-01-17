@@ -20,15 +20,15 @@ SPDX-License-Identifier: Apache-2.0
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 
-        <compiler-plugin.version>3.8.1</compiler-plugin.version>
+        <compiler-plugin.version>3.9.0</compiler-plugin.version>
         <surefire-plugin.version>3.0.0-M5</surefire-plugin.version>
         <sonarqube-plugin.version>3.2.0</sonarqube-plugin.version>
 
-        <compas.core.version>0.6.0</compas.core.version>
+        <compas.core.version>0.7.0</compas.core.version>
 
-        <quarkus.platform.version>2.4.2.Final</quarkus.platform.version>
-        <slf4j.version>1.7.32</slf4j.version>
-        <powsybl.sld.version>2.5.1</powsybl.sld.version>
+        <quarkus.platform.version>2.6.2.Final</quarkus.platform.version>
+        <slf4j.version>1.7.33</slf4j.version>
+        <powsybl.sld.version>2.7.0</powsybl.sld.version>
         <gson.version>2.8.9</gson.version>
         <openpojo.version>0.9.1</openpojo.version>
     </properties>
@@ -134,7 +134,7 @@ SPDX-License-Identifier: Apache-2.0
                 <plugin>
                     <groupId>org.jboss.jandex</groupId>
                     <artifactId>jandex-maven-plugin</artifactId>
-                    <version>1.2.1</version>
+                    <version>1.2.2</version>
                     <executions>
                         <execution>
                             <id>make-index</id>
@@ -148,7 +148,7 @@ SPDX-License-Identifier: Apache-2.0
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-jar-plugin</artifactId>
-                    <version>3.2.0</version>
+                    <version>3.2.2</version>
                 </plugin>
             </plugins>
         </pluginManagement>
