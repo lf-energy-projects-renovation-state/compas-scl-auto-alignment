@@ -7,13 +7,9 @@ import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
-import org.lfenergy.compas.scl.auto.alignment.model.GenericBay;
-import org.lfenergy.compas.scl.auto.alignment.model.GenericConductingEquipment;
-import org.lfenergy.compas.scl.auto.alignment.model.GenericSCL;
-import org.lfenergy.compas.scl.auto.alignment.model.GenericSubstation;
+import org.lfenergy.compas.scl.auto.alignment.model.*;
 
 import java.util.Optional;
-import java.util.concurrent.atomic.AtomicLong;
 import java.util.stream.StreamSupport;
 
 import static org.lfenergy.compas.scl.auto.alignment.common.CommonUtil.cleanSXYDeclarationAndAttributes;
@@ -37,41 +33,61 @@ public class SclAutoAlignmentEnricher {
 
             // Next process the VoltageLevels.
             if (jsonSubstation.has("voltageLevels")) {
-                jsonSubstation.getAsJsonArray("voltageLevels")
-                        .forEach(jsonVoltageLevel -> enrichVoltageLevel(substation, jsonVoltageLevel.getAsJsonObject()));
+                JsonArray jsonNodes = jsonSubstation.getAsJsonArray("voltageLevels");
+                substation.getVoltageLevels()
+                        .forEach(voltageLevel -> enrichVoltageLevel(jsonNodes, voltageLevel));
             }
 
-            AtomicLong pwtCoordinate = new AtomicLong(1);
-            substation.getPowerTransformers().forEach(powerTransformer ->
-                    powerTransformer.setXYCoordinates(pwtCoordinate.get(), pwtCoordinate.getAndIncrement()));
+            if (jsonSubstation.has("multitermNodes")) {
+                JsonArray jsonNodes = jsonSubstation.getAsJsonArray("multitermNodes");
+                substation.getPowerTransformers()
+                        .forEach(powerTransformer -> enrichPowerTransformer(jsonNodes, powerTransformer));
+            }
         });
     }
 
-    private void enrichVoltageLevel(GenericSubstation substation, JsonObject jsonVoltageLevel) {
-        var voltageLevelFullName = jsonVoltageLevel.get("voltageLevelInfos").getAsJsonObject().get("id").getAsString();
-        var sclVoltageLevel = substation.getVoltageLevelByFullName(voltageLevelFullName);
-        sclVoltageLevel.ifPresent(voltageLevel -> {
-            voltageLevel.setXYCoordinates(getCoordinate(jsonVoltageLevel, "x"),
+    private void enrichPowerTransformer(JsonArray jsonNodes, GenericPowerTransformer powerTransformer) {
+        var jsonObject = findNode(jsonNodes, powerTransformer.getFullName());
+        jsonObject.ifPresent(jsonPowerTransformer ->
+                powerTransformer.setXYCoordinates(
+                        getCoordinate(jsonPowerTransformer, "x"),
+                        getCoordinate(jsonPowerTransformer, "y")));
+    }
+
+    private void enrichVoltageLevel(JsonArray jsonNodes, GenericVoltageLevel voltageLevel) {
+        var jsonObject = findVoltageLevelNode(jsonNodes, voltageLevel.getFullName());
+        jsonObject.ifPresent(jsonVoltageLevel -> {
+            voltageLevel.setXYCoordinates(
+                    getCoordinate(jsonVoltageLevel, "x"),
                     getCoordinate(jsonVoltageLevel, "y"));
 
             if (jsonVoltageLevel.has("nodes")) {
-                JsonArray jsonNodes = jsonVoltageLevel.getAsJsonArray("nodes");
+                JsonArray jsonSubNodes = jsonVoltageLevel.getAsJsonArray("nodes");
                 voltageLevel.getBays()
                         .forEach(bay -> {
                             if (bay.isBusbar()) {
-                                enrichBusbar(jsonNodes, bay);
+                                enrichBusbar(jsonSubNodes, bay);
                             } else {
-                                enrichBay(jsonNodes, bay);
+                                enrichBay(jsonSubNodes, bay);
                             }
                         });
             }
         });
     }
 
+    private Optional<JsonObject> findVoltageLevelNode(JsonArray jsonNodes, String fullName) {
+        return StreamSupport.stream(jsonNodes.spliterator(), false)
+                .map(JsonElement::getAsJsonObject)
+                .filter(jsonObject -> fullName.equals(jsonObject.get("voltageLevelInfos").getAsJsonObject().get("id").getAsString()))
+                .findFirst();
+    }
+
     private void enrichBusbar(JsonArray jsonNodes, GenericBay busbar) {
         var jsonObject = findNode(jsonNodes, busbar.getFullName());
         jsonObject.ifPresent(jsonBusbar ->
-                busbar.setXYCoordinates(getCoordinate(jsonBusbar, "x"), getCoordinate(jsonBusbar, "y")));
+                busbar.setXYCoordinates(
+                        getCoordinate(jsonBusbar, "x"),
+                        getCoordinate(jsonBusbar, "y")));
     }
 
     private void enrichBay(JsonArray jsonNodes, GenericBay bay) {
@@ -102,10 +118,10 @@ public class SclAutoAlignmentEnricher {
                 .orElse(1);
     }
 
-    private Optional<JsonObject> findNode(JsonArray jsonNodes, String fullname) {
+    private Optional<JsonObject> findNode(JsonArray jsonNodes, String fullName) {
         return StreamSupport.stream(jsonNodes.spliterator(), false)
                 .map(JsonElement::getAsJsonObject)
-                .filter(jsonObject -> fullname.equals(jsonObject.get("id").getAsString()))
+                .filter(jsonObject -> fullName.equals(jsonObject.get("id").getAsString()))
                 .findFirst();
     }
 
