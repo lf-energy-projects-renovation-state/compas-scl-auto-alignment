@@ -475,7 +475,6 @@
     }, {
       "type" : "FICTITIOUS",
       "id" : "BUSCO_AA1/J1/Bay A/QB1",
-      "equipmentId" : null,
       "componentType" : "BUS_CONNECTION",
       "fictitious" : true,
       "x" : 225.0,
@@ -484,7 +483,6 @@
     }, {
       "type" : "FICTITIOUS",
       "id" : "BUSCO_AA1/J1/Bay A/QB2",
-      "equipmentId" : null,
       "componentType" : "BUS_CONNECTION",
       "fictitious" : true,
       "x" : 275.0,
@@ -493,7 +491,6 @@
     }, {
       "type" : "FICTITIOUS",
       "id" : "BUSCO_AA1/J1/Bay B/QB1",
-      "equipmentId" : null,
       "componentType" : "BUS_CONNECTION",
       "fictitious" : true,
       "x" : 325.0,
@@ -502,7 +499,6 @@
     }, {
       "type" : "FICTITIOUS",
       "id" : "BUSCO_AA1/J1/Bay B/QB2",
-      "equipmentId" : null,
       "componentType" : "BUS_CONNECTION",
       "fictitious" : true,
       "x" : 375.0,
@@ -511,7 +507,6 @@
     }, {
       "type" : "FICTITIOUS",
       "id" : "BUSCO_AA1/J1/Bay C/QB1",
-      "equipmentId" : null,
       "componentType" : "BUS_CONNECTION",
       "fictitious" : true,
       "x" : 425.0,
@@ -520,7 +515,6 @@
     }, {
       "type" : "FICTITIOUS",
       "id" : "BUSCO_AA1/J1/Bay C/QB2",
-      "equipmentId" : null,
       "componentType" : "BUS_CONNECTION",
       "fictitious" : true,
       "x" : 475.0,
@@ -529,7 +523,6 @@
     }, {
       "type" : "FICTITIOUS",
       "id" : "BUSCO_AA1/J1/Bay D/QB1",
-      "equipmentId" : null,
       "componentType" : "BUS_CONNECTION",
       "fictitious" : true,
       "x" : 525.0,
@@ -538,7 +531,6 @@
     }, {
       "type" : "FICTITIOUS",
       "id" : "BUSCO_AA1/J1/Bay D/QB2",
-      "equipmentId" : null,
       "componentType" : "BUS_CONNECTION",
       "fictitious" : true,
       "x" : 575.0,
@@ -547,7 +539,6 @@
     }, {
       "type" : "FICTITIOUS",
       "id" : "BUSCO_AA1/J1/CoupField/QB1",
-      "equipmentId" : null,
       "componentType" : "BUS_CONNECTION",
       "fictitious" : true,
       "x" : 25.0,
@@ -556,7 +547,6 @@
     }, {
       "type" : "FICTITIOUS",
       "id" : "BUSCO_AA1/J1/CoupField/QB2",
-      "equipmentId" : null,
       "componentType" : "BUS_CONNECTION",
       "fictitious" : true,
       "x" : 175.0,
@@ -565,7 +555,6 @@
     }, {
       "type" : "FICTITIOUS",
       "id" : "BUSCO_AA1/J1/CoupField/QC11",
-      "equipmentId" : null,
       "componentType" : "BUS_CONNECTION",
       "fictitious" : true,
       "x" : 675.0,
@@ -574,7 +563,6 @@
     }, {
       "type" : "FICTITIOUS",
       "id" : "BUSCO_AA1/J1/CoupField/QC12",
-      "equipmentId" : null,
       "componentType" : "BUS_CONNECTION",
       "fictitious" : true,
       "x" : 625.0,
@@ -583,7 +571,6 @@
     }, {
       "type" : "FICTITIOUS",
       "id" : "INTERNAL_AA1/J1_AA1/J1/Bay A/L1",
-      "equipmentId" : null,
       "componentType" : "NODE",
       "fictitious" : true,
       "x" : 250.0,
@@ -592,7 +579,6 @@
     }, {
       "type" : "FICTITIOUS",
       "id" : "INTERNAL_AA1/J1_AA1/J1/Bay A/L3",
-      "equipmentId" : null,
       "componentType" : "NODE",
       "fictitious" : true,
       "x" : 250.0,
@@ -601,7 +587,6 @@
     }, {
       "type" : "FICTITIOUS",
       "id" : "INTERNAL_AA1/J1_AA1/J1/Bay A/QB1",
-      "equipmentId" : null,
       "componentType" : "NODE",
       "fictitious" : true,
       "x" : 225.0,
@@ -610,7 +595,6 @@
     }, {
       "type" : "FICTITIOUS",
       "id" : "INTERNAL_AA1/J1_AA1/J1/Bay A/QB2",
-      "equipmentId" : null,
       "componentType" : "NODE",
       "fictitious" : true,
       "x" : 275.0,
@@ -619,7 +603,6 @@
     }, {
       "type" : "FICTITIOUS",
       "id" : "INTERNAL_AA1/J1_AA1/J1/Bay A/QB9/Grounded",
-      "equipmentId" : null,
       "componentType" : "NODE",
       "fictitious" : true,
       "x" : 225.0,
@@ -628,7 +611,6 @@
     }, {
       "type" : "FICTITIOUS",
       "id" : "INTERNAL_AA1/J1_AA1/J1/Bay A/T5/Grounded",
-      "equipmentId" : null,
       "componentType" : "NODE",
       "fictitious" : true,
       "x" : 275.0,
@@ -637,7 +619,6 @@
     }, {
       "type" : "FICTITIOUS",
       "id" : "INTERNAL_AA1/J1_AA1/J1/Bay B/L1",
-      "equipmentId" : null,
       "componentType" : "NODE",
       "fictitious" : true,
       "x" : 350.0,
@@ -646,7 +627,6 @@
     }, {
       "type" : "FICTITIOUS",
       "id" : "INTERNAL_AA1/J1_AA1/J1/Bay B/L3",
-      "equipmentId" : null,
       "componentType" : "NODE",
       "fictitious" : true,
       "x" : 350.0,
@@ -655,7 +635,6 @@
     }, {
       "type" : "FICTITIOUS",
       "id" : "INTERNAL_AA1/J1_AA1/J1/Bay B/QB1",
-      "equipmentId" : null,
       "componentType" : "NODE",
       "fictitious" : true,
       "x" : 325.0,
@@ -664,7 +643,6 @@
     }, {
       "type" : "FICTITIOUS",
       "id" : "INTERNAL_AA1/J1_AA1/J1/Bay B/QB2",
-      "equipmentId" : null,
       "componentType" : "NODE",
       "fictitious" : true,
       "x" : 375.0,
@@ -673,7 +651,6 @@
     }, {
       "type" : "FICTITIOUS",
       "id" : "INTERNAL_AA1/J1_AA1/J1/Bay B/QB9/Grounded",
-      "equipmentId" : null,
       "componentType" : "NODE",
       "fictitious" : true,
       "x" : 325.0,
@@ -682,7 +659,6 @@
     }, {
       "type" : "FICTITIOUS",
       "id" : "INTERNAL_AA1/J1_AA1/J1/Bay B/T5/Grounded",
-      "equipmentId" : null,
       "componentType" : "NODE",
       "fictitious" : true,
       "x" : 375.0,
@@ -691,7 +667,6 @@
     }, {
       "type" : "FICTITIOUS",
       "id" : "INTERNAL_AA1/J1_AA1/J1/Bay C/L1",
-      "equipmentId" : null,
       "componentType" : "NODE",
       "fictitious" : true,
       "x" : 450.0,
@@ -700,7 +675,6 @@
     }, {
       "type" : "FICTITIOUS",
       "id" : "INTERNAL_AA1/J1_AA1/J1/Bay C/L3",
-      "equipmentId" : null,
       "componentType" : "NODE",
       "fictitious" : true,
       "x" : 450.0,
@@ -709,7 +683,6 @@
     }, {
       "type" : "FICTITIOUS",
       "id" : "INTERNAL_AA1/J1_AA1/J1/Bay C/QB1",
-      "equipmentId" : null,
       "componentType" : "NODE",
       "fictitious" : true,
       "x" : 425.0,
@@ -718,7 +691,6 @@
     }, {
       "type" : "FICTITIOUS",
       "id" : "INTERNAL_AA1/J1_AA1/J1/Bay C/QB2",
-      "equipmentId" : null,
       "componentType" : "NODE",
       "fictitious" : true,
       "x" : 475.0,
@@ -727,7 +699,6 @@
     }, {
       "type" : "FICTITIOUS",
       "id" : "INTERNAL_AA1/J1_AA1/J1/Bay C/QB9/Grounded",
-      "equipmentId" : null,
       "componentType" : "NODE",
       "fictitious" : true,
       "x" : 425.0,
@@ -736,7 +707,6 @@
     }, {
       "type" : "FICTITIOUS",
       "id" : "INTERNAL_AA1/J1_AA1/J1/Bay C/T5/Grounded",
-      "equipmentId" : null,
       "componentType" : "NODE",
       "fictitious" : true,
       "x" : 475.0,
@@ -745,7 +715,6 @@
     }, {
       "type" : "FICTITIOUS",
       "id" : "INTERNAL_AA1/J1_AA1/J1/Bay D/L1",
-      "equipmentId" : null,
       "componentType" : "NODE",
       "fictitious" : true,
       "x" : 550.0,
@@ -754,7 +723,6 @@
     }, {
       "type" : "FICTITIOUS",
       "id" : "INTERNAL_AA1/J1_AA1/J1/Bay D/L3",
-      "equipmentId" : null,
       "componentType" : "NODE",
       "fictitious" : true,
       "x" : 550.0,
@@ -763,7 +731,6 @@
     }, {
       "type" : "FICTITIOUS",
       "id" : "INTERNAL_AA1/J1_AA1/J1/Bay D/QB1",
-      "equipmentId" : null,
       "componentType" : "NODE",
       "fictitious" : true,
       "x" : 525.0,
@@ -772,7 +739,6 @@
     }, {
       "type" : "FICTITIOUS",
       "id" : "INTERNAL_AA1/J1_AA1/J1/Bay D/QB2",
-      "equipmentId" : null,
       "componentType" : "NODE",
       "fictitious" : true,
       "x" : 575.0,
@@ -781,7 +747,6 @@
     }, {
       "type" : "FICTITIOUS",
       "id" : "INTERNAL_AA1/J1_AA1/J1/Bay D/QB9/Grounded",
-      "equipmentId" : null,
       "componentType" : "NODE",
       "fictitious" : true,
       "x" : 575.0,
@@ -790,7 +755,6 @@
     }, {
       "type" : "FICTITIOUS",
       "id" : "INTERNAL_AA1/J1_AA1/J1/Bay D/T5/Grounded",
-      "equipmentId" : null,
       "componentType" : "NODE",
       "fictitious" : true,
       "x" : 525.0,
@@ -799,7 +763,6 @@
     }, {
       "type" : "FICTITIOUS",
       "id" : "INTERNAL_AA1/J1_AA1/J1/CoupField/QB1",
-      "equipmentId" : null,
       "componentType" : "NODE",
       "fictitious" : true,
       "x" : 75.0,
@@ -809,7 +772,6 @@
     }, {
       "type" : "FICTITIOUS",
       "id" : "INTERNAL_AA1/J1_AA1/J1/CoupField/QB1",
-      "equipmentId" : null,
       "componentType" : "NODE",
       "fictitious" : true,
       "x" : 25.0,
@@ -819,7 +781,6 @@
     }, {
       "type" : "FICTITIOUS",
       "id" : "INTERNAL_AA1/J1_AA1/J1/CoupField/QB2",
-      "equipmentId" : null,
       "componentType" : "NODE",
       "fictitious" : true,
       "x" : 125.0,
@@ -829,7 +790,6 @@
     }, {
       "type" : "FICTITIOUS",
       "id" : "INTERNAL_AA1/J1_AA1/J1/CoupField/QB2",
-      "equipmentId" : null,
       "componentType" : "NODE",
       "fictitious" : true,
       "x" : 175.0,
@@ -839,7 +799,6 @@
     }, {
       "type" : "FICTITIOUS",
       "id" : "INTERNAL_AA1/J1_AA1/J1/CoupField/QC11",
-      "equipmentId" : null,
       "componentType" : "NODE",
       "fictitious" : true,
       "x" : 675.0,
@@ -848,7 +807,6 @@
     }, {
       "type" : "FICTITIOUS",
       "id" : "INTERNAL_AA1/J1_AA1/J1/CoupField/QC12",
-      "equipmentId" : null,
       "componentType" : "NODE",
       "fictitious" : true,
       "x" : 625.0,
@@ -857,7 +815,6 @@
     }, {
       "type" : "FICTITIOUS",
       "id" : "INTERNAL_AA1/J1_grounded",
-      "equipmentId" : null,
       "componentType" : "NODE",
       "fictitious" : true,
       "x" : 675.0,
@@ -866,7 +823,6 @@
     }, {
       "type" : "FICTITIOUS",
       "id" : "INTERNAL_AA1/J1_grounded",
-      "equipmentId" : null,
       "componentType" : "NODE",
       "fictitious" : true,
       "x" : 625.0,
