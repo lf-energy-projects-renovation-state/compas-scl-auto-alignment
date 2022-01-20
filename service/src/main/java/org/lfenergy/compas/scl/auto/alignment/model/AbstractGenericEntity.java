@@ -41,6 +41,14 @@ public abstract class AbstractGenericEntity<P extends GenericEntity> implements 
         return parent;
     }
 
+    public long getCoordinate(String fieldName) {
+        var value = element.getAttributeNS(SCLXY_NS_URI, fieldName);
+        if (!value.isBlank()) {
+            return Long.parseLong(value);
+        }
+        return 0;
+    }
+
     public void setXYCoordinates(long x, long y) {
         element.setAttributeNS(SCLXY_NS_URI, SCLXY_PREFIX + ":x", String.valueOf(x));
         element.setAttributeNS(SCLXY_NS_URI, SCLXY_PREFIX + ":y", String.valueOf(y));

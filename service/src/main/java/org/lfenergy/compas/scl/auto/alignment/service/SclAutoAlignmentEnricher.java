@@ -3,13 +3,18 @@
 // SPDX-License-Identifier: Apache-2.0
 package org.lfenergy.compas.scl.auto.alignment.service;
 
+import com.google.gson.JsonArray;
+import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
+import org.lfenergy.compas.scl.auto.alignment.model.GenericBay;
+import org.lfenergy.compas.scl.auto.alignment.model.GenericConductingEquipment;
 import org.lfenergy.compas.scl.auto.alignment.model.GenericSCL;
 import org.lfenergy.compas.scl.auto.alignment.model.GenericSubstation;
-import org.lfenergy.compas.scl.auto.alignment.model.GenericVoltageLevel;
 
+import java.util.Optional;
 import java.util.concurrent.atomic.AtomicLong;
+import java.util.stream.StreamSupport;
 
 import static org.lfenergy.compas.scl.auto.alignment.common.CommonUtil.cleanSXYDeclarationAndAttributes;
 
@@ -49,39 +54,63 @@ public class SclAutoAlignmentEnricher {
             voltageLevel.setXYCoordinates(getCoordinate(jsonVoltageLevel, "x"),
                     getCoordinate(jsonVoltageLevel, "y"));
 
-            AtomicLong bayXCoordinate = new AtomicLong(1);
-            voltageLevel.getBays()
-                    .stream()
-                    .filter(bay -> !bay.isBusbar())
-                    .forEach(bay -> bay.setXYCoordinates(bayXCoordinate.getAndIncrement(), 1));
-
             if (jsonVoltageLevel.has("nodes")) {
-                jsonVoltageLevel.getAsJsonArray("nodes")
-                        .forEach(jsonNode -> {
-                            var type = jsonNode.getAsJsonObject().get("type").getAsString();
-                            if ("BUS".equals(type)) {
-                                enrichBusbar(voltageLevel, jsonNode.getAsJsonObject());
+                JsonArray jsonNodes = jsonVoltageLevel.getAsJsonArray("nodes");
+                voltageLevel.getBays()
+                        .forEach(bay -> {
+                            if (bay.isBusbar()) {
+                                enrichBusbar(jsonNodes, bay);
                             } else {
-                                enrichConductingEquipment(voltageLevel, jsonNode.getAsJsonObject());
+                                enrichBay(jsonNodes, bay);
                             }
                         });
             }
         });
     }
 
-    private void enrichBusbar(GenericVoltageLevel voltageLevel, JsonObject jsonBusbar) {
-        var fullName = jsonBusbar.get("id").getAsString();
-        var sclBusbar = voltageLevel.getBusbarByFullName(fullName);
-        sclBusbar.ifPresent(busbar ->
+    private void enrichBusbar(JsonArray jsonNodes, GenericBay busbar) {
+        var jsonObject = findNode(jsonNodes, busbar.getFullName());
+        jsonObject.ifPresent(jsonBusbar ->
                 busbar.setXYCoordinates(getCoordinate(jsonBusbar, "x"), getCoordinate(jsonBusbar, "y")));
     }
 
-    private void enrichConductingEquipment(GenericVoltageLevel voltageLevel, JsonObject jsonCoductingEquipment) {
-        var fullName = jsonCoductingEquipment.get("id").getAsString();
-        var sclConductingEquipment = voltageLevel.getConductingEquipmentByFullName(fullName);
-        sclConductingEquipment.ifPresent(conductingEquipment ->
-                conductingEquipment.setXYCoordinates(getCoordinate(jsonCoductingEquipment, "x"),
-                        getCoordinate(jsonCoductingEquipment, "y")));
+    private void enrichBay(JsonArray jsonNodes, GenericBay bay) {
+        var xCoordinate = getMinimumCoordinate(jsonNodes, bay, "x");
+        var yCoordinate = getMinimumCoordinate(jsonNodes, bay, "y");
+        bay.setXYCoordinates(xCoordinate, yCoordinate);
+
+        bay.getConductingEquipments()
+                .forEach(conductingEquipment -> enrichConductingEquipment(jsonNodes, bay, conductingEquipment));
+    }
+
+    private void enrichConductingEquipment(JsonArray jsonNodes, GenericBay bay, GenericConductingEquipment conductingEquipment) {
+        var jsonObject = findNode(jsonNodes, conductingEquipment.getFullName());
+        jsonObject.ifPresent(jsonConductingEquipment ->
+                conductingEquipment.setXYCoordinates(
+                        getCoordinateForConductingEquipment(jsonConductingEquipment, bay, "x"),
+                        getCoordinateForConductingEquipment(jsonConductingEquipment, bay, "y")));
+    }
+
+    private long getMinimumCoordinate(JsonArray jsonNodes, GenericBay bay, String fieldName) {
+        return bay.getConductingEquipments()
+                .stream()
+                .map(conductingEquipment -> findNode(jsonNodes, conductingEquipment.getFullName()))
+                .filter(Optional::isPresent)
+                .flatMap(Optional::stream)
+                .mapToLong(jsonObject -> getCoordinate(jsonObject, fieldName))
+                .min()
+                .orElse(1);
+    }
+
+    private Optional<JsonObject> findNode(JsonArray jsonNodes, String fullname) {
+        return StreamSupport.stream(jsonNodes.spliterator(), false)
+                .map(JsonElement::getAsJsonObject)
+                .filter(jsonObject -> fullname.equals(jsonObject.get("id").getAsString()))
+                .findFirst();
+    }
+
+    private long getCoordinateForConductingEquipment(JsonObject jsonObject, GenericBay bay, String fieldName) {
+        return Math.max(getCoordinate(jsonObject, fieldName) - bay.getCoordinate(fieldName) + 1, 1);
     }
 
     private long getCoordinate(JsonObject jsonObject, String fieldName) {
