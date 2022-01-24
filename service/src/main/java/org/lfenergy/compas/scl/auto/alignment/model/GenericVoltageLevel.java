@@ -3,12 +3,10 @@
 // SPDX-License-Identifier: Apache-2.0
 package org.lfenergy.compas.scl.auto.alignment.model;
 
-import org.apache.commons.lang3.StringUtils;
 import org.lfenergy.compas.scl.auto.alignment.exception.SclAutoAlignmentException;
 import org.w3c.dom.Element;
 
 import java.util.List;
-import java.util.Optional;
 import java.util.stream.Collectors;
 
 import static org.lfenergy.compas.scl.auto.alignment.exception.SclAutoAlignmentErrorCode.NO_VOLTAGE_FOUND_ERROR_CODE;
@@ -35,26 +33,5 @@ public class GenericVoltageLevel extends AbstractGenericNameEntity<GenericSubsta
                     .collect(Collectors.toList());
         }
         return bays;
-    }
-
-    public Optional<GenericBay> getBusbarByFullName(String fullName) {
-        if (StringUtils.isNotBlank(fullName)) {
-            return getBays().stream()
-                    .filter(GenericBay::isBusbar)
-                    .filter(busbar -> fullName.equals(busbar.getFullName()))
-                    .findFirst();
-        }
-        return Optional.empty();
-    }
-
-    public Optional<GenericConductingEquipment> getConductingEquipmentByFullName(String fullName) {
-        if (StringUtils.isNotBlank(fullName)) {
-            return getBays().stream()
-                    .map(GenericBay::getConductingEquipments)
-                    .flatMap(List::stream)
-                    .filter(conductingEquipment -> fullName.equals(conductingEquipment.getFullName()))
-                    .findFirst();
-        }
-        return Optional.empty();
     }
 }
