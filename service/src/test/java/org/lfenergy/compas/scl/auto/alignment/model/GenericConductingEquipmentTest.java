@@ -26,7 +26,7 @@ class GenericConductingEquipmentTest {
         var scl = new GenericSCL(readSCLElement(BASIC_SCD_FILENAME));
         var substation = scl.getSubstation(SUBSTATION_NAME).get();
         var voltageLevel = substation.getVoltageLevel(VOLTAGE_LEVEL_NAME).get();
-        var bay = voltageLevel.getBays().get(2);
+        var bay = voltageLevel.getBays().get(3);
         conductingEquipment = bay.getConductingEquipments().get(0);
     }
 

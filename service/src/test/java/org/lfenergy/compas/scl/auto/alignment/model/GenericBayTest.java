@@ -20,6 +20,7 @@ class GenericBayTest {
     public static final String BAY_NAME = "Bay A";
     public static final String BUSBAR_NAME = "BusBar A";
 
+    private GenericVoltageLevel voltageLevel;
     private GenericBay bay;
     private GenericBay busbar;
 
@@ -27,9 +28,9 @@ class GenericBayTest {
     void setup() throws IOException {
         var scl = new GenericSCL(readSCLElement(BASIC_SCD_FILENAME));
         var substation = scl.getSubstation(SUBSTATION_NAME).get();
-        var voltageLevel = substation.getVoltageLevel(VOLTAGE_LEVEL_NAME).get();
+        voltageLevel = substation.getVoltageLevel(VOLTAGE_LEVEL_NAME).get();
         busbar = voltageLevel.getBays().get(0);
-        bay = voltageLevel.getBays().get(2);
+        bay = voltageLevel.getBays().get(3);
     }
 
     @Test
@@ -42,6 +43,20 @@ class GenericBayTest {
     void constructorBay_WhenCreated_ThenElementSet() {
         assertNotNull(bay.getElement());
         assertEquals(BAY_NAME, bay.getName());
+    }
+
+    @Test
+    void isBusbar_WhenCalledOnAllBays_ThenExpectedResult() {
+        var bayNr = 0;
+        for (var bayOrBusbar : voltageLevel.getBays()) {
+            // First 2 bays are Busbars, others are Bays.
+            if (bayNr <= 1) {
+                assertTrue(bayOrBusbar.isBusbar());
+            } else {
+                assertFalse(bayOrBusbar.isBusbar());
+            }
+            bayNr++;
+        }
     }
 
     @Test
