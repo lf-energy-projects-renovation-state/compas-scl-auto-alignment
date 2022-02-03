@@ -58,8 +58,8 @@ class GenericVoltageLevelTest {
         var result = voltageLevel.getBays();
 
         assertNotNull(result);
-        assertEquals(7, result.size());
+        assertEquals(8, result.size());
         assertEquals(BUSBAR_NAME, result.get(0).getName());
-        assertEquals(BAY_NAME, result.get(2).getName());
+        assertEquals(BAY_NAME, result.get(3).getName());
     }
 }

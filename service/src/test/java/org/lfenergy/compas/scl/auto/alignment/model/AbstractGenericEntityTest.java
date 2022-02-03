@@ -37,7 +37,7 @@ class AbstractGenericEntityTest {
         var result = entity.getElementsStream("Bay")
                 .collect(Collectors.toList());
 
-        assertEquals(7, result.size());
+        assertEquals(8, result.size());
     }
 
     @Test

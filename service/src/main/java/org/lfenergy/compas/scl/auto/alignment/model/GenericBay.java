@@ -7,6 +7,7 @@ import org.w3c.dom.Element;
 
 import java.util.List;
 import java.util.stream.Collectors;
+import java.util.stream.IntStream;
 
 public class GenericBay extends AbstractGenericNameEntity<GenericVoltageLevel> {
     private List<GenericConnectivityNode> connectivityNodes;
@@ -17,7 +18,15 @@ public class GenericBay extends AbstractGenericNameEntity<GenericVoltageLevel> {
     }
 
     public boolean isBusbar() {
-        return getConnectivityNodes().size() == 1;
+        return getConnectivityNodes().size() == 1 && getNrOfChilderen() == 1;
+    }
+
+    private long getNrOfChilderen() {
+        var nodeList = getElement().getChildNodes();
+        return IntStream.range(0, nodeList.getLength())
+                .mapToObj(nodeList::item)
+                .filter(Element.class::isInstance)
+                .count();
     }
 
     public List<GenericConnectivityNode> getConnectivityNodes() {
