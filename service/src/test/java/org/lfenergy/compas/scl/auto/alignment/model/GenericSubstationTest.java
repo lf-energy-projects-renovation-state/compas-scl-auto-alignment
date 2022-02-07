@@ -95,19 +95,4 @@ class GenericSubstationTest {
 
         assertFalse(result.isPresent());
     }
-
-    @Test
-    void getVoltageLevelByFullName_WhenCalled_ThenSpecificVoltageLevelReturned() {
-        var result = substation.getVoltageLevelByFullName("AA1/J1");
-
-        assertTrue(result.isPresent());
-        assertEquals(VOLTAGE_LEVEL_NAME, result.get().getName());
-    }
-
-    @Test
-    void getVoltageLevelByFullName_WhenCalledWithBlankName_ThenEmptyOptional() {
-        var result = substation.getVoltageLevelByFullName("");
-
-        assertFalse(result.isPresent());
-    }
 }

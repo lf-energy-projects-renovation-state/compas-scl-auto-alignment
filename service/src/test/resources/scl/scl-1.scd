@@ -21,6 +21,17 @@
             <Bay sxy:x="1" sxy:y="2" name="BusBar B">
                 <ConnectivityNode pathName="AA1/J1/BusBar B/L1" name="L1"/>
             </Bay>
+            <Bay name="Bay 1S" sxy:x="2" sxy:y="8">
+                <ConductingEquipment name="CBR1" sxy:x="1" sxy:y="1" type="CBR">
+                    <Terminal cNodeName="L1" connectivityNode="AA1/J1/BusBar B/L1" name="T4"/>
+                    <Terminal cNodeName="CN1" connectivityNode="AA1/J1/Bay 1S/CN1" name="T3"/>
+                </ConductingEquipment>
+                <ConductingEquipment name="CBR2" sxy:x="4" sxy:y="1" type="CBR">
+                    <Terminal cNodeName="L1" connectivityNode="AA1/J1/BusBar A/L1" name="T1"/>
+                    <Terminal cNodeName="CN1" connectivityNode="AA1/J1/Bay 1S/CN1" name="T2"/>
+                </ConductingEquipment>
+                <ConnectivityNode name="CN1" pathName="AA1/J1/Bay 1S/CN1"/>
+            </Bay>
             <Bay sxy:x="1" sxy:y="6" name="Bay A" desc="Feld A">
                 <ConductingEquipment type="DIS" sxy:x="1" sxy:y="1" name="QB1">
                     <Terminal name="T1" connectivityNode="AA1/J1/BusBar B/L1" substationName="AA1" voltageLevelName="J1" bayName="BusBar B" cNodeName="L1" txy:actTerm="1"/>

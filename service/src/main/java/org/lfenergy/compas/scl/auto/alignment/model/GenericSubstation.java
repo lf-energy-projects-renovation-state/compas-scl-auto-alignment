@@ -64,13 +64,4 @@ public class GenericSubstation extends AbstractGenericNameEntity<GenericSCL> {
         }
         return Optional.empty();
     }
-
-    public Optional<GenericVoltageLevel> getVoltageLevelByFullName(String fullName) {
-        if (StringUtils.isNotBlank(fullName)) {
-            return getVoltageLevels().stream()
-                    .filter(voltageLevel -> fullName.equals(voltageLevel.getFullName()))
-                    .findFirst();
-        }
-        return Optional.empty();
-    }
 }

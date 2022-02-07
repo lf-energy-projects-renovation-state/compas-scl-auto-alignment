@@ -15,7 +15,6 @@ import static org.lfenergy.compas.scl.auto.alignment.TestUtil.readSCLElement;
 import static org.lfenergy.compas.scl.auto.alignment.exception.SclAutoAlignmentErrorCode.NO_VOLTAGE_FOUND_ERROR_CODE;
 import static org.lfenergy.compas.scl.auto.alignment.model.GenericBayTest.BAY_NAME;
 import static org.lfenergy.compas.scl.auto.alignment.model.GenericBayTest.BUSBAR_NAME;
-import static org.lfenergy.compas.scl.auto.alignment.model.GenericConductingEquipmentTest.CE_NAME;
 import static org.lfenergy.compas.scl.auto.alignment.model.GenericSCLTest.BASIC_SCD_FILENAME;
 import static org.lfenergy.compas.scl.auto.alignment.model.GenericSubstationTest.SUBSTATION_NAME;
 
@@ -59,45 +58,8 @@ class GenericVoltageLevelTest {
         var result = voltageLevel.getBays();
 
         assertNotNull(result);
-        assertEquals(7, result.size());
+        assertEquals(8, result.size());
         assertEquals(BUSBAR_NAME, result.get(0).getName());
-        assertEquals(BAY_NAME, result.get(2).getName());
-    }
-
-    @Test
-    void getBusbarByFullName_WhenCalled_ThenReturnTheBusbar() {
-        var result = voltageLevel.getBusbarByFullName("AA1/J1/BusBar A");
-
-        assertTrue(result.isPresent());
-        assertEquals(BUSBAR_NAME, result.get().getName());
-    }
-
-    @Test
-    void getBusbarByFullName_WhenCalledForBay_ThenEmptyOptional() {
-        var result = voltageLevel.getBusbarByFullName("AA1/J1/Bay A");
-
-        assertFalse(result.isPresent());
-    }
-
-    @Test
-    void getBusbarByFullName_WhenCalledWithEmptyString_ThenEmptyOptional() {
-        var result = voltageLevel.getBusbarByFullName("");
-
-        assertFalse(result.isPresent());
-    }
-
-    @Test
-    void getConductingEquipmentByFullName_WhenCalled_ThenConductingEquipmentReturned() {
-        var result = voltageLevel.getConductingEquipmentByFullName("AA1/J1/Bay A/QB1");
-
-        assertTrue(result.isPresent());
-        assertEquals(CE_NAME, result.get().getName());
-    }
-
-    @Test
-    void getConductingEquipmentByFullName_WhenCalledWithEmptyString_ThenEmptyOptional() {
-        var result = voltageLevel.getConductingEquipmentByFullName("");
-
-        assertFalse(result.isPresent());
+        assertEquals(BAY_NAME, result.get(3).getName());
     }
 }
