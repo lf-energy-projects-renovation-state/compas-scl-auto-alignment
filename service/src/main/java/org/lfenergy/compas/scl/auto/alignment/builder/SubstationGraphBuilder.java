@@ -82,7 +82,8 @@ public class SubstationGraphBuilder extends AbstractGraphBuilder<SubstationGraph
                             getFeeder3WTLegNode(tws.get(2)),
                             getVoltageLevelBuilder(tws.get(0)).getGraph().getVoltageLevelInfos(),
                             getVoltageLevelBuilder(tws.get(1)).getGraph().getVoltageLevelInfos(),
-                            getVoltageLevelBuilder(tws.get(2)).getGraph().getVoltageLevelInfos()));
+                            getVoltageLevelBuilder(tws.get(2)).getGraph().getVoltageLevelInfos(),
+                            false));
         }
     }
 
