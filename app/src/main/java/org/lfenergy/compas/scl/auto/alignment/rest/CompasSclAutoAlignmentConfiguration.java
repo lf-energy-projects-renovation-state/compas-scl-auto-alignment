@@ -13,7 +13,9 @@ import javax.enterprise.inject.Produces;
  * Create Beans from other dependencies that are used in the application.
  */
 @RegisterForReflection(targets = {com.powsybl.sld.library.Components.class,
-        com.powsybl.sld.library.Component.class})
+        com.powsybl.sld.library.Component.class,
+        org.lfenergy.compas.core.jaxrs.model.ErrorResponse.class,
+        org.lfenergy.compas.core.jaxrs.model.ErrorMessage.class})
 public class CompasSclAutoAlignmentConfiguration {
     @Produces
     @ApplicationScoped

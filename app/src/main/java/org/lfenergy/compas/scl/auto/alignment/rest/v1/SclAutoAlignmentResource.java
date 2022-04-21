@@ -44,7 +44,7 @@ public class SclAutoAlignmentResource {
     @POST
     @Consumes(MediaType.APPLICATION_XML)
     @Produces(MediaType.APPLICATION_XML)
-    public SclAutoAlignResponse updateSCL(@Valid SclAutoAlignRequest request) {
+    public SclAutoAlignResponse alignment(@Valid SclAutoAlignRequest request) {
         String who = jsonWebToken.getClaim(userInfoProperties.who());
         LOGGER.trace("Username used for Who {}", who);
 
@@ -57,7 +57,7 @@ public class SclAutoAlignmentResource {
     @Consumes(MediaType.APPLICATION_XML)
     @Produces(MediaType.APPLICATION_SVG_XML)
     @Path("/svg")
-    public String getSVG(@Valid SclAutoAlignSVGRequest request) {
+    public String svg(@Valid SclAutoAlignSVGRequest request) {
         return sclAutoAlignmentService.getSVG(request.getSclData(), request.getSubstationName());
     }
 }
