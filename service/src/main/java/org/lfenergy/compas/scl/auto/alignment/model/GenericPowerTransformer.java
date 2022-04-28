@@ -3,7 +3,7 @@
 // SPDX-License-Identifier: Apache-2.0
 package org.lfenergy.compas.scl.auto.alignment.model;
 
-import com.powsybl.sld.model.FeederWithSideNode;
+import com.powsybl.sld.model.nodes.FeederWithSideNode;
 import org.w3c.dom.Element;
 
 import java.util.Collection;

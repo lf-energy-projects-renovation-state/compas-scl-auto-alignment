@@ -3,10 +3,15 @@
 // SPDX-License-Identifier: Apache-2.0
 package org.lfenergy.compas.scl.auto.alignment.builder;
 
-import com.powsybl.sld.model.*;
+import com.powsybl.sld.library.ComponentTypeName;
+import com.powsybl.sld.model.coordinate.Direction;
+import com.powsybl.sld.model.graphs.BaseGraph;
+import com.powsybl.sld.model.graphs.NodeFactory;
+import com.powsybl.sld.model.graphs.VoltageLevelGraph;
+import com.powsybl.sld.model.graphs.VoltageLevelInfos;
+import com.powsybl.sld.model.nodes.*;
 import org.lfenergy.compas.scl.auto.alignment.model.*;
 
-import java.util.HashMap;
 import java.util.Map;
 import java.util.Optional;
 import java.util.concurrent.atomic.AtomicInteger;
@@ -15,20 +20,10 @@ public class VoltageLevelGraphBuilder extends AbstractGraphBuilder<VoltageLevelG
     private final GenericVoltageLevel voltageLevel;
     private final GenericSubstation substation;
 
-    public VoltageLevelGraphBuilder(GenericVoltageLevel voltageLevel) {
-        this(voltageLevel, null, new HashMap<>(), true);
-    }
-
     public VoltageLevelGraphBuilder(GenericVoltageLevel voltageLevel,
                                     GenericSubstation substation,
-                                    Map<String, Node> path2Node) {
-        this(voltageLevel, substation, path2Node, false);
-    }
-
-    private VoltageLevelGraphBuilder(GenericVoltageLevel voltageLevel,
-                                     GenericSubstation substation,
-                                     Map<String, Node> path2Node,
-                                     boolean forVoltageLevelDiagram) {
+                                    Map<String, Node> path2Node,
+                                    BaseGraph parentGraph) {
         super(path2Node);
         this.voltageLevel = voltageLevel;
         this.substation = substation;
@@ -36,7 +31,7 @@ public class VoltageLevelGraphBuilder extends AbstractGraphBuilder<VoltageLevelG
         var voltageLevelInfos = new VoltageLevelInfos(voltageLevel.getFullName(),
                 voltageLevel.getFullName(),
                 voltageLevel.getVoltage());
-        setGraph(VoltageLevelGraph.create(voltageLevelInfos, forVoltageLevelDiagram));
+        setGraph(new VoltageLevelGraph(voltageLevelInfos, parentGraph));
 
         createVoltageLevel();
     }
@@ -57,14 +52,14 @@ public class VoltageLevelGraphBuilder extends AbstractGraphBuilder<VoltageLevelG
     private void processBusbarNode(GenericBay busbar,
                                    AtomicInteger busbarIndex) {
         busbar.getConnectivityNodes()
-                .forEach(connectivityNode ->
+                .stream().findFirst()
+                .ifPresent(connectivityNode ->
                         addNode(connectivityNode.getPathName(),
                                 createBusbarNode(busbar.getFullName(), busbarIndex.getAndIncrement(), 1)));
     }
 
     public BusNode createBusbarNode(String id, int busbarIndex, int sectionIndex) {
-        BusNode busNode = BusNode.create(getGraph(), id, id);
-        getGraph().addNode(busNode);
+        BusNode busNode = NodeFactory.createBusNode(getGraph(), id, id);
         busNode.setBusBarIndexSectionIndex(busbarIndex, sectionIndex);
         return busNode;
     }
@@ -127,10 +122,8 @@ public class VoltageLevelGraphBuilder extends AbstractGraphBuilder<VoltageLevelG
     }
 
     private SwitchNode createSwitchNode(String id) {
-        SwitchNode sw = new SwitchNode(id, id, SwitchNode.SwitchKind.BREAKER.name(), false,
-                getGraph(), SwitchNode.SwitchKind.BREAKER, false);
-        getGraph().addNode(sw);
-        return sw;
+        return NodeFactory.createSwitchNode(getGraph(), id, id, SwitchNode.SwitchKind.BREAKER.name(),
+                false, SwitchNode.SwitchKind.BREAKER, false);
     }
 
     private void connectNode(Node node1, Node node2) {
@@ -138,34 +131,31 @@ public class VoltageLevelGraphBuilder extends AbstractGraphBuilder<VoltageLevelG
     }
 
     private FictitiousNode createFictitiousNode(String id) {
-        InternalNode fictitiousNode = new InternalNode(id, getGraph());
-        getGraph().addNode(fictitiousNode);
-        return fictitiousNode;
+        return NodeFactory.createFictitiousNode(getGraph(), id, id, id, ComponentTypeName.LINE);
     }
 
     private FeederNode createLoad(String id) {
-        FeederInjectionNode fn = FeederInjectionNode.createLoad(getGraph(), id, id);
+        FeederNode fn = NodeFactory.createLoad(getGraph(), id, id);
         commonFeederSetting(fn, id, 0, null);
         return fn;
     }
 
     public Feeder2WTLegNode createFeeder2WTLegNode(String id, FeederWithSideNode.Side side, int order,
-                                                   BusCell.Direction direction) {
-        Feeder2WTLegNode f2WTe = Feeder2WTLegNode.create(getGraph(), id + "_" + side, id, id, side);
+                                                   Direction direction) {
+        Feeder2WTLegNode f2WTe = NodeFactory.createFeeder2WTLegNode(getGraph(), id + "_" + side, id, id, side);
         commonFeederSetting(f2WTe, id, order, direction);
         return f2WTe;
     }
 
     public Feeder3WTLegNode createFeeder3WTLegNode(String id, FeederWithSideNode.Side side, int order,
-                                                   BusCell.Direction direction) {
-        Feeder3WTLegNode f3WTe = Feeder3WTLegNode.createForSubstationDiagram(getGraph(), id + "_" + side, id, id, side);
+                                                   Direction direction) {
+        Feeder3WTLegNode f3WTe = NodeFactory.createFeeder3WTLegNodeForSubstationDiagram(getGraph(), id + "_" + side, id, id, side);
         commonFeederSetting(f3WTe, id + side.getIntValue(), order, direction);
         return f3WTe;
     }
 
-    private void commonFeederSetting(FeederNode node, String id, int order, BusCell.Direction direction) {
+    private void commonFeederSetting(FeederNode node, String id, int order, Direction direction) {
         node.setLabel(id);
-        getGraph().addNode(node);
 
         if (direction != null) {
             node.setOrder(order);

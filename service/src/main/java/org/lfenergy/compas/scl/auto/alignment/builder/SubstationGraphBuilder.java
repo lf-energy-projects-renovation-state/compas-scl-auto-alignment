@@ -3,7 +3,11 @@
 // SPDX-License-Identifier: Apache-2.0
 package org.lfenergy.compas.scl.auto.alignment.builder;
 
-import com.powsybl.sld.model.*;
+import com.powsybl.sld.model.graphs.NodeFactory;
+import com.powsybl.sld.model.graphs.SubstationGraph;
+import com.powsybl.sld.model.nodes.Feeder2WTLegNode;
+import com.powsybl.sld.model.nodes.Feeder3WTLegNode;
+import com.powsybl.sld.model.nodes.Node;
 import org.lfenergy.compas.scl.auto.alignment.exception.SclAutoAlignmentException;
 import org.lfenergy.compas.scl.auto.alignment.model.*;
 
@@ -38,7 +42,7 @@ public class SubstationGraphBuilder extends AbstractGraphBuilder<SubstationGraph
     }
 
     private void createVoltageLevelGraph(GenericVoltageLevel voltageLevel) {
-        var voltageLevelBuilder = new VoltageLevelGraphBuilder(voltageLevel, substation, getPath2Node());
+        var voltageLevelBuilder = new VoltageLevelGraphBuilder(voltageLevel, substation, getPath2Node(), getGraph());
         getGraph().addVoltageLevel(voltageLevelBuilder.getGraph());
         voltageLevelGraphBuilderMap.put(voltageLevel.getFullName(), voltageLevelBuilder);
     }
@@ -63,9 +67,9 @@ public class SubstationGraphBuilder extends AbstractGraphBuilder<SubstationGraph
         if (powerTransformer.isFeeder2WT()) {
             var tws = powerTransformer.getTransformerWindings();
             getGraph().addMultiTermNode(
-                    Middle2WTNode.create(powerTransformer.getFullName(),
+                    NodeFactory.createMiddle2WTNode(getGraph(),
                             powerTransformer.getFullName(),
-                            getGraph(),
+                            powerTransformer.getFullName(),
                             getFeeder2WTLegNode(tws.get(0)),
                             getFeeder2WTLegNode(tws.get(1)),
                             getVoltageLevelBuilder(tws.get(0)).getGraph().getVoltageLevelInfos(),
@@ -74,16 +78,12 @@ public class SubstationGraphBuilder extends AbstractGraphBuilder<SubstationGraph
         } else if (powerTransformer.isFeeder3WT()) {
             var tws = powerTransformer.getTransformerWindings();
             getGraph().addMultiTermNode(
-                    Middle3WTNode.create(powerTransformer.getFullName(),
+                    NodeFactory.createMiddle3WTNode(getGraph(),
                             powerTransformer.getFullName(),
-                            getGraph(),
+                            powerTransformer.getFullName(),
                             getFeeder3WTLegNode(tws.get(0)),
                             getFeeder3WTLegNode(tws.get(1)),
-                            getFeeder3WTLegNode(tws.get(2)),
-                            getVoltageLevelBuilder(tws.get(0)).getGraph().getVoltageLevelInfos(),
-                            getVoltageLevelBuilder(tws.get(1)).getGraph().getVoltageLevelInfos(),
-                            getVoltageLevelBuilder(tws.get(2)).getGraph().getVoltageLevelInfos(),
-                            false));
+                            getFeeder3WTLegNode(tws.get(2))));
         }
     }
 
