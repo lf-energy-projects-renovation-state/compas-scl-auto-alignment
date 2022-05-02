@@ -4,9 +4,10 @@
 package org.lfenergy.compas.scl.auto.alignment.service;
 
 import com.powsybl.sld.library.ComponentTypeName;
-import com.powsybl.sld.model.FeederNode;
-import com.powsybl.sld.model.Node;
-import com.powsybl.sld.model.SubstationGraph;
+import com.powsybl.sld.model.coordinate.Direction;
+import com.powsybl.sld.model.graphs.SubstationGraph;
+import com.powsybl.sld.model.nodes.FeederNode;
+import com.powsybl.sld.model.nodes.Node;
 import com.powsybl.sld.svg.DiagramLabelProvider;
 import com.powsybl.sld.svg.FeederInfo;
 import com.powsybl.sld.svg.LabelPosition;
@@ -33,17 +34,17 @@ public class SclAutoAlignmentDiagramLabelProvider implements DiagramLabelProvide
 
     @Override
     public List<FeederInfo> getFeederInfos(FeederNode node) {
-        return Arrays.asList(new FeederInfo(ComponentTypeName.ARROW_ACTIVE, Direction.OUT, "", "", null),
-                new FeederInfo(ComponentTypeName.ARROW_REACTIVE, Direction.IN, "", "", null));
+        return Arrays.asList(new FeederInfo(ComponentTypeName.ARROW_ACTIVE, LabelDirection.OUT, "", "", null),
+                new FeederInfo(ComponentTypeName.ARROW_REACTIVE, LabelDirection.IN, "", "", null));
     }
 
     @Override
-    public List<NodeLabel> getNodeLabels(com.powsybl.sld.model.Node node) {
+    public List<NodeLabel> getNodeLabels(Node node, Direction direction) {
         return busLabels.get(node);
     }
 
     @Override
-    public List<NodeDecorator> getNodeDecorators(com.powsybl.sld.model.Node node) {
+    public List<NodeDecorator> getNodeDecorators(Node node, Direction direction) {
         return new ArrayList<>();
     }
 

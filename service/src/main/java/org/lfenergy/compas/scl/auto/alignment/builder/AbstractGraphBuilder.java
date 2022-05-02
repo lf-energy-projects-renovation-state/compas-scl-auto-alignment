@@ -3,8 +3,9 @@
 // SPDX-License-Identifier: Apache-2.0
 package org.lfenergy.compas.scl.auto.alignment.builder;
 
-import com.powsybl.sld.model.BaseGraph;
-import com.powsybl.sld.model.Node;
+
+import com.powsybl.sld.model.graphs.BaseGraph;
+import com.powsybl.sld.model.nodes.Node;
 
 import java.util.Map;
 

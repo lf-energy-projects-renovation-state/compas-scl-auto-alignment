@@ -7,7 +7,7 @@ import com.powsybl.sld.layout.HorizontalSubstationLayoutFactory;
 import com.powsybl.sld.layout.LayoutParameters;
 import com.powsybl.sld.layout.PositionVoltageLevelLayoutFactory;
 import com.powsybl.sld.library.ConvergenceComponentLibrary;
-import com.powsybl.sld.model.SubstationGraph;
+import com.powsybl.sld.model.graphs.SubstationGraph;
 import com.powsybl.sld.svg.BasicStyleProvider;
 import com.powsybl.sld.svg.DefaultSVGWriter;
 import org.lfenergy.compas.core.commons.ElementConverter;
