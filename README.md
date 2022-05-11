@@ -7,6 +7,7 @@ SPDX-License-Identifier: Apache-2.0
 [![Maven Build Github Action Status](<https://img.shields.io/github/workflow/status/com-pas/compas-scl-auto-alignment/Build%20Project?logo=GitHub>)](https://github.com/com-pas/compas-scl-auto-alignment/actions?query=workflow%3A%22Build+Project%22)
 [![REUSE status](https://api.reuse.software/badge/github.com/com-pas/compas-scl-auto-alignment)](https://api.reuse.software/info/github.com/com-pas/compas-scl-auto-alignment)
 [![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=com-pas_compas-scl-auto-alignment&metric=alert_status)](https://sonarcloud.io/dashboard?id=com-pas_compas-scl-auto-alignment)
+[![CII Best Practices](https://bestpractices.coreinfrastructure.org/projects/5925/badge)](https://bestpractices.coreinfrastructure.org/projects/5925)
 [![Slack](https://raw.githubusercontent.com/com-pas/compas-architecture/master/public/LFEnergy-slack.svg)](http://lfenergy.slack.com/)
 
 # compas-scl-auto-alignment
