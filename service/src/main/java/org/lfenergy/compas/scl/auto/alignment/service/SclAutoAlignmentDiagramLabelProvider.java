@@ -69,6 +69,26 @@ public class SclAutoAlignmentDiagramLabelProvider implements DiagramLabelProvide
         return Collections.emptyMap();
     }
 
+    @Override
+    public String getTooltip(Node node) {
+        return null;
+    }
+
+    @Override
+    public List<ElectricalNodeInfo> getElectricalNodesInfos(VoltageLevelGraph voltageLevelGraph) {
+        return Collections.emptyList();
+    }
+
+    @Override
+    public Optional<BusInfo> getBusInfo(BusNode busNode) {
+        return Optional.empty();
+    }
+
+    @Override
+    public Map<String, Side> getBusInfoSides(VoltageLevelGraph voltageLevelGraph) {
+        return Collections.emptyMap();
+    }
+
     String stripLabel(String id) {
         String label = id;
         if (StringUtils.isNotBlank(label) && label.lastIndexOf("/") >= 0) {
