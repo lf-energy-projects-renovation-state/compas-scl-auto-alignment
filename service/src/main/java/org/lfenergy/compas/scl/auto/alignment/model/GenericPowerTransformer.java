@@ -3,12 +3,11 @@
 // SPDX-License-Identifier: Apache-2.0
 package org.lfenergy.compas.scl.auto.alignment.model;
 
-import com.powsybl.sld.model.nodes.FeederWithSideNode;
+import com.powsybl.sld.model.nodes.NodeSide;
 import org.w3c.dom.Element;
 
 import java.util.Collection;
 import java.util.List;
-import java.util.stream.Collectors;
 
 public class GenericPowerTransformer extends AbstractGenericNameEntity<GenericSubstation> {
     private List<GenericTransformerWinding> transformerWindings;
@@ -21,7 +20,7 @@ public class GenericPowerTransformer extends AbstractGenericNameEntity<GenericSu
         if (transformerWindings == null) {
             transformerWindings = getElementsStream("TransformerWinding")
                     .map(element -> new GenericTransformerWinding(this, element))
-                    .collect(Collectors.toList());
+                    .toList();
         }
         return transformerWindings;
     }
@@ -45,17 +44,17 @@ public class GenericPowerTransformer extends AbstractGenericNameEntity<GenericSu
         return getTransformerWindings().size() == 3;
     }
 
-    public FeederWithSideNode.Side getSide(String connectivityNode) {
+    public NodeSide getSide(String connectivityNode) {
         var ptw = getTransformerWindingByConnectivityNode(connectivityNode);
         var index = getTransformerWindings().indexOf(ptw);
 
         switch (index) {
             case 0:
-                return FeederWithSideNode.Side.ONE;
+                return NodeSide.ONE;
             case 1:
-                return FeederWithSideNode.Side.TWO;
+                return NodeSide.TWO;
             case 2:
-                return FeederWithSideNode.Side.THREE;
+                return NodeSide.THREE;
             default:
                 return null;
         }
