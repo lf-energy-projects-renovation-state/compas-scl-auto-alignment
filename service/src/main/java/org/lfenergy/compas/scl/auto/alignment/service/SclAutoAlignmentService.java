@@ -114,10 +114,12 @@ public class SclAutoAlignmentService {
     }
 
     private void configureLayout(SubstationGraph graph, LayoutParameters layoutParameters) {
+        PositionVoltageLevelLayoutFactoryParameters parameters = new PositionVoltageLevelLayoutFactoryParameters();
+        parameters.setFeederStacked(false)
+            .setHandleShunts(true);
         new HorizontalSubstationLayoutFactory().create(graph,
-                        new PositionVoltageLevelLayoutFactory()
-                                .setFeederStacked(false)
-                                .setHandleShunts(true))
-                .run(layoutParameters);
+            new PositionVoltageLevelLayoutFactory(parameters)
+        )
+        .run(layoutParameters);
     }
 }
